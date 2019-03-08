@@ -1,0 +1,46 @@
+version: '2'
+services:
+  gestao-descontos-db:
+    container_name: 'gestao-descontos-db'
+    build:
+      context: ./
+      dockerfile: db.dockerfile
+    working_dir: /var/lib/mysql
+    restart: always
+    #cria as variaveis de ambientes necessarias para o container do mysql 
+    environment:
+      MYSQL_ROOT_PASSWORD: gestaodescontos
+      MYSQL_DATABASE: gestao_descontos
+      MYSQL_USER: gestao
+      MYSQL_PASSWORD: gestao
+    ports :
+       - 3333:3306
+  gestao-descontos-api:
+    container_name: 'gestao-descontos-api'
+    build:
+      context: ./
+      dockerfile: api.dockerfile
+    working_dir: /var/www
+    command: bash -c "chmod 775 /usr/bin/laravel-postinstall.sh && chown root:root /usr/bin/laravel-postinstall.sh && sed -i 's/\r//g' /usr/bin/laravel-postinstall.sh && /usr/bin/laravel-postinstall.sh && php-fpm"
+    volumes:
+      - ./:/var/www
+    depends_on:
+      - gestao-descontos-db
+    #linka o container api com o container db 
+    links:
+      - gestao-descontos-db
+  gestao-descontos-web:
+    container_name: 'gestao-descontos-web'
+    build:
+      context: ./
+      dockerfile: web.dockerfile
+    working_dir: /var/www
+    volumes_from:
+      - gestao-descontos-api
+    ports:
+      - 8888:80
+    depends_on:
+      - gestao-descontos-api
+volumes:
+  gestao-descontos-api:
+    driver: "local"
