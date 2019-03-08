@@ -1,71 +1,55 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# API Gestão de Descontos
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Especificações tecnologicas do projeto
+* Laravel 5.7;
+* MYSQL 5.7;
+* PHP Fpm 7.1;
+* NGINX 1.13.
 
-## About Laravel
+## Ambiente de desenvolvimento local
+O ambiente de desenvolvimento local, utiliza o docker. Foi criada uma estrutura personalizada atráves de imagens oficiais do docker, divida em 4 partes:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. api.dockerfile (Utiliza a imagem oficial do php-fpm 7.1 como base)
+1. db.dockerfile (Utiliza a imagem oficial do Mysql 5.7 como base)
+1. web.dockerfile (Utiliza a imagem oficial do ngxin 1.13 como base)
+1. docker-compose.yml (Utilizado para configurar os serviços)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Como faço para rodar o projeto ?
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Primeiro passo instalar o [docker](https://www.docker.com/){:target="_blank"} na sua maquina. 
 
-## Learning Laravel
+Caso seja a primeira vez que esteja executando o projeto rode o seguindo comando: **docker-compose build** na raiz do diretorio do projeto. Após o build da imagem execute o seguinte comando **docker-compose up -d**. 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Caso já tenha realizado o build basta executar o comando ** docker-compose up -d** na raiz do diretório do projeto.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost you and your team's skills by digging into our comprehensive video library.
+## Como faço para acessar de fato o local ?  aonde o serviço esta rodando ?
 
-## Laravel Sponsors
+Neste caso será necessário acessar o **bash** do serviço desejado, para isso execute o seguinte comando **docker-compose exec nome-do-container bash** (Substituia o nome do container pelo nome ou id do container desejado);
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+** Temos os seguintes containers **
+* gestao-descontos-api;
+* gestao-descontos-db;
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
+Execute o comando **docker-compose exec gestao-descontos-api** caso seja a primeira vez que esteja executando o porjeto rode o seguinte comando dentro do bash do container **php artisan migrate --seed** (com isso ele ira criar a estrutura de banco de dados). PS: Os comandos descritos acima, devem ser executados no BASH do container **gestao-descontos-api**
 
-## Contributing
+Caso não seja a primeira vez e você queira recriar o banco execute o seguinte comando **php artisan migrate:refresh --seed** 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Não deu certo, como recrio tudo ?
+Caso não tenha dado certo e você deseje recriar tudo novamente, primeiramente pare o container caso o mesmo esteja rodando, execute o seguinte comando **docker-compose stop** (Dentro do PATH do projeto, na raiz do mesmo).
 
-## Security Vulnerabilities
+Logo após realizar o passo anterior, execute o seguinte comando **docker-compose down** e posterior a esse **docker-compose build --no-cache** (o parametro --no-cache é para não utilizar o cache do container que foi criado).
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## O que devo executar depois de criar os containers ? 
+Após criar os containers entre dentro do bash do container da api executando o seguinte comando **docker-compose exec gestao-descontos-api bash** 
 
-## License
+# Tutorial
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Criação da Model, Controller (Tipo Resource) e Migration
+```php artisan make:model Models/<Model_name> -m -r```
+
+O **-m** cria a migration do modelo e o **-r** cria o controle do tipo resource
+
+### Criação do Resource
+```php artisan make:resource <Resource_name>```
+
+O comando acima, cria a camada que formata a exibição dos dados entre a API é o 'Mundo Externo'
