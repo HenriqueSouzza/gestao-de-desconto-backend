@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,6 +28,16 @@ Route::resources([
     'roles'            => 'Api\RoleController',
     'role-users'       => 'Api\RoleUserController',
 ]);
+
+
+Route::get('google', function(){
+    $url = \Socialite::driver('google')->stateless()->setScopes(['openid', 'email'])->redirect()->getTargetUrl();
+  
+    //$google = \Socialite::with('google')->stateless()->user();
+    $google = \Socialite::driver('google')->stateless()->user();
+    dd($google);
+   
+});
 
 
 Route::get('redirects', 'Api\AuthController@redirect');

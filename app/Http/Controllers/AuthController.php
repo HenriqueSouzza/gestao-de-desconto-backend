@@ -11,23 +11,29 @@ use Exception;
 
 class AuthController extends Controller
 {
-    
+    /**
+     * 
+     */
     public function redirect()
     {
         return Socialite::driver('google')->redirect();
     }
 
+    /**
+     * 
+     */
     public function callback()
     {
         try
         {
             $googleUser = Socialite::driver('google')->user();
+         
 
             if(! strripos($googleUser->email, '@cnec.br'))
             {
                 abort(422, "O dominio do e-mail deverá conter CNEC.BR ");
             }
-            
+
             $exist = User::where('email', $googleUser->email)->first();
 
             if($exist)
