@@ -27,6 +27,7 @@ Route::resources([
     'permission-roles' => 'Api\PermissionRoleController',
     'roles'            => 'Api\RoleController',
     'role-users'       => 'Api\RoleUserController',
+    'users'            => 'Api\UserController'
 ]);
 
 
@@ -34,7 +35,7 @@ Route::get('google', function(){
     $url = \Socialite::driver('google')->stateless()->setScopes(['openid', 'email'])->redirect()->getTargetUrl();
   
     //$google = \Socialite::with('google')->stateless()->user();
-    $google = \Socialite::driver('google')->stateless()->user();
+    $google = \Socialite::driver('google')->stateless()->getTokenUrl();
     dd($google);
    
 });

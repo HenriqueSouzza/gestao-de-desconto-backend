@@ -16,14 +16,13 @@ class User extends Authenticatable
     use Notifiable, SoftDeletes, HasApiTokens;
 
     /**
-     * <b>table</b>
+     * <b>table</b> Informa qual é a tabela que o modelo irá utilizar
      */
     public $table = "users";
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
+     * <b>fillable</b> Informa quais colunas é permitido a inserção de dados (MassAssignment)
+     *  
      */
     protected $fillable = [
         'name', 
@@ -35,10 +34,8 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
+     * <b>hidden</b> Atributo responsável em esconder colunas que não deverão ser retornadas em uma requisição
+    */
     protected $hidden = [
         'password', 'remember_token',
     ];
@@ -53,24 +50,25 @@ class User extends Authenticatable
     ];
 
     /**
-     * <b>CREATED_AT</b>
+     * <b>CREATED_AT</b> Renomeia o campo padrão created_at criado por padrão quando utilizamos o metodo timestamps() na migration
      */
     const CREATED_AT = "created_at";
 
     /**
-     * <b>UPDATED_AT</b>
+     * <b>UPDATED_AT</b> Renomeia o campo padrão updated_at criado por padrão quando utilizamos o metodo timestamps() na migration
      */
     const UPDATED_AT = "updated_at";
 
     /**
-     *<b>DELETED_AT</b> 
+     *<b>DELETED_AT</b> Renomeia o campo padrão deleted_at criado por padrão quando utilizamos a Trait SoftDeletes na model
+     * OBS: Essa trait habilita a exclusão logica de registros nativa do Laravel
      */
 
      const DELETED_AT = "deleted_at";
 
    
      /**
-      * <b>primaryKey</b>
+      * <b>primaryKey</b> Informa qual a é a chave primaria da tabela
       */
      protected $primaryKey = "id";
 
@@ -80,8 +78,9 @@ class User extends Authenticatable
     protected $dates = ['created_at', 'updated_at', 'deleted_at', 'email_verified_at'];
 
     /**
-     * <b>rules</b>
-     */
+     * <b>rules</b> Atributo responsável em definir regras de validação dos dados submetidos pelo formulário
+     * OBS: A validação bail é responsável em parar a validação caso um das que tenha sido especificada falhe
+    */
     public $rules = [
 
         'name'     => 'bail|required',
@@ -90,28 +89,31 @@ class User extends Authenticatable
     ];
 
     /**
-     * <b>messages</b>
+     * <b>messages</b> Atributo responsável em definir mensagem de validação de acordo com as regras especificadas no atributo $rules
      */
     public $messages = [
 
     ];
 
-    /**
-     * <b>collection</b>
-     */
+     /**
+     *<b>collection</b> Atributo responsável em informar o namespace e o arquivo do resource
+     * O mesmo é utilizado em forma de facade.
+     * OBS: Responsável em retornar uma coleção com os alias(apelido) atribuidos para cada coluna. 
+     * Mais informações em https://laravel.com/docs/5.8/eloquent-resources
+    */
 
-     public $collection = "";
+     public $collection = "\App\Http\Resources\UserResource::collection";
 
      /**
       * <b>resource</b>
       */
 
-    public $resource = "";
+    public $resource = "\App\Http\Resources\UserResource";
 
     /**
-     * <b>map</b>
+     * <b>map</b> Atributo responsável em atribuir um alias(Apelido), para a colunas do banco de dados
+     * OBS: este atributo é utilizado no Metodo store e update da ApiControllerTrait
      */
-
      public $map = [
         'id'             => 'id',
         'name'           => 'name',
@@ -126,9 +128,9 @@ class User extends Authenticatable
 
 
     /**
-     * <b>getPrimaryKey</b>
+     * <b>getPrimaryKey</b> Método responsável em retornar o nome da primaryKey.
+     * OBS: Não é recomendado que este atributo seja publico, por isso foi realizado o encapsulamento
      */
-
      public function getPrimaryKey()
      {
          return $this->primaryKey;
