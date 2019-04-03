@@ -16,7 +16,7 @@ O ambiente de desenvolvimento local, utiliza o docker. Foi criada uma estrutura 
 
 ## Como faço para rodar o projeto ?
 
-Primeiro passo instalar o [docker](https://www.docker.com/ "Clique para acessar!" target="_blank"){:target="_blank"} na sua maquina. 
+Primeiro passo instalar o <a href="https://www.docker.com/" target="_blank">docker</a> na sua maquina. 
 
 Caso seja a primeira vez que esteja executando o projeto rode o seguindo comando: **docker-compose build** na raiz do diretorio do projeto. Após o build da imagem execute o seguinte comando **docker-compose up -d**. 
 
