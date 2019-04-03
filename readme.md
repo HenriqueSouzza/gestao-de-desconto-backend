@@ -55,7 +55,7 @@ Após criar os containers entre dentro do bash do container da api executando o 
 
 ## Visão geral de funcionamento
 Veja abaixo a imagem:<br>
-![funcionamento-api](/docs/1-api-funcionamento.png)
+![funcionamento-api](docs/1-api-funcionamento.png)
 
 ## Como Criar models. controllers e resources ?
 
