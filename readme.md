@@ -1,7 +1,7 @@
 # API Gestão de Descontos
 
 ## Especificações tecnologicas do projeto
-* Laravel 5.7;
+* Laravel 5.8;
 * MYSQL 5.7;
 * PHP Fpm 7.1;
 * NGINX 1.13.
