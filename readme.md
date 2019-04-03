@@ -30,19 +30,35 @@ Neste caso será necessário acessar o **bash** do serviço desejado, para isso 
 * gestao-descontos-api;
 * gestao-descontos-db;
 
-Execute o comando **docker-compose exec gestao-descontos-api** caso seja a primeira vez que esteja executando o porjeto rode o seguinte comando dentro do bash do container **php artisan migrate --seed** (com isso ele ira criar a estrutura de banco de dados). PS: Os comandos descritos acima, devem ser executados no BASH do container **gestao-descontos-api**
+## O que devo fazer ao executar o projeto pela primeira vez ? 
 
-Caso não seja a primeira vez e você queira recriar o banco execute o seguinte comando **php artisan migrate:refresh --seed** 
+Execute o comando **docker-compose exec gestao-descontos-api bash** dentro do bash(terminal do container) execute os seguintes comandos: 
+
+- **composer install**
+- **php artisan migrate --seed**
+- **php artisan passport:install**
+
+
+**OBS:** Caso não seja a primeira vez e você queira recriar o banco execute o seguinte comando **php artisan migrate:refresh --seed** ou **php artisan migrate:fresh --seed**
 
 ## Não deu certo, como recrio tudo ?
 Caso não tenha dado certo e você deseje recriar tudo novamente, primeiramente pare o container caso o mesmo esteja rodando, execute o seguinte comando **docker-compose stop** (Dentro do PATH do projeto, na raiz do mesmo).
 
-Logo após realizar o passo anterior, execute o seguinte comando **docker-compose down** e posterior a esse **docker-compose build --no-cache** (o parametro --no-cache é para não utilizar o cache do container que foi criado).
+Logo após realizar o passo anterior, execute o seguinte comando **docker-compose down** e posterior a esse **docker-compose build --no-cache** (o parametro --no-cache é para não utilizar o cache do container que foi criado) ou apenas **docker-compose build**.
 
 ## O que devo executar depois de criar os containers ? 
-Após criar os containers entre dentro do bash do container da api executando o seguinte comando **docker-compose exec gestao-descontos-api bash** 
+Após criar os containers entre dentro do bash do container da api executando o seguinte comando **docker-compose exec gestao-descontos-api bash** e executar os mesmos comandos que são executados logo após a criação do container:
 
-# Tutorial
+- **composer install**
+- **php artisan migrate --seed**
+- **php artisan passport:install**
+
+## Visão geral de funcionamento
+
+Veja abaixo uma breve explicação: 
+![funcionamento](/docs/1-api-funcionamento.png)
+
+## Como Criar models. controllers e resources ?
 
 ### Criação da Model, Controller (Tipo Resource) e Migration
 ```php artisan make:model Models/<Model_name> -m -r```
@@ -53,3 +69,5 @@ O **-m** cria a migration do modelo e o **-r** cria o controle do tipo resource
 ```php artisan make:resource <Resource_name>```
 
 O comando acima, cria a camada que formata a exibição dos dados entre a API é o 'Mundo Externo'
+
+
