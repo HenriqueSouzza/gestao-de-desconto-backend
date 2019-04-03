@@ -41,8 +41,8 @@ Route::get('google', function(){
 });
 
 
-Route::get('redirects', 'Api\AuthController@redirect');
-Route::post('callback', 'Api\AuthController@callback');
+Route::get('redirects', 'AuthController@redirect');
+Route::post('callback', 'AuthController@callback');
 
 
 Route::get('soap-tcu', function(){
