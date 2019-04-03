@@ -18,6 +18,7 @@ class CreatePermissionsTable extends Migration
             $table->increments('id_permission');
             $table->string('name_permission', 50);
             $table->string('label_permission', 200);
+            $table->string('action_permission', 200)->default('N/I');
             $table->timestamp('created_at_permission')->useCurrent();
             $table->timestamp('updated_at_permission')->nullable();
             $table->timestamp('deleted_at_permission')->nullable();

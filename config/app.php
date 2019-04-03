@@ -173,6 +173,8 @@ return [
         Barryvdh\Cors\ServiceProvider::class,  
         //register laravel socialite
         Laravel\Socialite\SocialiteServiceProvider::class,
+        //register laravel passport
+        Laravel\Passport\PassportServiceProvider::class,
 
         /*
          * Application Service Providers...

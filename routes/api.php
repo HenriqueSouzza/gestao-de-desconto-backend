@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,17 +20,29 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::resources([
 
+Route::resources([
+    
     'permissions'      => 'Api\PermissionController',
     'permission-roles' => 'Api\PermissionRoleController',
     'roles'            => 'Api\RoleController',
     'role-users'       => 'Api\RoleUserController',
+    'users'            => 'Api\UserController'
 ]);
 
 
-Route::get('redirects', 'Api\AuthController@redirect');
-Route::post('callback', 'Api\AuthController@callback');
+Route::get('google', function(){
+    $url = \Socialite::driver('google')->stateless()->setScopes(['openid', 'email'])->redirect()->getTargetUrl();
+  
+    //$google = \Socialite::with('google')->stateless()->user();
+    $google = \Socialite::driver('google')->stateless()->getTokenUrl();
+    dd($google);
+   
+});
+
+
+Route::get('redirects', 'AuthController@redirect');
+Route::post('callback', 'AuthController@callback');
 
 
 Route::get('soap-tcu', function(){
