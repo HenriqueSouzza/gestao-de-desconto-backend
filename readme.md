@@ -54,8 +54,7 @@ Após criar os containers entre dentro do bash do container da api executando o 
 - **php artisan passport:install**
 
 ## Visão geral de funcionamento
-
-**Veja abaixo uma breve explicação:** <br>
+Veja abaixo a imagem:<br>
 ![funcionamento](/docs/1-api-funcionamento.png)
 
 ## Como Criar models. controllers e resources ?
