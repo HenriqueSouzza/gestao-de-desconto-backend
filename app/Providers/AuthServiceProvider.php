@@ -3,7 +3,16 @@
 namespace App\Providers;
 
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Laravel\Passport\Passport;
+use Illuminate\Support\Facades\DB;
+
+use App\User;
+use App\Models\Permission;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -25,6 +34,50 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+         /**
+          * <b>Passport</b> Definição de duração de token, rotas para autenticação via API 
+          */
+         Passport::routes();//routes passport
+         Passport::tokensExpireIn(Carbon::now()->addYears(1));
+         Passport::refreshTokensExpireIn(Carbon::now()->addYears(2));
+
+        /**
+        * <b>Permission::with('roles')->get();</b> Recuperar os dados do relacionamento entre a tabela de permissão e a tabela de papeis
+        * Tem como parametro o nome do relacionamento que esta na model de permission
+        * verifica se possui a tabela antes de realizar as verificações 
+        * Essa ação evita erros caso a tabela não exista na hora de rodar a migration
+        */ 
+        
+        $table = "permissions";
+        $count =  DB::select("SHOW TABLES LIKE '%$table%'");
+       
+        if(count($count))
+        {
+            $permissions = Permission::with('roles')->get();
+            
+            foreach( $permissions as $permission )
+            {
+                Gate::define($permission->name_permission, function(User $user) use ($permission){
+                    return $user->hasPermission($permission) ;
+                });
+            }
+            
+     
+            /**
+            * <b> Gate::before</b> Caso o usuário tenha papel de administrador irá passar direto sem passar pelo gate acima
+            */
+            Gate::before(function(User $user, $ability)
+            {
+                
+                if( $user->hasAnyRoles('Administrador') )
+                {
+                    //if( $user->hasAnyRoles('1') )
+                    return true;
+                }
+                
+                
+            });
+
+        }
     }
 }
