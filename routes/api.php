@@ -27,7 +27,8 @@ Route::resources([
     'permission-roles' => 'Api\PermissionRoleController',
     'roles'            => 'Api\RoleController',
     'role-users'       => 'Api\RoleUserController',
-    'users'            => 'Api\UserController'
+    'users'            => 'Api\UserController',
+    'totvs-queries'    => 'Api\TotvsQuerySqlController'
 ]);
 
 
@@ -83,6 +84,31 @@ Route::get('soap-tcu', function(){
 
 Route::get('totvs', function (){
 
+    $client = new \Zend\Soap\Client('http://10.254.44.175/TOTVSBusinessConnect/wsConsultaSQL.asmx?wsdl', ['login' => 'wsgestaodedesconto', 'password' => 'MjAxOUBjbmVjMDE=']);
+
+    $params = [
+        'codSentenca'=> 'WEBS001', // SELECT CHAPA , NOME FROM PFUNC
+        'codColigada'=>'1',         
+        'codAplicacao'=>'V',         
+        'parameters'=>'CPF=04203638151'       
+    ];
+
+    //obtendo informações do servidor SOAP
+   /* echo "informações do servidor SOAP: ";
+    print_r($client->getOptions());
+
+    //obtem quais são as funções
+    echo "funcionalidades/recursos: ";
+    print_r($client->getFunctions());
+
+    //obtem os tipos de dados(struct) dos recursos (especificação dos recursos)
+    echo "Tipos:";
+    print_r($client->getTypes());*/
+
+    $result = ($client->RealizarConsultaSQL($params));
+    $response = simplexml_load_string($result->RealizarConsultaSQLResult);
+
+    return json_encode($response->Resultado);
 
    /* $client = new \Zend\Soap\Client('http://10.254.44.147/wsINTEGMOODLE_CNEC/CstImportarNotas.asmx?wsdl', ['login' => '016908139', 'password' => 'd2VzbGV5MjA=']);
 
@@ -243,7 +269,7 @@ Route::get('totvs', function (){
         $soapClient->setStreamContext($context);*/
 
 
-        $client = new \Zend\Soap\Client('http://10.254.44.147/wsINTEGMOODLE_CNEC/CstImportarNotas.asmx?wsdl');
+       /* $client = new \Zend\Soap\Client('http://10.254.44.147/wsINTEGMOODLE_CNEC/CstImportarNotas.asmx?wsdl');
 
         $username = '016908139';
         $password = 'MTIzNDU2';
@@ -321,7 +347,7 @@ Route::get('totvs', function (){
             $xml->endElement();
         $xml->endElement();*/
 
-        $prefix = 'br';
+       /* $prefix = 'br';
 
         $xml = new \XMLWriter();
         $xml->openMemory();
@@ -369,7 +395,7 @@ $request = new SoapVar($xml->outputMemory(), XSD_ANYXML);
             
             ]
         ], XSD_ANYXML);*/
-        var_dump($client->IncluirNotaEtapa($xml3));
+       /* var_dump($client->IncluirNotaEtapa($xml3));
         //var_dump($client->IncluirNotaAvaliacao($xml2));
         
         var_dump($client->getLastRequestHeaders());
