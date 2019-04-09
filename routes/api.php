@@ -32,6 +32,15 @@ Route::resources([
 ]);
 
 
+Route::post('login', 'Api\UserController@login');
+Route::post('register', 'Api\UserController@register');
+
+Route::group(['middleware' => 'auth:api'], function() {
+    Route::get('logout', 'Api\UserController@logout');
+    Route::get('user', 'Api\UserController@user');
+});
+
+
 Route::get('google', function(){
     $url = \Socialite::driver('google')->stateless()->setScopes(['openid', 'email'])->redirect()->getTargetUrl();
   
