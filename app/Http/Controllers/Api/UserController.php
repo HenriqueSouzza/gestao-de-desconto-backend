@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; 
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Api\ApiControllerTrait;
 use Carbon\Carbon;
@@ -12,6 +13,7 @@ use Carbon\Carbon;
 use Validator;
 
 use App\User;
+use Socialite;
 
 class UserController extends Controller
 {
@@ -200,6 +202,80 @@ class UserController extends Controller
     public function user(Request $request)
     {
         return $this->createResponse($request->user());
+    }
+
+
+
+     /**
+     * 
+     */
+    public function redirectToProvider()
+    {
+        return [
+            'url' => Socialite::driver('google')->stateless()->redirect()->getTargetUrl(),
+        ];
+    }
+
+    /**
+     * 
+     */
+    public function callback(Request $request)
+    {
+
+       try
+        {
+             $googleUser = Socialite::driver('google')->stateless()->user();
+            
+
+            if(! strripos($googleUser->email, '@cnec.br'))
+            {
+                $errors['messages'] = "O dominio do e-mail deverá conter CNEC.BR";
+                $errors['error']    = true;
+
+                return $this->createResponse($errors, 401);
+             
+            }
+
+            $exist = User::where('email', $googleUser->email)->first();
+
+            if($exist)
+            {
+                $user =  Auth::loginUsingId($exist->id);
+                //cria o token com base em uma string randomica, o time e o id do usuário
+                $token = $user->createToken(Str::random(10) . time() . $user->id);
+
+                //cria o response com os dados do token tais como: access_token (token de acesso) expires_at (data e hora de expiração do token)
+                $response['access_token'] = $token->accessToken;
+                $response['token_type']   = 'Bearer';
+                $response['avatar']       = $googleUser->avatar;
+                $response['avatar_original'] = $googleUser->avatar_original;
+                $response['user'] = $user;
+                $response['expires_at']   = Carbon::parse(
+                    $token->token->expires_at
+                )->toDateTimeString();
+            
+                return $this->createResponse($response);
+            }
+            else
+            {
+                $user = User::create([
+                    'name'        => $googleUser->name,
+                    'email'       => $googleUser->email,
+                    'password'    =>  \Hash::make(rand(1,10000)),
+                    'provider'    => 'google',
+                    'provider_id' => $googleUser->id,
+                ]);
+                
+            }
+            
+            return $this->createResponse($googleUser);
+
+        } 
+        catch (Exception $e)
+        {
+            dd($e);
+            abort(422, "Ocorreu um erro");
+        }
     }
 
 }

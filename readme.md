@@ -20,19 +20,19 @@ Primeiro passo instalar o <a href="https://www.docker.com/" target="_blank">dock
 
 Caso seja a primeira vez que esteja executando o projeto rode o seguindo comando: **docker-compose build** na raiz do diretorio do projeto. Após o build da imagem execute o seguinte comando **docker-compose up -d**. 
 
-Caso já tenha realizado o build basta executar o comando ** docker-compose up -d** na raiz do diretório do projeto.
+Caso já tenha realizado o build basta executar o comando **docker-compose up -d** na raiz do diretório do projeto.
 
 ## Como faço para acessar de fato o local ?  aonde o serviço esta rodando ?
 
 Neste caso será necessário acessar o **bash** do serviço desejado, para isso execute o seguinte comando **docker-compose exec nome-do-container bash** (Substituia o nome do container pelo nome ou id do container desejado);
 
-** Temos os seguintes containers **
+**Temos os seguintes containers**
 * gestao-descontos-api;
 * gestao-descontos-db;
 
 ## O que devo fazer ao executar o projeto pela primeira vez ? 
 
-Execute o comando **docker-compose exec gestao-descontos-api bash** dentro do bash(terminal do container) execute os seguintes comandos: 
+Execute o comando **docker-compose up -d** e logo após execute **docker-compose exec gestao-descontos-api bash** dentro do bash(terminal do container) execute os seguintes comandos: 
 
 - **composer install**
 - **php artisan migrate --seed**
