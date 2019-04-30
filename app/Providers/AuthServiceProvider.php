@@ -38,8 +38,8 @@ class AuthServiceProvider extends ServiceProvider
           * <b>Passport</b> Definição de duração de token, rotas para autenticação via API 
           */
          Passport::routes();//routes passport
-         Passport::tokensExpireIn(Carbon::now()->addYears(1));
-         Passport::refreshTokensExpireIn(Carbon::now()->addYears(2));
+         Passport::tokensExpireIn(Carbon::now()->addDays(15));
+         Passport::refreshTokensExpireIn(Carbon::now()->addDays(30));
 
         /**
         * <b>Permission::with('roles')->get();</b> Recuperar os dados do relacionamento entre a tabela de permissão e a tabela de papeis

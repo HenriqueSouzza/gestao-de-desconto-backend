@@ -116,4 +116,44 @@ class PermissionController extends Controller
         return $destroy;
 
     }
+
+
+     /**
+     * <b>updateAllPermissions</b> Método responsável por atualizar todas as permissões presentes no sistema. 
+     * Essa atualização é realizada com base de todas as controllers e actions. Caso aconteça a criação de uma 
+     * controller ou mais uma action o mesmo será contemplado o cadastro das novas ações
+     * @param  \Illuminate\Http\Request  $request
+     */
+
+     public function updateAllPermissions(Request $request)
+     {
+         foreach(\Route::getRoutes()->getRoutes() as $route )
+         {
+             $action = $route->getAction();
+
+             if(array_key_exists('controller', $action))
+             {
+                 $controller = explode('\\', $action['controller']);
+                 $index = max(array_keys($controller));
+                 $actionPermission = explode('@', $controller[$index]);
+                 $actionName = ( array_key_exists('as', $action) ? $action['as'] : '' );
+
+                 $find = Permission::where('name_permission', $controller[$index])->count();
+
+                 if(!$find)
+                 {
+                     $data = Permission::insert([
+                        'name_permission'   => $controller[$index],
+                        'label_permission'  => 'Acesso a ação '.$actionPermission[1],
+                        'action_permission' => $actionName,
+                     ]);
+                 }
+             }
+         }
+
+         $message['message'] = 'Permissões atualizadas com sucesso !';
+         $message['error'] = false;
+
+         return $this->createResponse($message);
+     }
 }

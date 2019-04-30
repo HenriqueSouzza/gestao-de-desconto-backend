@@ -38,8 +38,12 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
+            // \App\Http\Middleware\EncryptCookies::class,
+            // \Illuminate\Session\Middleware\StartSession::class,
             'throttle:60,1',
             'bindings',
+             // Middlewares externos
+             \Barryvdh\Cors\HandleCors::class,
         ],
     ];
 
