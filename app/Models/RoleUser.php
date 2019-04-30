@@ -120,9 +120,9 @@ class RoleUser extends Model
      * <b>roles</b> Método responsável em definir o relacionamento entre as de RoleUser  e Role e suas
      * respectivas tabelas.
      */
-    public function roles()
+    public function role()
     {
-        //return $this->belongsToMany(Role::class, 'role_users', 'fk_user', 'fk_role');
+
         return $this->belongsTo(Role::class, 'fk_role', 'id_role');
     }
 
