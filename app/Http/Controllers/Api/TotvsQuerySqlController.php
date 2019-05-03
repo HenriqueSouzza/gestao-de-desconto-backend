@@ -5,10 +5,12 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\TotvsTraits\TotvsQuerySqlTrait;
+use App\TotvsTraits\TotvsReadRecordTrait;
+
 
 class TotvsQuerySqlController extends Controller
 {
-    use TotvsQuerySqlTrait;
+    use /*TotvsQuerySqlTrait,*/ TotvsReadRecordTrait;
     /**
      * Display a listing of the resource.
      *
@@ -86,5 +88,17 @@ class TotvsQuerySqlController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * <b>read</b>
+     */
+    public function read(Request $request)
+    {
+        
+
+        return $requestSoap =  $this->readRecord($request->DataServer, $request->PrimaryKey);
+
+        
     }
 }
