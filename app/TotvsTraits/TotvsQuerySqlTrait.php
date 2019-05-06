@@ -17,7 +17,9 @@ Trait TotvsQuerySqlTrait
      * OBS: A mesma deverá existir na tabela GCONSQL no TOTVS
      */
     public static $nameQuery = [
-        'WEBS001' => 'WEBS001',
+        'WEB001' => 'WEB.0001',
+        'WEB002' => 'WEB.0002',
+        'WEB003' => 'WEB.0003',
         
     ];
 
@@ -55,7 +57,7 @@ Trait TotvsQuerySqlTrait
         $parameters = [
             'codSentenca'  => $name, 
             'codColigada'  => '1',         
-            'codAplicacao' => 'V',         
+            'codAplicacao' => 'S',         
             'parameters'   =>  $this->transformParams($params)       
         ];
 
@@ -63,12 +65,12 @@ Trait TotvsQuerySqlTrait
         $client = new ZendClient($url, 
                     ['login' => env('USER_WS_TOTVS'), 'password' => env('PASS_WS_TOTVS')]
                 );
-
-     
+       
         $result = ($client->RealizarConsultaSQL($parameters));
+       
         //transforma o xml em string e obtem o resultado
         $response = simplexml_load_string($result->RealizarConsultaSQLResult);   
-        
+      
         return $this->transformResponse($response);
 
     
@@ -78,10 +80,11 @@ Trait TotvsQuerySqlTrait
      * <b>transformResponse<b/> Método responsável por transformar a resposta de xml para json
      * @param $response (Resposta a ser parseada)
      * @return json $reponse
+     * OBS: JSON_UNESCAPED_UNICODE formata o charset
      */
     protected function transformResponse($response)
     {
-        return json_encode($response);
+        return json_encode($response, JSON_UNESCAPED_UNICODE);
     }
 
     /**
@@ -93,6 +96,7 @@ Trait TotvsQuerySqlTrait
      */
     protected function transformParams(Array $params)
     {
+       
         $stringParams = [];
 
         for($i=0; $i<count($params); $i++)
@@ -108,6 +112,7 @@ Trait TotvsQuerySqlTrait
           
 
         }
+      
         //transforma o array em string
         return implode('',$stringParams);
     

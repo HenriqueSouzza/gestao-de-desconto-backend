@@ -7,10 +7,12 @@ use App\Http\Controllers\Controller;
 use App\TotvsTraits\TotvsQuerySqlTrait;
 use App\TotvsTraits\TotvsReadRecordTrait;
 
+use App\TotvsTraits\TotvsSaveRecordTrait;
+
 
 class TotvsQuerySqlController extends Controller
 {
-    use /*TotvsQuerySqlTrait,*/ TotvsReadRecordTrait;
+    use TotvsQuerySqlTrait /*TotvsReadRecordTrait,*/ /*TotvsSaveRecordTrait*/;
     /**
      * Display a listing of the resource.
      *
@@ -18,10 +20,12 @@ class TotvsQuerySqlController extends Controller
      */
     public function index()
     {
-        $name = self::$nameQuery['WEBS001'];
-        $parameters = ['cpf' => '04203638151', 'test' => '1212'];
+        /*$name = self::$nameQuery['WEB002'];
+        $parameters = ['CODTIPOCURSO' => '-1', 'CODFILIAL' => '-1'];*/
+        $name = self::$nameQuery['WEB003'];
+        $parameters = ['CODTIPOCURSO' => '-1', 'CODFILIAL' => '-1'];
         $requestSoap = $this->query($name, $parameters);
-        dd($requestSoap);
+        return $requestSoap;
     }
 
     /**
@@ -67,7 +71,7 @@ class TotvsQuerySqlController extends Controller
         //
     }
 
-    /**
+    /**saveRecord
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -100,5 +104,11 @@ class TotvsQuerySqlController extends Controller
         return $requestSoap =  $this->readRecord($request->DataServer, $request->PrimaryKey);
 
         
+    }
+
+
+    public function save(Request $request)
+    {
+         return $requestSoap = $this->saveRecord($request->DataServer, $request->XML);
     }
 }

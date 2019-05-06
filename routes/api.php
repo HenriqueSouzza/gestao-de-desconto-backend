@@ -35,6 +35,8 @@ Route::group(['middleware' => ['auth:api']], function(){
 });
 
 Route::post('/totvs-queries/read', 'Api\TotvsQuerySqlController@read');
+
+Route::post('/totvs-queries/save', 'Api\TotvsQuerySqlController@save');
     
 Route::post('login', 'Api\UserController@login');
 Route::post('register', 'Api\UserController@register');
