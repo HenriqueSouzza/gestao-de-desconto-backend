@@ -67,6 +67,8 @@ Trait TotvsQuerySqlTrait
                 );
        
         $result = ($client->RealizarConsultaSQL($parameters));
+
+        //dd($client->getLastResponse(), $client->getLastResponseHeaders());
        
         //transforma o xml em string e obtem o resultado
         $response = simplexml_load_string($result->RealizarConsultaSQLResult);   
@@ -92,7 +94,7 @@ Trait TotvsQuerySqlTrait
      * passar os parametros para a consulta que será realizada no webservice da TOTVS
      * Exemplo: ['param' => 123, 'param2' => 234] => param=123;param2=234;
      * @param Array $params;
-     * @return string $stringParams
+     * @return strin'CODCURSO' => '-1', g $stringParams
      */
     protected function transformParams(Array $params)
     {

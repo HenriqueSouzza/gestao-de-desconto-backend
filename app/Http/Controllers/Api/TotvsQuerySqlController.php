@@ -12,7 +12,7 @@ use App\TotvsTraits\TotvsSaveRecordTrait;
 
 class TotvsQuerySqlController extends Controller
 {
-    use TotvsQuerySqlTrait /*TotvsReadRecordTrait,*/ /*TotvsSaveRecordTrait*/;
+    use /*TotvsQuerySqlTrait /*TotvsReadRecordTrait,*/ TotvsSaveRecordTrait;
     /**
      * Display a listing of the resource.
      *
@@ -20,10 +20,12 @@ class TotvsQuerySqlController extends Controller
      */
     public function index()
     {
+        /*$name = self::$nameQuery['WEB001'];
+        $parameters = ['CODTIPOCURSO' => '3'];*/
         /*$name = self::$nameQuery['WEB002'];
-        $parameters = ['CODTIPOCURSO' => '-1', 'CODFILIAL' => '-1'];*/
+        $parameters = ['CODFILIAL' => '169', 'CODTIPOCURSO' => '3'];*/
         $name = self::$nameQuery['WEB003'];
-        $parameters = ['CODTIPOCURSO' => '-1', 'CODFILIAL' => '-1'];
+        $parameters = ['CODFILIAL' => '169', 'CODCURSO' => 'GP011'];
         $requestSoap = $this->query($name, $parameters);
         return $requestSoap;
     }
@@ -109,6 +111,7 @@ class TotvsQuerySqlController extends Controller
 
     public function save(Request $request)
     {
+       
          return $requestSoap = $this->saveRecord($request->DataServer, $request->XML);
     }
 }
