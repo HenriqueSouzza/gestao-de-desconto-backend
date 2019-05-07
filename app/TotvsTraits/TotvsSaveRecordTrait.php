@@ -65,6 +65,7 @@ Trait TotvsSaveRecordTrait
      * @param $context (CODCOLIGADA e CODSISTEMA)
      * @return json $result
      * 
+     * OBS: Para mais informações a respeito do webservice acesse: http://tdn.totvs.com/display/public/LRM/Cadastros+-+Webservice
      */
     protected function saveRecord($dataServer, Array $xml, $context = null)
     {
