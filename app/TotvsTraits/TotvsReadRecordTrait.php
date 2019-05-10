@@ -16,7 +16,7 @@ Trait TotvsReadRecordTrait
     
     protected function readRecord($dataServer, $primaryKey, $context = null)
     {
-        $context = (!is_null($context) ? [$context] : 'CODCOLIGADA=1;CODSISTEMA=S;');
+        $context = (!is_null($context) ? $context : 'CODCOLIGADA=1;CODSISTEMA=S;');
 
         $parameters = [
             'DataServerName' => $dataServer,

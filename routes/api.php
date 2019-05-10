@@ -34,6 +34,7 @@ Route::group(['middleware' => ['auth:api']], function(){
     Route::get('/permissions/update/all', 'Api\PermissionController@updateAllPermissions');
 });
 
+Route::post('/totvs-queries/query', 'Api\TotvsQuerySqlController@totvsQuery');
 Route::post('/totvs-queries/read', 'Api\TotvsQuerySqlController@read');
 
 Route::post('/totvs-queries/save', 'Api\TotvsQuerySqlController@save');

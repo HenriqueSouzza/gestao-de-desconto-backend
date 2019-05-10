@@ -20,6 +20,9 @@ Trait TotvsQuerySqlTrait
         'WEB001' => 'WEB.0001',
         'WEB002' => 'WEB.0002',
         'WEB003' => 'WEB.0003',
+        'WEB004' => 'WEB.0004',
+        'WEB005' => 'WEB.0005',
+        'WEB006' => 'WEB.0006',
         
     ];
 
@@ -51,9 +54,11 @@ Trait TotvsQuerySqlTrait
      * @param $params(Parametros da consulta)
      * @return json  
      */
-    protected function query($name, $params)
+    protected function query($name, $params, $context = null)
     {
-       
+     
+        $context = (!is_null($context) ? $context : 'CODCOLIGADA=1;CODSISTEMA=S;');
+        
         $parameters = [
             'codSentenca'  => $name, 
             'codColigada'  => '1',         
@@ -65,7 +70,7 @@ Trait TotvsQuerySqlTrait
         $client = new ZendClient($url, 
                     ['login' => env('USER_WS_TOTVS'), 'password' => env('PASS_WS_TOTVS')]
                 );
-       
+          
         $result = ($client->RealizarConsultaSQL($parameters));
 
         //dd($client->getLastResponse(), $client->getLastResponseHeaders());
@@ -73,7 +78,8 @@ Trait TotvsQuerySqlTrait
         //transforma o xml em string e obtem o resultado
         $response = simplexml_load_string($result->RealizarConsultaSQLResult);   
       
-        return $this->transformResponse($response);
+        return $response;
+        //return $this->transformResponse($response);
 
     
     }
@@ -106,10 +112,10 @@ Trait TotvsQuerySqlTrait
            
             $keys   = array_keys($params);
             $values = array_values($params);
-
+           
             //formata a string no padrão chave=valor; 
             $string = (string) strtoupper($keys[$i]).'='.$values[$i].';';
-
+         
             $stringParams[$i] = $string;
           
 

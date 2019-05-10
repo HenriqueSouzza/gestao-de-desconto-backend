@@ -71,19 +71,21 @@ Trait TotvsSaveRecordTrait
     {
        
         $context = (!is_null($context) ? $context : 'CODCOLIGADA=1;CODSISTEMA=S;');
-
+       
         $parameters = [
             'DataServerName' => $dataServer,
             'XML'            => $this->arrayToXml($xml),
             'Contexto'       => $context
         ];
-
+        
         //fazer a chamada RPC
         $url = env('URL_WS_DEVELOPER').$this->wsdl;
         $client = new ZendClient($url, 
                     ['login' => env('USER_WS_TOTVS'), 'password' => env('PASS_WS_TOTVS_REAL')]
                 );
         $result = ($client->SaveRecord($parameters));
+
+     
        
         // $response['action'] = 'SaveRecordResult';
         // $response['id'] = $result->SaveRecordResult;
