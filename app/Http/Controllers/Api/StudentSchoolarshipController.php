@@ -69,6 +69,7 @@ class StudentSchoolarShipController extends Controller
      */
     public function store(Request $request)
     {        
+        $this->validateInputs($request);
         $schoolarship = $this->model->create($request->all());        
         SchoolarshipWorkflow::create(
             [

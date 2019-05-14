@@ -27,7 +27,9 @@ class StudentSchoolarshipResource extends JsonResource
             'value_student_schoolarship'                            => $this->value_student_schoolarship,
             'first_installment_student_schoolarship'                => $this->first_installment_student_schoolarship,
             'last_installment_student_schoolarship'                 => $this->last_installment_student_schoolarship,
-            'detail_student_schoolarship'                          => $this->detail_student_schoolarship
+            'detail_student_schoolarship'                           => $this->detail_student_schoolarship,
+            'workflows'                                             => SchoolarshipWorkflowResource::collection($this->workflows) 
+
         ];
     }
 }

@@ -91,5 +91,9 @@ class SchoolarshipWorkflow extends Model
     {
         return $this->primaryKey;
     }
+    public function schoolarships(){
+        return $this->belongsTo(StudentSchoolarship::class, 'fk_student_schoolarship', 'id_student_schoolarship');
+    }
+
 
 }
