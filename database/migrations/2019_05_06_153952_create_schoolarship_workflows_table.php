@@ -16,8 +16,8 @@ class CreateSchoolarshipWorkflowsTable extends Migration
         Schema::create('schoolarship_workflows', function (Blueprint $table) {
             $table->bigIncrements('id_schoolarship_workflow');
             $table->integer('fk_user')->comment('ID do usuário referencia a tabela USERS');
-            $table->integer('fk_student_schoolaship')->comment('ID da bolsa referencia a tabela STUDENT_SCHOOLARSHIP');
-            $table->integer('fk_actions')->comment('ID da ação que o usuario fez referencia a tabela ACTIONS');
+            $table->integer('fk_student_schoolarship')->comment('ID da bolsa referencia a tabela STUDENT_SCHOOLARSHIP');
+            $table->integer('fk_action')->comment('ID da ação que o usuario fez referencia a tabela ACTIONS');
             $table->string('detail_schoolarship_workflow',255);
             $table->timestamp('created_at_schoolarship_workflow')->useCurrent();
             $table->timestamp('updated_at_schoolarship_workflow')->nullable();

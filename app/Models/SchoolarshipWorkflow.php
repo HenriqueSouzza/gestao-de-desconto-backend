@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 
 
-class SchoolarhipWorkflow extends Model
+class SchoolarshipWorkflow extends Model
 {
     use SoftDeletes;
 
@@ -22,8 +22,8 @@ class SchoolarhipWorkflow extends Model
      */
     protected $fillable = [
         'fk_user',
-        'fk_student_schoolaship',
-        'fk_actions',
+        'fk_student_schoolarship',
+        'fk_action',
         'detail_schoolarship_workflow'
     ];
 
@@ -64,9 +64,9 @@ class SchoolarhipWorkflow extends Model
 
     public $rules = [
         'fk_user'  => 'bail|required|max:50',
-        'fk_student_schoolaship' => 'bail|required|max:200',
-        'fk_actions' => 'bail|required|max:200',
-        'detail_schoolarship_workflow' => 'bail|required|max:200',
+        'fk_student_schoolarship' => 'bail|required|max:200',
+        'fk_action' => 'bail|required|max:200',
+        'detail_schoolarship_workflow' => 'max:200',
         
     ];
 

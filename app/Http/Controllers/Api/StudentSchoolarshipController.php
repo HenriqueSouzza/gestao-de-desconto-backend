@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Api\ApiControllerTrait;
 
-use App\Models\Role;
+use App\Models\SchoolarshipWorkflow;
 use App\Models\StudentSchoolarship;
 
 class StudentSchoolarShipController extends Controller
@@ -69,7 +69,16 @@ class StudentSchoolarShipController extends Controller
      */
     public function store(Request $request)
     {        
-        return $this->storeTrait($request);
+        $schoolarship = $this->model->create($request->all());        
+        SchoolarshipWorkflow::create(
+            [
+            'fk_student_schoolarship' => $schoolarship->id_student_schoolarship,
+            'fk_action' => 1, // CRIACAO
+            'fk_user' => 1, //TODO: Pegar id do usuario
+            'detail_schoolarship_workflow' => 'Detalhe sobre o passo'
+            ]
+        );
+        return $this->createResponse($this->columnsShow($schoolarship), 201);
     }
 
     /**

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-use App\SchoolarshipWorkflow; 
+
 
 class StudentSchoolarship extends Model
 {
@@ -145,7 +145,7 @@ class StudentSchoolarship extends Model
     }
 
     public function workflows(){
-        return $this->hasMany(SchoolarshipWorkflow::class, 'fk_student_schoolaship', 'id_student_schoolarship');
+        return $this->hasMany(SchoolarshipWorkflow::class, 'fk_student_schoolarship', 'id_student_schoolarship');
     }
 
 }
