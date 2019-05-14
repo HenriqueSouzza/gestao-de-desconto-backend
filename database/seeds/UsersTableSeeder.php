@@ -14,17 +14,17 @@ class UsersTableSeeder extends Seeder
     {
         factory(User::class)->create([
             'email'    => 'paulo.silva@cnec.br',
-            'password' => '123456'
+            'password' => '$2y$10$O8pBxNUdpAxY/9lz90G6UOTE3fXRFNxPhwe9YJooSZ94omIwlAQqC' //12345678
         ]);
 
         factory(User::class)->create([
             'email' => 'henrique.souza@cnec.br',
-            'password' => '123456'
+            'password' => '$2y$10$O8pBxNUdpAxY/9lz90G6UOTE3fXRFNxPhwe9YJooSZ94omIwlAQqC' //12345678
         ]);
 
         factory(User::class)->create([
             'email' => 'caio.oliveira@cnec.br',
-            'password' => '123456'
+            'password' => '$2y$10$O8pBxNUdpAxY/9lz90G6UOTE3fXRFNxPhwe9YJooSZ94omIwlAQqC' //12345678
         ]);
 
         factory(User::class, 50)->create();
