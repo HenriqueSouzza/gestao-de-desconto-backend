@@ -13,7 +13,7 @@ class CreateStudentSchoolarshipTable extends Migration
      */
     public function up()
     {
-        Schema::create('student_schoolarship', function (Blueprint $table) {
+        Schema::create('student_schoolarships', function (Blueprint $table) {
             $table->bigIncrements('id_student_schoolarship');
             $table->integer('ra_rm_student_schoolarship')->comment('RA do estudante tabela SALUNO RM TOTVS');
             $table->string('id_rm_schoolarship_student_schoolarship',10)->comment('ID da bolsa tabela SBOLSA RM TOTVS');
@@ -27,10 +27,10 @@ class CreateStudentSchoolarshipTable extends Migration
             $table->decimal('value_student_schoolarship',8,2)->comment('Valor percentual da bolsa do estudante');
             $table->integer('first_installment_student_schoolarship')->comment('Primeira parcela ou parcela inicial do desconto do aluno');
             $table->integer('last_installment_student_schoolarship')->comment('Ultima parcela ou parcela final do desconto do aluno');
-            $table->string('detail_schoolarship_workflow',255);
-            $table->timestamp('created_at_schoolarship_workflow')->useCurrent();
-            $table->timestamp('updated_at_schoolarship_workflow')->nullable();
-            $table->timestamp('deleted_at_schoolarship_workflow')->nullable();
+            $table->string('detail_student_schoolarship',255);
+            $table->timestamp('created_at_student_schoolarship')->useCurrent();
+            $table->timestamp('updated_at_student_schoolarship')->nullable();
+            $table->timestamp('deleted_at_student_schoolarship')->nullable();
         });
     }
 

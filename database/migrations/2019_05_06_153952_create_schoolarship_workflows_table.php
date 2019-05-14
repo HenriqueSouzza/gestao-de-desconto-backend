@@ -13,7 +13,7 @@ class CreateSchoolarshipWorkflowTable extends Migration
      */
     public function up()
     {
-        Schema::create('schoolarship_workflow', function (Blueprint $table) {
+        Schema::create('schoolarship_workflows', function (Blueprint $table) {
             $table->bigIncrements('id_schoolarship_workflow');
             $table->integer('fk_user')->comment('ID do usuário referencia a tabela USERS');
             $table->integer('fk_student_schoolaship')->comment('ID da bolsa referencia a tabela STUDENT_SCHOOLARSHIP');
