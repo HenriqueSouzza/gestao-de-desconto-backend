@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStudentSchoolarshipTable extends Migration
+class CreateStudentSchoolarshipsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -42,5 +42,6 @@ class CreateStudentSchoolarshipTable extends Migration
     public function down()
     {
         Schema::dropIfExists('student_schoolarship');
+        Schema::dropIfExists('student_schoolarships');
     }
 }

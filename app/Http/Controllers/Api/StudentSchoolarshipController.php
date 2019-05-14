@@ -68,7 +68,7 @@ class StudentSchoolarShipController extends Controller
      */
     public function store(Request $request)
     {
-        
+        dd("chamou store");
         return $this->storeTrait($request);
     }
 

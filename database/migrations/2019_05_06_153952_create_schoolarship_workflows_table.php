@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSchoolarshipWorkflowTable extends Migration
+class CreateSchoolarshipWorkflowsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -33,5 +33,6 @@ class CreateSchoolarshipWorkflowTable extends Migration
     public function down()
     {
         Schema::dropIfExists('schoolarship_workflow');
+        Schema::dropIfExists('schoolarship_workflows');
     }
 }
