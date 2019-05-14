@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Api\ApiControllerTrait;
 
 use App\Models\Role;
+use App\Models\StudentSchoolarship;
 
 class StudentSchoolarShipController extends Controller
 {
@@ -46,7 +47,7 @@ class StudentSchoolarShipController extends Controller
      * <b>__construct</b> Método construtor da classe. O mesmo é utilizado, para que atribuir qual a model será utilizada.
      * Essa informação atribuida aqui, fica disponivel na ApiControllerTrait e é utilizada pelos seus metodos.
      */
-     public function __construct(Role $model)
+     public function __construct(StudentSchoolarship $model)
      {
          $this->model = $model;
      }
@@ -67,8 +68,7 @@ class StudentSchoolarShipController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        dd("chamou store");
+    {        
         return $this->storeTrait($request);
     }
 

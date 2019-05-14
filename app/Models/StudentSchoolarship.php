@@ -14,7 +14,7 @@ class StudentSchoolarship extends Model
     /**
      * <b>table</b> Informa qual é a tabela que o modelo irá utilizar
     */
-    public $table = "student_schoolarship";
+    public $table = "student_schoolarships";
 
      /**
      * <b>fillable</b> Informa quais colunas é permitido a inserção de dados (MassAssignment)
@@ -33,7 +33,7 @@ class StudentSchoolarship extends Model
         'value_student_schoolarship',
         'first_installment_student_schoolarship',
         'last_installment_student_schoolarship',
-        'detail_schoolarship_workflow'
+        'detail_student_schoolarship'
     ];
 
     /**
@@ -83,8 +83,8 @@ class StudentSchoolarship extends Model
         'schoolarship_order_student_schoolarship' => 'required|max:50',
         'value_student_schoolarship' => 'required|max:50',
         'first_installment_student_schoolarship' => 'required|max:50',
-        'last_installment_student_schoolarship' => 'required|max:50',
-        'detail_schoolarship_workflow' => 'required|max:250'        
+        'last_installment_student_schoolarship' => 'required|max:50'
+        // 'detail_student_schoolarship' => 'required|max:250'        
         
     ];
 
@@ -131,7 +131,7 @@ class StudentSchoolarship extends Model
         'value_student_schoolarship' => 'value_student_schoolarship',
         'first_installment_student_schoolarship' => 'first_installment_student_schoolarship',
         'last_installment_student_schoolarship' => 'last_installment_student_schoolarship',
-        'detail_schoolarship_workflow' => 'detail_schoolarship_workflow'
+        'detail_student_schoolarship' => 'detail_schoolarship_workflow'
     ];
 
 
