@@ -28,7 +28,8 @@ class StudentSchoolarshipResource extends JsonResource
             'first_installment_student_schoolarship'                => $this->first_installment_student_schoolarship,
             'last_installment_student_schoolarship'                 => $this->last_installment_student_schoolarship,
             'detail_student_schoolarship'                           => $this->detail_student_schoolarship,
-            'workflows'                                             => SchoolarshipWorkflowResource::collection($this->workflows) 
+            'workflows'                                             => SchoolarshipWorkflowResource::collection($this->workflows),
+            'user'                                                  => new UserResource($this->user)
 
         ];
     }

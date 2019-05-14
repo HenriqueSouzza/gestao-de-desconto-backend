@@ -4,8 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
-
+use App\User;
 
 class SchoolarshipWorkflow extends Model
 {
@@ -93,6 +92,9 @@ class SchoolarshipWorkflow extends Model
     }
     public function schoolarships(){
         return $this->belongsTo(StudentSchoolarship::class, 'fk_student_schoolarship', 'id_student_schoolarship');
+    }
+    public function user(){
+        return $this->belongsTo(User::class, 'fk_user', 'id');
     }
 
 

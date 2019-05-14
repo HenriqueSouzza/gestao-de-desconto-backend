@@ -75,7 +75,7 @@ class StudentSchoolarShipController extends Controller
             [
             'fk_student_schoolarship' => $schoolarship->id_student_schoolarship,
             'fk_action' => 1, // CRIACAO
-            'fk_user' => 1, //TODO: Pegar id do usuario
+            'fk_user' => $request->fk_user, //TODO: Pegar id do usuario
             'detail_schoolarship_workflow' => 'Detalhe sobre o passo'
             ]
         );

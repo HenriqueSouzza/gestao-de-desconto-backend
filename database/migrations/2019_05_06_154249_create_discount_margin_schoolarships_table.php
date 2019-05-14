@@ -16,10 +16,10 @@ class CreateDiscountMarginSchoolarshipsTable extends Migration
         Schema::create('discount_margin_schoolarships', function (Blueprint $table) {
             $table->bigIncrements('id_discount_margin_schoolarships')->autoIncrement();
             $table->string('id_rm_schoolarship',10)->comment('ID da bolsa do RM tabela SBOLSA');
-            $table->integer('id_rm_establishment_schoolarship')->comment('ID da Unidade do RM tabela GFILIAL');
-            $table->integer('id_rm_course_type_schoolarship')->comment('ID do Tipo do Curso do RM da tabela STIPOCURSO');
-            $table->integer('id_rm_modality_schoolarship')->comment('ID da molidade do RM presencial ou EAD');
-            $table->integer('id_rm_major_schoolarship')->comment('ID do Curso tabela SCURSO');
+            $table->integer('id_rm_establishment_schoolarship')->comment('ID da Unidade do RM tabela GFILIAL, CAMPO: CODFILIAL');
+            $table->integer('id_rm_course_type_schoolarship')->comment('ID do Tipo do Curso do RM da tabela STIPOCURSO, CAMPO: IDTIPOCURSO');
+            $table->integer('id_rm_modality_schoolarship')->comment('ID da molidade do RM presencial ou EAD, CAMPO: CURPRESDIST');
+            $table->integer('id_rm_major_schoolarship')->comment('ID do Curso tabela SCURSO, CAMPO: CODCURSO');
             $table->decimal('max_value_schoolarship',3,2);
             $table->integer('is_exact_value_schoolarship');
             $table->timestamp('created_at_schoolarship')->useCurrent();
