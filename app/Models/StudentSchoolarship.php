@@ -32,8 +32,7 @@ class StudentSchoolarship extends Model
         'value_student_schoolarship',
         'first_installment_student_schoolarship',
         'last_installment_student_schoolarship',
-        'detail_student_schoolarship',
-        'fk_user'
+        'detail_student_schoolarship'        
     ];
 
     /**
@@ -83,8 +82,7 @@ class StudentSchoolarship extends Model
         'schoolarship_order_student_schoolarship' => 'required|max:50',
         'value_student_schoolarship' => 'required|max:50',
         'first_installment_student_schoolarship' => 'required|max:50',
-        'last_installment_student_schoolarship' => 'required|max:50',
-        'fk_user' => 'required|max:50',
+        'last_installment_student_schoolarship' => 'required|max:50',        
         'detail_student_schoolarship' => 'required|max:250'        
         
     ];
@@ -132,8 +130,7 @@ class StudentSchoolarship extends Model
         'value_student_schoolarship' => 'value_student_schoolarship',
         'first_installment_student_schoolarship' => 'first_installment_student_schoolarship',
         'last_installment_student_schoolarship' => 'last_installment_student_schoolarship',
-        'detail_student_schoolarship' => 'detail_schoolarship_workflow',
-        'fk_user' => 'fk_user'
+        'detail_student_schoolarship' => 'detail_schoolarship_workflow'        
     ];
 
 
@@ -148,9 +145,6 @@ class StudentSchoolarship extends Model
 
     public function workflows(){
         return $this->hasMany(SchoolarshipWorkflow::class, 'fk_student_schoolarship', 'id_student_schoolarship');
-    }
-    public function user(){
-        return $this->belongsTo(User::class, 'fk_user', 'id');
     }
 
 }
