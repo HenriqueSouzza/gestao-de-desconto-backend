@@ -70,6 +70,29 @@ class StudentSchoolarShipController extends Controller
     public function store(Request $request)
     {        
         $this->validateInputs($request);
+        
+        if($request->first_installment_student_schoolarship == $request->last_installment_student_schoolarship){
+            $schoolarship = $this->storeOne($request);
+            return $this->createResponse($this->columnsShow($schoolarship), 201);
+        }
+        else{
+            // Criando varias entradas com parcela inicial e final igual
+            $first = $request->first_installment_student_schoolarship;
+            $last = $request->last_installment_student_schoolarship;
+            for($i = $first; $i <= $last; $i=$i+1 ){                
+                $temp = clone $request;                
+                $temp['first_installment_student_schoolarship'] = $temp['last_installment_student_schoolarship'] = $i;                                       
+                $schoolarship = $this->storeOne($temp);
+            }
+            return $this->createResponse($this->columnsShow($schoolarship), 201);
+        }
+    }
+    /**
+     * Display faz inserção apenas sem retornar resposta
+     * @param  \Illuminate\Http\Request  $request
+     * @return \App\Models\StudentSchoolarship
+     */
+    private function storeOne(Request $request){
         $schoolarship = $this->model->create($request->all());        
         SchoolarshipWorkflow::create(
             [
@@ -79,8 +102,9 @@ class StudentSchoolarShipController extends Controller
             'detail_schoolarship_workflow' => 'Detalhe sobre o passo'
             ]
         );
-        return $this->createResponse($this->columnsShow($schoolarship), 201);
+        return $schoolarship;
     }
+
 
     /**
      * Display the specified resource.
