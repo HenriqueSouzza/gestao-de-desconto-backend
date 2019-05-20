@@ -341,7 +341,7 @@ trait ApiControllerTrait
             
         //retorna os dados em formato json
         return response()
-        ->json(['response' => $data])
+        ->json(['response' => $data], $statusCode, [], JSON_UNESCAPED_UNICODE)
         ->setStatusCode($statusCode);
 
       
