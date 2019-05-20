@@ -25,7 +25,7 @@ Route::group(['middleware' => ['auth:api']], function(){
     Route::resources([
         'permissions'                 => 'Api\PermissionController',
         'permission-roles'            => 'Api\PermissionRoleController',
-        'roles'                       => 'Api\RoleController',
+        'roles'                       => 'Api\RoleController',        
         'role-users'                  => 'Api\RoleUserController',
         'student-schoolarships'       => 'Api\StudentSchoolarshipController',
         'users'                       => 'Api\UserController',
@@ -33,6 +33,7 @@ Route::group(['middleware' => ['auth:api']], function(){
     ]);
 
     Route::get('/permissions/update/all', 'Api\PermissionController@updateAllPermissions');
+    Route::post('concession-periods/list', 'Api\ConcessionPeriodController@listPeriods'); // lista de periodos letivos dado filial, e modalidade
     
 });
 
