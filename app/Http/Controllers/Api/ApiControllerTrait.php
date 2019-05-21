@@ -268,9 +268,8 @@ trait ApiControllerTrait
         $arrayResult = $response->toArray($result);
         $columnsResult = array_keys($arrayResult);
         $columnsModel = $this->model->map;
-        $columnsAndValues = []; 
-    
-
+        $columnsAndValues = [];         
+        
         foreach($columnsResult as $column)
         {
          //se existir a columa enviada na requisição no mapeamento
@@ -282,6 +281,7 @@ trait ApiControllerTrait
                 $columnsAndValues[$columnResult] = $valueResult;
             }
         }
+        
 
          return $columnsAndValues;
 

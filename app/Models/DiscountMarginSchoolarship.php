@@ -19,16 +19,19 @@ class DiscountMarginSchoolarship extends Model
      * <b>fillable</b> Informa quais colunas é permitido a inserção de dados (MassAssignment)
      *  
      */
-    protected $fillable = [        
-        'id_rm_establishment_discount_margin_schoolarship',
-        'id_rm_course_type_discount_margin_schoolarship',
-        'id_rm_modality_discount_margin_schoolarship',
-        'id_rm_major_discount_margin_schoolarship',
-        'id_rm_period_discount_margin_schoolarship',
-        'id_rm_period_code_discount_margin_schoolarship',
-        'max_value_discount_margin_schoolarship',
-        'is_exact_value_discount_margin_schoolarship',
-        'fk_user'
+    protected $fillable = [                
+            'id_rm_schoolarship_discount_margin_schoolarship'  ,
+            'id_rm_establishment_discount_margin_schoolarship' ,
+            'id_rm_course_type_discount_margin_schoolarship'   ,
+            'id_rm_modality_discount_margin_schoolarship'      ,
+            'id_rm_major_discount_margin_schoolarship'         ,
+            'id_rm_period_discount_margin_schoolarship'        ,
+            'id_rm_period_code_discount_margin_schoolarship'   ,
+            'max_value_discount_margin_schoolarship'           ,
+            'is_exact_value_discount_margin_schoolarship'      ,
+            'first_installment_discount_margin_schoolarship'   ,
+            'last_installment_discount_margin_schoolarship'    ,
+            'fk_user'
     ];
 
     /**
@@ -47,7 +50,18 @@ class DiscountMarginSchoolarship extends Model
      * OBS: Essa trait habilita a exclusão logica de registros nativa do Laravel
      */
     const DELETED_AT = 'deleted_at_discount_margin_schoolarship';
+    /**
+     *<b>collection</b> Atributo responsável em informar o namespace e o arquivo do resource
+     * O mesmo é utilizado em forma de facade.
+     * OBS: Responsável em retornar uma coleção com os alias(apelido) atribuidos para cada coluna. 
+     * Mais informações em https://laravel.com/docs/5.5/eloquent-resources
+    */
+    public $collection = "\App\Http\Resources\DiscountMarginSchoolarshipResource::collection";
 
+    /**
+     * <b>resource</b>
+     */
+    public $resource = "\App\Http\Resources\DiscountMarginSchoolarshipResource";
    
 
     /**
@@ -67,18 +81,39 @@ class DiscountMarginSchoolarship extends Model
     */
 
     public $rules = [        
-        'id_rm_establishment_discount_margin_schoolarship'  => 'required',
-        'id_rm_course_type_discount_margin_schoolarship'    => 'required',
-        'id_rm_modality_discount_margin_schoolarship'       => 'required',
-        'id_rm_major_discount_margin_schoolarship'          => 'required',
-        'id_rm_period_discount_margin_schoolarship'         => 'required',
-        'id_rm_period_code_discount_margin_schoolarship'    => 'required',
-        'max_value_discount_margin_schoolarship'            => 'required',
-        'is_exact_value_discount_margin_schoolarship'       => 'required',
-        'fk_user'                                           => 'required'
+        'id_rm_schoolarship_discount_margin_schoolarship' => 'required' ,
+        'id_rm_establishment_discount_margin_schoolarship'=> 'required' ,
+        'id_rm_course_type_discount_margin_schoolarship'  => 'required' ,
+        'id_rm_modality_discount_margin_schoolarship'     => 'required' ,
+        'id_rm_major_discount_margin_schoolarship'        => 'required' ,
+        'id_rm_period_discount_margin_schoolarship'       => 'required' ,
+        'id_rm_period_code_discount_margin_schoolarship'  => 'required' ,
+        'max_value_discount_margin_schoolarship'          => 'required' ,
+        'is_exact_value_discount_margin_schoolarship'     => 'required' ,
+        'first_installment_discount_margin_schoolarship'  => 'required' ,
+        'last_installment_discount_margin_schoolarship'   => 'required' ,
+        'fk_user'
         
     ];
-
+    /**
+     * <b>map</b> Atributo responsável em atribuir um alias(Apelido), para a colunas do banco de dados
+     * OBS: este atributo é utilizado no Metodo store e update da ApiControllerTrait
+     */
+    public $map = [        
+        'id_rm_schoolarship_discount_margin_schoolarship' => 'id_rm_schoolarship_discount_margin_schoolarship'  ,
+        'id_rm_establishment_discount_margin_schoolarship'=> 'id_rm_establishment_discount_margin_schoolarship' ,
+        'id_rm_course_type_discount_margin_schoolarship'  => 'id_rm_course_type_discount_margin_schoolarship'   ,
+        'id_rm_modality_discount_margin_schoolarship'     => 'id_rm_modality_discount_margin_schoolarship'      ,
+        'id_rm_major_discount_margin_schoolarship'        => 'id_rm_major_discount_margin_schoolarship'         ,
+        'id_rm_period_discount_margin_schoolarship'       => 'id_rm_period_discount_margin_schoolarship'        ,
+        'id_rm_period_code_discount_margin_schoolarship'  => 'id_rm_period_code_discount_margin_schoolarship'   ,
+        'max_value_discount_margin_schoolarship'          => 'max_value_discount_margin_schoolarship'           ,
+        'is_exact_value_discount_margin_schoolarship'     => 'is_exact_value_discount_margin_schoolarship'      ,
+        'first_installment_discount_margin_schoolarship'  => 'first_installment_discount_margin_schoolarship'   ,
+        'last_installment_discount_margin_schoolarship'   => 'last_installment_discount_margin_schoolarship'    ,
+        'fk_user'
+        
+    ];
     /**
      * <b>messages</b>  Atributo responsável em definir mensagem de validação de acordo com as regras especificadas no atributo $rules
     */
