@@ -15,9 +15,10 @@ class CreateDiscountMarginClassTable extends Migration
     {
         Schema::create('discount_margin_class', function (Blueprint $table) {
             $table->bigIncrements('id_discount_margin_class')->autoIncrement();
-            $table->string('id_rm_establishment_discount_margin_class', 10)->comment('ID da unidade do RM tabela GFILIAL RM TOTVS');
-            $table->string('id_rm_class_discount_margin_class', 10)->comment('ID da turma do RM tabela STURMA RM TOTVS');
+            $table->string('id_rm_establishment_discount_margin_class', 10)->comment('ID da unidade do RM tabela GFILIAL RM TOTVS, CAMPO: CODFILIAL');
+            $table->string('id_rm_class_discount_margin_class', 10)->comment('ID da turma do RM tabela STURMA RM TOTVS, CAMPOS: CODTURMA');
             $table->integer('value_discount_margin_class')->comment('Valor do desconto da por turma');
+            $table->integer('fk_user_margin_class')->comment('ID do usuario que criou a insercao');
             $table->timestamp('created_at_discount_margin_class')->useCurrent();
             $table->timestamp('updated_at_discount_margin_class')->nullable();
             $table->timestamp('deleted_at_discount_margin_class')->nullable();

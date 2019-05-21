@@ -23,15 +23,18 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['middleware' => ['auth:api']], function(){
     
     Route::resources([
-        'permissions'      => 'Api\PermissionController',
-        'permission-roles' => 'Api\PermissionRoleController',
-        'roles'            => 'Api\RoleController',
-        'role-users'       => 'Api\RoleUserController',
-        'users'            => 'Api\UserController',
-        'totvs-queries'    => 'Api\TotvsQuerySqlController'
+        'permissions'                 => 'Api\PermissionController',
+        'permission-roles'            => 'Api\PermissionRoleController',
+        'roles'                       => 'Api\RoleController',        
+        'role-users'                  => 'Api\RoleUserController',
+        'student-schoolarships'       => 'Api\StudentSchoolarshipController',
+        'users'                       => 'Api\UserController',
+        'totvs-queries'               => 'Api\TotvsQuerySqlController'
     ]);
 
     Route::get('/permissions/update/all', 'Api\PermissionController@updateAllPermissions');
+    Route::post('concession-periods/list', 'Api\ConcessionPeriodController@listPeriods'); // lista de periodos letivos dado filial, e modalidade
+    
 });
 
 Route::post('/totvs-queries/query', 'Api\TotvsQuerySqlController@totvsQuery');
