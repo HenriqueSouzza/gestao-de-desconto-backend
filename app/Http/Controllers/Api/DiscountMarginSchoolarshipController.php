@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Api\ApiControllerTrait;
 
-use App\Models\ConcessionPeriod;
+use App\Models\DiscountMarginSchoolarship;
 
-class ConcessionPeriodController extends Controller
+class DiscountMarginSchoolarshipController extends Controller
 {
     /**
      * <b>use ApiControllerTrait</b> Usa a trait e sobreescreve os seus nomes e sua visibilidade, para a classe
@@ -46,7 +46,7 @@ class ConcessionPeriodController extends Controller
      * <b>__construct</b> Método construtor da classe. O mesmo é utilizado, para que atribuir qual a model será utilizada.
      * Essa informação atribuida aqui, fica disponivel na ApiControllerTrait e é utilizada pelos seus metodos.
      */
-     public function __construct(ConcessionPeriod $model)
+     public function __construct(DiscountMarginSchoolarship $model)
      {
          $this->model = $model;
      }
@@ -64,17 +64,20 @@ class ConcessionPeriodController extends Controller
      * Lista os periodos vigentes com os parametros passados
      * CODFILIAL(codFilial), MODALIDADE(P/D)(modality)
      */
-    public function listPeriods(Request $request){
-        $now = date('Y-m-d');        
+    public function listMargins(Request $request){        
         $codFilial = $request->codFilial;
         $modality = $request->modality;
-        $periods = ConcessionPeriod::where('date_start_concession_period', '<=', $now)
-                         ->where('date_end_concession_period', '>=', $now)
-                         ->where('id_rm_establishment_concession_period', $codFilial)
-                         ->where('id_rm_modality_concession_period', $modality)
+        $codPerlet = $request->codPerlet;
+        $codCurso = $request->codCurso;        
+        $margins = DiscountMarginSchoolarship::where([
+                          'id_rm_establishment_discount_margin_schoolarship' => $codFilial,
+                          'id_rm_modality_discount_margin_schoolarship' => $modality,
+                          'id_rm_major_discount_margin_schoolarship' => $codCurso,
+                          'id_rm_period_code_discount_margin_schoolarship' => $codPerlet])
                          ->get();
         
-        return $this->createResponse($periods, 201);
+        
+        return $this->createResponse($margins, 201);
     }
 
     /**
