@@ -69,15 +69,15 @@ class DiscountMarginSchoolarshipController extends Controller
         $modality = $request->modality;
         $codPerlet = $request->codPerlet;
         $codCurso = $request->codCurso;        
-        $margins = DiscountMarginSchoolarship::where('id_rm_establishment_discount_margin_schoolarship', $codFilial)
-                         ->where('id_rm_modality_discount_margin_schoolarship', $modality)
-                         ->where('id_rm_major_discount_margin_schoolarship', $codCurso)
-                         ->where('id_rm_period_code_discount_margin_schoolarship', $codPerlet)
+        $margins = DiscountMarginSchoolarship::where([
+                          'id_rm_establishment_discount_margin_schoolarship' => $codFilial,
+                          'id_rm_modality_discount_margin_schoolarship' => $modality,
+                          'id_rm_major_discount_margin_schoolarship' => $codCurso,
+                          'id_rm_period_code_discount_margin_schoolarship' => $codPerlet])
                          ->get();
         
         
-        
-        return $this->createResponse($this->columnsShow($margins), 201);
+        return $this->createResponse($margins, 201);
     }
 
     /**

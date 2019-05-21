@@ -74,7 +74,7 @@ class ConcessionPeriodController extends Controller
                          ->where('id_rm_modality_concession_period', $modality)
                          ->get();
         
-        return $this->createResponse($this->columnsShow($periods), 201);
+        return $this->createResponse($periods, 201);
     }
 
     /**
