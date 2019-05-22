@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDiscountMargimEstablishmentTable extends Migration
+class CreateDiscountMarginEstablishmentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateDiscountMargimEstablishmentTable extends Migration
      */
     public function up()
     {
-        Schema::create('discount_margim_establishment', function (Blueprint $table) {
+        Schema::create('discount_margin_establishment', function (Blueprint $table) {
             $table->bigIncrements('id_discount_margim_establishment')->autoIncrement();
             $table->string('id_rm_establishment_discount_margin_establishment',10)->comment('ID da unidade do RM tabela SBOLSA RM TOTVS');
             $table->integer('school_margin_discount_margin_establishment')->comment('Margem de desconto do colégio');
@@ -35,6 +35,6 @@ class CreateDiscountMargimEstablishmentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('discount_margim_establishment');
+        Schema::dropIfExists('discount_margin_establishment');
     }
 }

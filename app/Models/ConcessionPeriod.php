@@ -104,17 +104,17 @@ class ConcessionPeriod extends Model
      * OBS: este atributo é utilizado no Metodo store e update da ApiControllerTrait
      */
     public $map = [
-        'id'                                         => 'id_concession_period',
-        'id_rm_establishment_concession_period'      => 'id_rm_establishment_concession_period',
-        'id_rm_modality_concession_period'           => 'id_rm_modality_concession_period' ,
-        'id_rm_period_concession_period'             => 'id_rm_period_concession_period' ,
-        'id_rm_period_code_concession_period'        => 'id_rm_period_code_concession_period' ,
-        'date_start_concession_period'               => 'date_start_concession_period' ,
-        'date_end_concession_period'                 => 'date_end_concession_period' ,
+        'id'                                         => 'id',
+        'id_rm_establishment_concession_period'      => 'id_rm_establishment',
+        'id_rm_modality_concession_period'           => 'id_rm_modality' ,
+        'id_rm_period_concession_period'             => 'id_rm_period' ,
+        'id_rm_period_code_concession_period'        => 'id_rm_period' ,
+        'date_start_concession_period'               => 'date_start' ,
+        'date_end_concession_period'                 => 'date_end' ,
         'fk_user'                                    => 'fk_user',
-        'created_at'                                 => 'created_at_concession_period', 
-        'updated_at'                                 => 'updated_at_concession_period', 
-        'deleted_at'                                 => 'deleted_at_concession_period'
+        'created_at'                                 => 'created_at', 
+        'updated_at'                                 => 'updated_at', 
+        'deleted_at'                                 => 'deleted_at'
     ];
 
 
