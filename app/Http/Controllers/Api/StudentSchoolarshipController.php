@@ -4,10 +4,15 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Validator;
+
 use App\Http\Controllers\Api\ApiControllerTrait;
 
 use App\Models\SchoolarshipWorkflow;
 use App\Models\StudentSchoolarship;
+
+use App\TotvsTraits\TotvsQuerySqlTrait;
+
 
 class StudentSchoolarShipController extends Controller
 {
@@ -26,6 +31,13 @@ class StudentSchoolarShipController extends Controller
         update as protected updateTrait;
         destroy as protected destroyTrait;
     }
+
+    /**
+     * <b>use TotvsQuerySqlTrait</b> Usa a trait e sobreescreve os nomes de alguns de seus métodos e sua visibilidade
+     * Mais informações em: http://php.net/manual/en/language.oop5.traits.php (Changing Method Visibility)
+     */
+    use TotvsQuerySqlTrait;
+    
    
     /**
      * <b>model</b> Atributo responsável em guardar informações a respeito de qual model a controller ira utilizar. 
@@ -71,38 +83,24 @@ class StudentSchoolarShipController extends Controller
     {        
         $this->validateInputs($request);
         
-        if($request->first_installment_student_schoolarship == $request->last_installment_student_schoolarship){
+        if($request->first_installment_student_schoolarship == $request->last_installment_student_schoolarship)
+        {
             $schoolarship = $this->storeOne($request);
             return $this->createResponse($schoolarship, 201);
         }
-        else{
+        else
+        {
             // Criando varias entradas com parcela inicial e final igual
             $first = $request->first_installment_student_schoolarship;
             $last = $request->last_installment_student_schoolarship;
-            for($i = $first; $i <= $last; $i=$i+1 ){                
+            for($i = $first; $i <= $last; $i=$i+1 )
+            {                
                 $temp = clone $request;                
                 $temp['first_installment_student_schoolarship'] = $temp['last_installment_student_schoolarship'] = $i;                                       
                 $schoolarship = $this->storeOne($temp);
             }
             return $this->createResponse($schoolarship, 201);
         }
-    }
-    /**
-     * Display faz inserção apenas sem retornar resposta
-     * @param  \Illuminate\Http\Request  $request
-     * @return \App\Models\StudentSchoolarship
-     */
-    private function storeOne(Request $request){
-        $schoolarship = $this->model->create($request->all());        
-        SchoolarshipWorkflow::create(
-            [
-            'fk_student_schoolarship' => $schoolarship->id_student_schoolarship,
-            'fk_action' => 1, // CRIACAO
-            'fk_user' => $request->fk_user, //TODO: Pegar id do usuario
-            'detail_schoolarship_workflow' => 'Detalhe sobre o passo'
-            ]
-        );
-        return $schoolarship;
     }
 
 
@@ -141,4 +139,236 @@ class StudentSchoolarShipController extends Controller
         return $destroy;
 
     }
+
+
+    /**
+     * Display faz inserção apenas sem retornar resposta
+     * @param  \Illuminate\Http\Request  $request
+     * @return \App\Models\StudentSchoolarship
+     */
+    private function storeOne(Request $request)
+    {
+        $schoolarship = $this->model->create($request->all());  
+        //insere no historico a ação
+        SchoolarshipWorkflow::create(
+            [
+                'fk_student_schoolarship'      => $schoolarship->id_student_schoolarship,
+                'fk_action'                    => 1, // CRIACAO
+                'fk_user'                      => $request->fk_user, //TODO: Pegar id do usuario
+                'detail_schoolarship_workflow' => 'Detalhe sobre o passo'
+            ]
+        );
+
+        return $schoolarship;
+    }
+
+
+    ///////////////////////////////////////////////////////////////////////
+   ///////////////////// WEBSERVICE TOTVS SOAP METHODS ////////////////////
+  ////////////////////////////////////////////////////////////////////////
+
+  /**
+   * <b>getStudents<b/> Método responsavel por obter os dados dos estudantes para isso devem ser informados os seguintes dados:
+  */
+  protected function getStudents(Request $request)
+  {
+  
+    $validator = Validator::make($request->all(), [
+        'codfilial' => 'required|numeric|min:1',
+        'codcurso'  => 'required|string',
+        'codperlet' => 'required',
+        'ra'        => 'required|numeric',
+        'nomealuno' => 'required|'
+    ]);
+
+    if($validator->fails())
+    {    
+        $error['message'] = $validator->errors();
+        $error['error']   = true;
+
+        return  $this->createResponse($error, 422);
+    }
+
+    $name = self::$nameQuery['WEB006'];
+
+    $parameters = [
+                    'CODFILIAL' => $request->codfilial, 
+                    'CODCURSO'  => $request->codcurso, 
+                    'CODPERLET' => $request->codperlet, 
+                    'RA'        => $request->ra, 
+                    'NOMEALUNO' => $request->nomealuno
+                ];
+
+    $requestSoap = (array) $this->query($name, $parameters);
+
+    $schoolarship = $this->getSchoolarship($request);
+
+    $responseSoap = $this->formatResponse($requestSoap, $schoolarship);
+    return $this->createResponse($responseSoap);
+    //dd($responseSoap);
+    /*
+
+    return $this->createResponse($responseSoap);*/
+  
+   
+  }
+
+  /**
+   * <b>formatResponse</b> Método responsável por trabalhar os dados de estudantes e de bolsas dos estudantes, separa as bolsas anteriores das
+   * bolsas atuais e chamar o método printResponse e retornar o dado.
+   * @param $dataStudent (dados dos estudantes)
+   * @param $dataSchoolarship (dados das bolsas)
+   * OBS: Ajuda a "mergiar" os dados tendo em vista que nos dados de bolsas  é retornado apenas o RA do aluno
+   */
+  protected function formatResponse(Array $dataStudent, Array $dataSchoolarship)
+  {
+     
+    $beforeSchoolarship = [];
+    $afterSchoolarship = [];
+    //caso so tenha um registro irá contar os objetos
+    if(count($dataStudent['Resultado']) == 12)
+    {
+         $result = $dataStudent['Resultado'];
+         $ra = (string) $result->RA;
+         //pesquisa se nas bolsas obtidas possui o RA do aluno 
+         for($i = 0; $i <count($dataSchoolarship); $i++)
+         {
+             $data = (array) $dataSchoolarship[$i];
+             if(in_array($ra, $data))
+             {
+                 //obtem as bolsas anteriores
+                if(in_array('ANTERIOR', $data))
+                {
+                    $beforeSchoolarship [] = $data;
+                   
+                }else{
+                    $afterSchoolarship [] = $data;
+                }
+               
+             }
+            
+         }
+
+         $response = $this->printResponse($result, $beforeSchoolarship, $afterSchoolarship);
+        
+    }//caso tenha mais de um aluno 
+    else
+    {
+        foreach($dataStudent['Resultado'] as $result)
+        {
+            $ra = (string) $result->RA;
+            //pesquisa se nas bolsas obtidas possui o RA do aluno 
+            for($i = 0; $i <count($dataSchoolarship); $i++)
+            {
+                $data = (array) $dataSchoolarship[$i];
+                if(in_array($ra, $data))
+                {
+                    //obtem as bolsas anteriores
+                   if(in_array('ANTERIOR', $data))
+                   {
+                       $beforeSchoolarship [] = $data;
+                      
+                   }else{
+                       $afterSchoolarship [] = $data;
+                   }
+                  
+                }
+               
+
+            }
+            
+            $response [] = $this->printResponse($result, $beforeSchoolarship, $afterSchoolarship);
+     
+         }
+   
+    }
+   
+    
+    return $response;
+
+  }
+
+
+  /**
+   * <b>getSchoolarship</b> Método responsavel por obter as bolsas dos estudantes para isso devem ser informados os seguintes dados:
+   * codfilial, codcurso, codperlet, ra, nomealuno
+   * exemplo:
+   * codfilial : 169,
+   * codcurso : GP006,
+   * codperlet : 2019-1,
+   * ra : -1,
+   * nomealuno : -1
+   * OBS: Caso não possua um determinado dado para pesquisa informar -1
+   *
+   */
+  protected function getSchoolarship(Request $request)
+  {
+    $validator = Validator::make($request->all(), [
+        'codfilial' => 'required|numeric|min:1',
+        'codcurso'  => 'required|string',
+        'codperlet' => 'required',
+        'ra'        => 'required|numeric',
+        'nomealuno' => 'required|'
+    ]);
+
+    if($validator->fails())
+    {    
+        $error['message'] = $validator->errors();
+        $error['error']   = true;
+
+        return  $this->createResponse($error, 422);
+    }
+
+    $name = self::$nameQuery['WEB009'];
+
+    $parameters = [
+                    'CODFILIAL' => $request->codfilial, 
+                    'CODCURSO'  => $request->codcurso, 
+                    'CODPERLET' => $request->codperlet, 
+                    'RA'        => $request->ra, 
+                    'NOMEALUNO' => $request->nomealuno
+                ];
+
+    $requestSoap = (array) $this->query($name, $parameters);
+    return $requestSoap['Resultado'];
+
+
+  }
+
+
+  /**
+   * <b>printResponse<b/> Método responsável por formatar a resposta no padrão desejado
+   * @param $result (dados dos estudantes)
+   * @param $beforeSchoolarship (bolsas anteriores)
+   * @param $afterSchoolarship (bolsas atuais)
+   */
+  protected function printResponse($result, $beforeSchoolarship, $afterSchoolarship )
+  {
+    $response[(string) $result->RA] = [
+        'dados' => [
+            'aluno'             => (string) $result->ALUNO,
+            'codfilial'         => (string) $result->CODFILIAL,
+            'filial'            => (string) $result->FILIAL,
+            'codcurso'          => (string) $result->CODCURSO,
+            'curso'             => (string) $result->CURSO,
+            'codperlet'         => (string) $result->CODPERLET,
+            'idperlet'          => (string) $result->IDPERLET,
+            'valor_mensalidade' => (string) $result->VALOR_MENSALIDADE,
+            'tipo_aluno'        => (string) $result->TIPO_ALUNO, 
+            'modalidade'        => (string) $result->MODALIDADE,  
+        ],
+        'bolsas_anteriores' => $beforeSchoolarship,
+        'bolsas_atuais'=> $afterSchoolarship
+    ];
+
+    return $response;
+    
+  }
+
+
+
+
+
+
+
 }
