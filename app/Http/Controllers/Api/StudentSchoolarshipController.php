@@ -13,6 +13,8 @@ use App\Models\StudentSchoolarship;
 
 use App\TotvsTraits\TotvsQuerySqlTrait;
 
+use App\TotvsTraits\TotvsSaveRecordTrait;
+
 
 class StudentSchoolarShipController extends Controller
 {
@@ -37,8 +39,12 @@ class StudentSchoolarShipController extends Controller
      * Mais informações em: http://php.net/manual/en/language.oop5.traits.php (Changing Method Visibility)
      */
     use TotvsQuerySqlTrait;
-    
-   
+
+    /**
+     * <b>use TotvsSaveRecordTrait</b>
+     */
+    use TotvsSaveRecordTrait;
+
     /**
      * <b>model</b> Atributo responsável em guardar informações a respeito de qual model a controller ira utilizar. 
      * Por causa do D.I (injeção de dependencia feita) o mesmo armazena um objeto da classe que ira ser utilizada.
@@ -83,8 +89,9 @@ class StudentSchoolarShipController extends Controller
      */
     public function store(Request $request)
     {        
-        $schoolarship = $this->storeTrait($request);
-        dd($schoolarship);
+        //dd($request->all());
+        return $this->storeTrait($request);
+        // dd($schoolarship);
         // if($request->first_installment_student_schoolarship == $request->last_installment_student_schoolarship)
         // {
         //     $schoolarship = $this->storeOne($request);
@@ -418,13 +425,34 @@ class StudentSchoolarShipController extends Controller
         }
 
         //identificar qual ra esta faltando o dado, fazer o map das colunas e gravar na tabela, depois enviar para o totvs
-        // dd($request->all());
         $data = new Request($discount);
-        //dd($data);
-        $this->store($data);
-        // // $schoolarship = $this->store($data);
-        // dd($data);
+        $discount = (Object) $discount;
+        $create = $this->store($data);
+        //dd($discount);
+        $dataServer = 'EduBolsaAlunoData';
+        $xmlRequest = [
+                'SBolsaAluno' => [
+                    ['IDBOLSAALUNO'   => 'xsi'],
+                    ['CODCOLIGADA'    => 1],
+                    ['PARCELAINICIAL' => $discount->first_installment],
+                    ['PARCELAFINAL'   => $discount->last_installment],
+                    ['RA'             => $discount->ra],
+                    ['IDPERLET'       => $discount->period],
+                    ['CODCONTRATO'    => $discount->contract],
+                    ['CODBOLSA'       => $discount->schoolarship],
+                    ['CODSERVICO'     => 2],
+                    ['DESCONTO'       => $discount->value],
+                    ['TIPODESC'       => 'P'],
+                    ['CODUSUARIO'     => 'wsgestaodedesconto'],
+                    ['ATIVA'          => 'S']
+                
+                ],
+        ];
+       
+        $requestSoap[] = $this->saveRecord($dataServer, $xmlRequest);
+      
     }
+    dd($requestSoap);
 
   }
 

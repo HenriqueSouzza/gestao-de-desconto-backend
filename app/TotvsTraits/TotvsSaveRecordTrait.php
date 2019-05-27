@@ -37,7 +37,7 @@ Trait TotvsSaveRecordTrait
     /**
      * <b>wsdl</b> Endereço relativo do WSDL. O Restante da URL será concatenado no momento das CHAMADAS RPC remote procedure call ou chamada de procedimento remoto
     */
-    private $wsdl = 'TOTVSBusinessConnect/wsDataServer.asmx?wsdl';
+    private $wsdlSave = 'TOTVSBusinessConnect/wsDataServer.asmx?wsdl';
 
     /**
      * <b>configureDOM</b> Método responsável por configurar a instância da classe DOM que posteriormente é utilizada para gerar o XML que será utilizado na chamada RPC remote procedure call ou chamada de procedimento remoto
@@ -77,18 +77,13 @@ Trait TotvsSaveRecordTrait
             'XML'            => $this->arrayToXml($xml),
             'Contexto'       => $context
         ];
-        
+       
         //fazer a chamada RPC
-        $url = env('URL_WS_DEVELOPER').$this->wsdl;
+        $url = env('URL_WS_DEVELOPER').$this->wsdlSave;
         $client = new ZendClient($url, 
                     ['login' => env('USER_WS_TOTVS'), 'password' => env('PASS_WS_TOTVS_REAL')]
                 );
         $result = ($client->SaveRecord($parameters));
-
-     
-       
-        // $response['action'] = 'SaveRecordResult';
-        // $response['id'] = $result->SaveRecordResult;
 
         return json_encode($result);
    
@@ -106,7 +101,7 @@ Trait TotvsSaveRecordTrait
      */
     protected function arrayToXml(Array $xml)
     {
-  
+       
         $rootXml = array_keys($xml)[0];
 
         $this->configureDOM($rootXml);
@@ -116,9 +111,9 @@ Trait TotvsSaveRecordTrait
          
            $element = array_keys($key)[0]; 
            $value = $key[$element]; 
-
+       
            $this->elementXml($element, $value);
-
+        
            $this->rootXml->appendChild($this->elements[$element]);
            
            

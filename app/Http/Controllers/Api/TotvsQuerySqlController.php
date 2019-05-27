@@ -12,7 +12,7 @@ use App\TotvsTraits\TotvsSaveRecordTrait;
 
 class TotvsQuerySqlController extends Controller
 {
-    use TotvsQuerySqlTrait /* TotvsSaveRecordTrait TotvsReadRecordTrait*/;
+    use /*TotvsQuerySqlTrait */TotvsSaveRecordTrait /*TotvsReadRecordTrait*/;
 
      /**
      * <b>use ApiControllerTrait</b> Usa a trait e sobreescreve os seus nomes e sua visibilidade, para a classe
@@ -95,7 +95,7 @@ class TotvsQuerySqlController extends Controller
 
     public function save(Request $request)
     {
-       
+       dd($request->all());
          return $requestSoap = $this->saveRecord($request->DataServer, $request->XML, $request->Contexto);
     }
 }
