@@ -366,8 +366,8 @@ class StudentSchoolarShipController extends Controller
             'tipo_aluno'        => (string) $result->TIPO_ALUNO, 
             'modalidade'        => (string) $result->MODALIDADE,  
         ],
-        'bolsas_anteriores'     => [$beforeSchoolarship],
-        'bolsas_atuais'         => [$afterSchoolarship]
+        'bolsas_anteriores'     => $beforeSchoolarship,
+        'bolsas_atuais'         => $afterSchoolarship
     ];
 
     
