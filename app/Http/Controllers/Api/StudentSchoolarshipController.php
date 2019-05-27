@@ -261,18 +261,16 @@ class StudentSchoolarShipController extends Controller
             {
                 $data = (array) $dataSchoolarship[$i];
               
-                // dd($dataSchoolarship);
-                // dd($dataSchoolarship, $data);
                 if(in_array($ra, $data))
                 {
                     $check = true;
                     //obtem as bolsas anteriores
                    if(in_array('ANTERIOR', $data))
                    {
-                       $beforeSchoolarship[$ra][$i] = $data;
+                       $beforeSchoolarship[$ra][] = $data;
                       
                    }else{
-                       $afterSchoolarship[$ra][$i] = $data;
+                       $afterSchoolarship[$ra][] = $data;
                    }
 
                 }
@@ -289,7 +287,7 @@ class StudentSchoolarShipController extends Controller
           
          
          }
-         //dd($this->response);
+
    
     }
    
