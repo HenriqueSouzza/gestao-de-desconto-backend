@@ -278,8 +278,8 @@ class StudentSchoolarShipController extends Controller
             }
             if($check)
             {
-                $before = (array_key_exists($ra, $beforeSchoolarship) ? $beforeSchoolarship[$ra] : '');
-                $after = (array_key_exists($ra, $afterSchoolarship) ? $afterSchoolarship[$ra] : '');
+                $before = (array_key_exists($ra, $beforeSchoolarship) ? $beforeSchoolarship[$ra] : []);
+                $after = (array_key_exists($ra, $afterSchoolarship) ? $afterSchoolarship[$ra] : []);
                 $this->response[] = $this->printResponse($result, $before , $after);
             }
            
