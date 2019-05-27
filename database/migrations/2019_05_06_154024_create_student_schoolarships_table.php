@@ -15,7 +15,7 @@ class CreateStudentSchoolarshipsTable extends Migration
     {
         Schema::create('student_schoolarships', function (Blueprint $table) {
             $table->bigIncrements('id_student_schoolarship');
-            $table->integer('ra_rm_student_schoolarship')->comment('RA do estudante tabela SALUNO RM TOTVS -- CAMPO: RA');
+            $table->decimal('ra_rm_student_schoolarship', 10,2)->comment('RA do estudante tabela SALUNO RM TOTVS -- CAMPO: RA');
             $table->string('id_rm_schoolarship_student_schoolarship',10)->comment('ID da bolsa tabela SBOLSA RM TOTVS -- CAMPO: CODBOLSA');
             $table->string('id_rm_period_student_schoolarship',15)->comment('ID do periodo letivo tabela ? -- CAMPO: IDPERLET');
             $table->string('id_rm_contract_student_schoolarship',15)->comment('ID do contrato tabela SCONTRATO -- CAMPO: CODCONTRATO');
@@ -41,7 +41,6 @@ class CreateStudentSchoolarshipsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('student_schoolarship');
         Schema::dropIfExists('student_schoolarships');
     }
 }

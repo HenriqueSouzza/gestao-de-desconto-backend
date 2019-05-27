@@ -54,6 +54,8 @@ class StudentSchoolarShipController extends Controller
      * Possa utilizar o mesmo em seu método with() presente na consulta do metodo index
      */
      protected $relationships = [];
+
+     protected $response = [];
      
      /**
      * <b>__construct</b> Método construtor da classe. O mesmo é utilizado, para que atribuir qual a model será utilizada.
@@ -81,26 +83,26 @@ class StudentSchoolarShipController extends Controller
      */
     public function store(Request $request)
     {        
-        $this->validateInputs($request);
-        
-        if($request->first_installment_student_schoolarship == $request->last_installment_student_schoolarship)
-        {
-            $schoolarship = $this->storeOne($request);
-            return $this->createResponse($schoolarship, 201);
-        }
-        else
-        {
-            // Criando varias entradas com parcela inicial e final igual
-            $first = $request->first_installment_student_schoolarship;
-            $last = $request->last_installment_student_schoolarship;
-            for($i = $first; $i <= $last; $i=$i+1 )
-            {                
-                $temp = clone $request;                
-                $temp['first_installment_student_schoolarship'] = $temp['last_installment_student_schoolarship'] = $i;                                       
-                $schoolarship = $this->storeOne($temp);
-            }
-            return $this->createResponse($schoolarship, 201);
-        }
+        $schoolarship = $this->storeTrait($request);
+        dd($schoolarship);
+        // if($request->first_installment_student_schoolarship == $request->last_installment_student_schoolarship)
+        // {
+        //     $schoolarship = $this->storeOne($request);
+        //     return $this->createResponse($schoolarship, 201);
+        // }
+        // else
+        // {
+        //     // Criando varias entradas com parcela inicial e final igual
+        //     $first = $request->first_installment_student_schoolarship;
+        //     $last = $request->last_installment_student_schoolarship;
+        //     for($i = $first; $i <= $last; $i=$i+1 )
+        //     {                
+        //         $temp = clone $request;                
+        //         $temp['first_installment_student_schoolarship'] = $temp['last_installment_student_schoolarship'] = $i;                                       
+        //         $schoolarship = $this->storeOne($temp);
+        //     }
+        //     return $this->createResponse($schoolarship, 201);
+        // }
     }
 
 
@@ -149,6 +151,7 @@ class StudentSchoolarShipController extends Controller
     private function storeOne(Request $request)
     {
         $schoolarship = $this->model->create($request->all());  
+
         //insere no historico a ação
         SchoolarshipWorkflow::create(
             [
@@ -205,11 +208,6 @@ class StudentSchoolarShipController extends Controller
 
     $responseSoap = $this->formatResponse($requestSoap, $schoolarship);
     return $this->createResponse($responseSoap);
-    //dd($responseSoap);
-    /*
-
-    return $this->createResponse($responseSoap);*/
-  
    
   }
 
@@ -222,7 +220,7 @@ class StudentSchoolarShipController extends Controller
    */
   protected function formatResponse(Array $dataStudent, Array $dataSchoolarship)
   {
-     
+
     $beforeSchoolarship = [];
     $afterSchoolarship = [];
     //caso so tenha um registro irá contar os objetos
@@ -239,52 +237,64 @@ class StudentSchoolarShipController extends Controller
                  //obtem as bolsas anteriores
                 if(in_array('ANTERIOR', $data))
                 {
-                    $beforeSchoolarship [] = $data;
+                    $beforeSchoolarship[] = $data;
                    
                 }else{
-                    $afterSchoolarship [] = $data;
+                    $afterSchoolarship[] = $data;
                 }
                
              }
             
          }
 
-         $response = $this->printResponse($result, $beforeSchoolarship, $afterSchoolarship);
+         $this->response[] = $this->printResponse($result, $beforeSchoolarship, $afterSchoolarship);
         
     }//caso tenha mais de um aluno 
     else
     {
         foreach($dataStudent['Resultado'] as $result)
         {
+            $check = false;
             $ra = (string) $result->RA;
             //pesquisa se nas bolsas obtidas possui o RA do aluno 
             for($i = 0; $i <count($dataSchoolarship); $i++)
             {
                 $data = (array) $dataSchoolarship[$i];
+              
+                // dd($dataSchoolarship);
+                // dd($dataSchoolarship, $data);
                 if(in_array($ra, $data))
                 {
+                    $check = true;
                     //obtem as bolsas anteriores
                    if(in_array('ANTERIOR', $data))
                    {
-                       $beforeSchoolarship [] = $data;
+                       $beforeSchoolarship[$ra][$i] = $data;
                       
                    }else{
-                       $afterSchoolarship [] = $data;
+                       $afterSchoolarship[$ra][$i] = $data;
                    }
-                  
+
                 }
                
-
             }
-            
-            $response [] = $this->printResponse($result, $beforeSchoolarship, $afterSchoolarship);
-     
+            if($check)
+            {
+                $before = (array_key_exists($ra, $beforeSchoolarship) ? $beforeSchoolarship[$ra] : '');
+                $after = (array_key_exists($ra, $afterSchoolarship) ? $afterSchoolarship[$ra] : '');
+                $this->response[] = $this->printResponse($result, $before , $after);
+            }
+           
+          
+          
+         
          }
+         //dd($this->response);
    
     }
    
     
-    return $response;
+    return $this->response;
 
   }
 
@@ -344,8 +354,9 @@ class StudentSchoolarShipController extends Controller
    */
   protected function printResponse($result, $beforeSchoolarship, $afterSchoolarship )
   {
-    $response[(string) $result->RA] = [
+      return [
         'dados' => [
+            'ra'                => (string) $result->RA,
             'aluno'             => (string) $result->ALUNO,
             'codfilial'         => (string) $result->CODFILIAL,
             'filial'            => (string) $result->FILIAL,
@@ -357,14 +368,67 @@ class StudentSchoolarShipController extends Controller
             'tipo_aluno'        => (string) $result->TIPO_ALUNO, 
             'modalidade'        => (string) $result->MODALIDADE,  
         ],
-        'bolsas_anteriores' => $beforeSchoolarship,
-        'bolsas_atuais'=> $afterSchoolarship
+        'bolsas_anteriores'     => [$beforeSchoolarship],
+        'bolsas_atuais'         => [$afterSchoolarship]
     ];
 
-    return $response;
     
   }
 
+
+  /**
+   * 
+   */
+  protected function postSchoolarship(Request $request)
+  {
+    $validator = Validator::make($request->all(), [
+        'discounts' => 'required|array'
+    ]);
+
+    if($validator->fails())
+    {    
+        $error['message'] = $validator->errors();
+        $error['error']   = true;
+
+        return  $this->createResponse($error, 422);
+    }
+
+    foreach($request->discounts as $discount)
+    {
+        $validator = Validator::make($discount, [
+            'ra'                 => 'required',
+            'establishment'      => 'required',
+            'schoolarship'       => 'required',
+            'schoolarship_order' => 'required',
+            'value'              => 'required',
+            'first_installment'  => 'required|numeric|min:1',
+            'last_installment'   => 'required|numeric|max:12',
+            'period'             => 'required',
+            'contract'           => 'required',
+            'habilitation'       => 'required',
+            'modality_major'     => 'required',
+            'course_type'        => 'required',
+            'detail'             => 'nullable',
+        ]);
+     
+        if($validator->fails())
+        {    
+            $error['message'] = $validator->errors();
+            $error['error']   = true;
+
+            return  $this->createResponse($error, 422);
+        }
+
+        //identificar qual ra esta faltando o dado, fazer o map das colunas e gravar na tabela, depois enviar para o totvs
+        // dd($request->all());
+        $data = new Request($discount);
+        //dd($data);
+        $this->store($data);
+        // // $schoolarship = $this->store($data);
+        // dd($data);
+    }
+
+  }
 
 
 
