@@ -32,7 +32,10 @@ class StudentSchoolarship extends Model
         'value_student_schoolarship',
         'first_installment_student_schoolarship',
         'last_installment_student_schoolarship',
-        'detail_student_schoolarship'        
+        'id_rm_service_student_schoolarship',
+        'detail_student_schoolarship',
+        'active_student_schoolarship',
+        'send_rm_student_schoolarship'       
     ];
 
     /**
@@ -70,18 +73,21 @@ class StudentSchoolarship extends Model
 
     public $rules = [
         'ra_rm_student_schoolarship'                            => 'required',
-        'id_rm_schoolarship_student_schoolarship'               => 'required|max:50',
-        'id_rm_period_student_schoolarship'                     => 'required|max:50',
-        'id_rm_contract_student_schoolarship'                   => 'required|max:50',
-        'id_rm_habilitation_establishment_student_schoolarship' => 'required|max:50',
-        'id_rm_establishment_student_schoolarship'              => 'required|max:50',
-        'id_rm_modality_major_student_schoolarship'             => 'required|max:50',
-        'id_rm_course_type_student_schoolarship'                => 'required|max:50',
-        'schoolarship_order_student_schoolarship'               => 'required|max:50',
-        'value_student_schoolarship'                            => 'required|max:50',
-        'first_installment_student_schoolarship'                => 'required|max:50',
-        'last_installment_student_schoolarship'                 => 'required|max:50',        
-        'detail_student_schoolarship'                           => 'nullable|max:250'        
+        'id_rm_schoolarship_student_schoolarship'               => 'required|',
+        'id_rm_period_student_schoolarship'                     => 'required|',
+        'id_rm_contract_student_schoolarship'                   => 'required|',
+        'id_rm_habilitation_establishment_student_schoolarship' => 'required|',
+        'id_rm_establishment_student_schoolarship'              => 'required|',
+        'id_rm_modality_major_student_schoolarship'             => 'required|',
+        'id_rm_course_type_student_schoolarship'                => 'required|',
+        'schoolarship_order_student_schoolarship'               => 'required|',
+        'value_student_schoolarship'                            => 'required|',
+        'first_installment_student_schoolarship'                => 'required|min:1|max:12',
+        'last_installment_student_schoolarship'                 => 'required|min:1|max:12', 
+        'id_rm_service_student_schoolarship'                    => 'required|min:1|max:2',
+        'detail_student_schoolarship'                           => 'nullable|max:250',
+        'active_student_schoolarship'                           => 'required|boolean',
+        'send_rm_student_schoolarship'                          => 'required|boolean',
         
     ];
 
@@ -124,12 +130,15 @@ class StudentSchoolarship extends Model
         'value'              => 'value_student_schoolarship',
         'first_installment'  => 'first_installment_student_schoolarship',
         'last_installment'   => 'last_installment_student_schoolarship',
+        'service'            => 'id_rm_service_student_schoolarship',
         'period'             => 'id_rm_period_student_schoolarship',
         'contract'           => 'id_rm_contract_student_schoolarship',
         'habilitation'       => 'id_rm_habilitation_establishment_student_schoolarship',
         'modality_major'     => 'id_rm_modality_major_student_schoolarship',
         'course_type'        => 'id_rm_course_type_student_schoolarship',
         'detail'             => 'detail_student_schoolarship',
+        'active'             => 'active_student_schoolarship',
+        'send_rm'            => 'send_rm_student_schoolarship',
         'created_at'         => 'created_at_student_schoolarship', 
         'updated_at'         => 'updated_at_student_schoolarship', 
         'deleted_at'         => 'deleted_at_student_schoolarship'        
@@ -153,5 +162,36 @@ class StudentSchoolarship extends Model
     {
         return $this->hasMany(SchoolarshipWorkflow::class, 'fk_student_schoolarship', 'id_student_schoolarship');
     }
+
+
+    ///////////////////////////////////////////////////////////////////
+   ///////////////////// REGRAS DE NEGOCIO ////////////////////////////
+   ///////////////////////////////////////////////////////////////////
+
+   /**
+    * 
+    */
+   public function ruleDuplicateSchoolarship($ra, $contract, $schoolarship, $period, $firstInstallment, $lastInstallment)
+   {
+   
+        $query = $this->whereRaw("ra_rm_student_schoolarship={$ra} AND id_rm_contract_student_schoolarship={$contract} 
+                                 AND id_rm_schoolarship_student_schoolarship={$schoolarship} AND id_rm_period_student_schoolarship={$period}
+                                 AND first_installment_student_schoolarship={$firstInstallment} AND last_installment_student_schoolarship={$lastInstallment}
+                                 AND active_student_schoolarship=1");
+
+        if($query->count() >= 1)
+        {
+           $schoolarships = $query->get();
+           foreach($schoolarships as $schoolarship)
+           {
+               $data['active_student_schoolarship'] = 0;
+               $update = $this->where('id_student_schoolarship', $schoolarship->id_student_schoolarship)->update($data);
+           }
+           //retornar os ids do schoolarships
+
+        }
+       
+        return false;
+   }
 
 }

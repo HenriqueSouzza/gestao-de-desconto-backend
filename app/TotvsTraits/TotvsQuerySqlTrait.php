@@ -73,7 +73,7 @@ Trait TotvsQuerySqlTrait
         $client = new ZendClient($url, 
                     ['login' => env('USER_WS_TOTVS'), 'password' => env('PASS_WS_TOTVS')]
                 );
-          
+        
         $result = ($client->RealizarConsultaSQL($parameters));
 
         //dd($client->getLastResponse(), $client->getLastResponseHeaders());

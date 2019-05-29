@@ -84,7 +84,7 @@ Trait TotvsSaveRecordTrait
                     ['login' => env('USER_WS_TOTVS'), 'password' => env('PASS_WS_TOTVS_REAL')]
                 );
         $result = ($client->SaveRecord($parameters));
-
+      
         return json_encode($result);
    
         

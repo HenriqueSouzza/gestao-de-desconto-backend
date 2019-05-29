@@ -24,10 +24,13 @@ class CreateStudentSchoolarshipsTable extends Migration
             $table->bigInteger('id_rm_modality_major_student_schoolarship')->comment('ID da modalidade do curso (PRESENCIAL OU EAD) tabela ? RM TOTVS -- CAMPO: CODCURSO');
             $table->integer('id_rm_course_type_student_schoolarship')->comment('ID do tipo do curso tabela STIPOCURSO RM TOTVS -- CAMPO: IDTIPOCURSO');
             $table->integer('schoolarship_order_student_schoolarship')->comment('ID ordem da bolsa tabela ? RM TOTVS');
-            $table->decimal('value_student_schoolarship',8,2)->comment('Valor percentual da bolsa do estudante');
+            $table->decimal('value_student_schoolarship', 8,2)->comment('Valor percentual da bolsa do estudante');
             $table->integer('first_installment_student_schoolarship')->comment('Primeira parcela ou parcela inicial do desconto do aluno');
             $table->integer('last_installment_student_schoolarship')->comment('Ultima parcela ou parcela final do desconto do aluno');
-            $table->string('detail_student_schoolarship',255)->default("SEM INFORMAÇÕES");            
+            $table->integer('id_rm_service_student_schoolarship')->comment('ID do serviço referente a mensalidade ou matricula da tabela SSERVICO que é utilizado na tabela SBOLSAALUNO como FK campo: CODSERVICO');
+            $table->string('detail_student_schoolarship', 255)->default("Não há"); 
+            $table->boolean('active_student_schoolarship')->default(true);
+            $table->boolean('send_rm_student_schoolarship')->default(false);        
             $table->timestamp('created_at_student_schoolarship')->useCurrent();
             $table->timestamp('updated_at_student_schoolarship')->nullable();
             $table->timestamp('deleted_at_student_schoolarship')->nullable();

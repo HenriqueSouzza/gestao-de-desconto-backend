@@ -427,12 +427,19 @@ class StudentSchoolarShipController extends Controller
         //identificar qual ra esta faltando o dado, fazer o map das colunas e gravar na tabela, depois enviar para o totvs
         $data = new Request($discount);
         $discount = (Object) $discount;
+        // dd($discount->ra, $discount->contract, 
+        // $discount->schoolarship, $discount->period, $discount->first_installment, $discount->last_installment);
+        // dd($rule = $this->model->ruleDuplicateSchoolarship($discount->ra, $discount->contract, 
+        //                         $discount->schoolarship, $discount->period, $discount->first_installment, $discount->last_installment));
+
+        //verificar se trata de uma inserção ou um cancelamento
         $create = $this->store($data);
-        //dd($discount);
+        
+        //verificar se é para enviar para o RM
         $dataServer = 'EduBolsaAlunoData';
         $xmlRequest = [
                 'SBolsaAluno' => [
-                    ['IDBOLSAALUNO'   => 'xsi'],
+                    ['IDBOLSAALUNO'   => 'xsi'], //verificar se o idbolsaaluno foi inserido
                     ['CODCOLIGADA'    => 1],
                     ['PARCELAINICIAL' => $discount->first_installment],
                     ['PARCELAFINAL'   => $discount->last_installment],
@@ -440,7 +447,7 @@ class StudentSchoolarShipController extends Controller
                     ['IDPERLET'       => $discount->period],
                     ['CODCONTRATO'    => $discount->contract],
                     ['CODBOLSA'       => $discount->schoolarship],
-                    ['CODSERVICO'     => 2],
+                    ['CODSERVICO'     => $discount->service],
                     ['DESCONTO'       => $discount->value],
                     ['TIPODESC'       => 'P'],
                     ['CODUSUARIO'     => 'wsgestaodedesconto'],
@@ -448,11 +455,17 @@ class StudentSchoolarShipController extends Controller
                 
                 ],
         ];
-       
-        $requestSoap[] = $this->saveRecord($dataServer, $xmlRequest);
+
+        $result = (string) $this->saveRecord($dataServer, $xmlRequest);
+        //cria no response a resposta para cada RA , com a requisição do webservice e da API
+        $requestSoap[$discount->ra][] = $result;
+        dd(explode(':', $result)[1]);
+        //obtem a resposta (API) por meio da classe jsonresponse por meio do getData()
+        $requestSoap[$discount->ra][] = $create->getData();
       
     }
-    dd($requestSoap);
+    
+    return $requestSoap;
 
   }
 
