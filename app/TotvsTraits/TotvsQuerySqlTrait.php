@@ -25,7 +25,8 @@ Trait TotvsQuerySqlTrait
         'WEB006' => 'WEB.0006',
         'WEB007' => 'WEB.0007',
         'WEB008' => 'WEB.0008',
-        'WEB009' => 'WEB.0009'
+        'WEB009' => 'WEB.0009',
+        'WEB010' => 'WEB.0010'
         
     ];
 

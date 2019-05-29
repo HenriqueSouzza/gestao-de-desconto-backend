@@ -30,7 +30,8 @@ class CreateStudentSchoolarshipsTable extends Migration
             $table->integer('id_rm_service_student_schoolarship')->comment('ID do serviço referente a mensalidade ou matricula da tabela SSERVICO que é utilizado na tabela SBOLSAALUNO como FK campo: CODSERVICO');
             $table->string('detail_student_schoolarship', 255)->default("Não há"); 
             $table->boolean('active_student_schoolarship')->default(true);
-            $table->boolean('send_rm_student_schoolarship')->default(false);        
+            $table->boolean('send_rm_student_schoolarship')->default(false); 
+            $table->bigInteger('id_rm_student_schoolarship')->nullable()->comment('ID da bolsa inserida para o Aluno no RM TOTVS da tabela SBOLSAALUNO, poderá ser nulo caso a bolsa não tenha sido enviada para o RM');       
             $table->timestamp('created_at_student_schoolarship')->useCurrent();
             $table->timestamp('updated_at_student_schoolarship')->nullable();
             $table->timestamp('deleted_at_student_schoolarship')->nullable();

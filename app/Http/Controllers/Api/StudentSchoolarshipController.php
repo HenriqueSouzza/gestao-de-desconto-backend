@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Validator;
 
@@ -168,7 +169,7 @@ class StudentSchoolarShipController extends Controller
                 'detail_schoolarship_workflow' => 'Detalhe sobre o passo'
             ]
         );
-
+    
         return $schoolarship;
     }
 
@@ -227,7 +228,7 @@ class StudentSchoolarShipController extends Controller
    */
   protected function formatResponse(Array $dataStudent, Array $dataSchoolarship)
   {
-
+    dd($dataStudent);
     $beforeSchoolarship = [];
     $afterSchoolarship = [];
     //caso so tenha um registro irá contar os objetos
@@ -382,7 +383,31 @@ class StudentSchoolarShipController extends Controller
 
 
   /**
-   * 
+   * <b>postSchoolarship</b> Método responsável por cadastrar as bolsas recebidas no banco de dados da API e envia 
+   * a requisição para o Webservice (dataserver método SaveRecord). Para realizar esta ação recebe a requisição no seguinte formato:
+   * 	"discounts" : {
+   *   "0":{ (chave do json)
+	*  	"ra" : "02112385", (matricula do aluno)
+	*	"establishment" : 169, (filial/estabelecimento)
+	*	"schoolarship" : "2", (bolsa)
+	*	"schoolarship_order": "1", (ordem da bolsa)
+	*	"value" : "25", (valor da bolsa)
+	*	"first_installment" : 4,(parcela inicial)
+	*	"last_installment": 4, (parcela final)
+	*	"service" : 2, (codigo do serviço)
+	*	"period" : "2272", (periodo letivo)
+	*	"contract" : "393445", (codigo do contrato)
+	*	"habilitation" : 2092, (id da habilitação)
+	*	"modality_major" : 2, (código da modalidade)
+	*	"course_type" : 3, (código do tipo de curso)
+	*	"detail" : "boolsa", (detalhes da bolsa)
+	*	"send_rm" : true, (se foi enviado ou não para o RM TOTVS)
+	*	"active" : true (se a bolsa esta ativa ou não)
+	*  }
+    *
+    * @param Request $request (com os dados acima no formato JSON)
+    * @return array $requestSoap
+	* }
    */
   protected function postSchoolarship(Request $request)
   {
@@ -424,48 +449,119 @@ class StudentSchoolarShipController extends Controller
             return  $this->createResponse($error, 422);
         }
 
-        //identificar qual ra esta faltando o dado, fazer o map das colunas e gravar na tabela, depois enviar para o totvs
-        $data = new Request($discount);
-        $discount = (Object) $discount;
-        // dd($discount->ra, $discount->contract, 
-        // $discount->schoolarship, $discount->period, $discount->first_installment, $discount->last_installment);
-        // dd($rule = $this->model->ruleDuplicateSchoolarship($discount->ra, $discount->contract, 
-        //                         $discount->schoolarship, $discount->period, $discount->first_installment, $discount->last_installment));
+        //verificar se o contrato possui parcelas em abertos
+        $installments = $this->getInstallmentContract($discount['contract']);
+        if((string) $installments->POSSUI_LANCAMENTO == 1)
+        {
+            $error = "O Contrato {$discount['contract']} possui parcelas geradas, não sendo possível lançar o desconto";
+            $requestSoap[$discount['ra']][] = $discount;
+            $requestSoap[$discount['ra']]['erro'] = $error;
 
-        //verificar se trata de uma inserção ou um cancelamento
-        $create = $this->store($data);
-        
-        //verificar se é para enviar para o RM
-        $dataServer = 'EduBolsaAlunoData';
-        $xmlRequest = [
-                'SBolsaAluno' => [
-                    ['IDBOLSAALUNO'   => 'xsi'], //verificar se o idbolsaaluno foi inserido
-                    ['CODCOLIGADA'    => 1],
-                    ['PARCELAINICIAL' => $discount->first_installment],
-                    ['PARCELAFINAL'   => $discount->last_installment],
-                    ['RA'             => $discount->ra],
-                    ['IDPERLET'       => $discount->period],
-                    ['CODCONTRATO'    => $discount->contract],
-                    ['CODBOLSA'       => $discount->schoolarship],
-                    ['CODSERVICO'     => $discount->service],
-                    ['DESCONTO'       => $discount->value],
-                    ['TIPODESC'       => 'P'],
-                    ['CODUSUARIO'     => 'wsgestaodedesconto'],
-                    ['ATIVA'          => 'S']
+        }else{
+
+            //identificar qual ra esta faltando o dado, fazer o map das colunas e gravar na tabela, depois enviar para o totvs
+            $data = new Request($discount);
+            $discount = (Object) $discount;
+            // dd($rule = $this->model->ruleDuplicateSchoolarship($discount->ra, $discount->contract, 
+            //                         $discount->schoolarship, $discount->period, $discount->first_installment, $discount->last_installment));
+
+            //VERIFICAR QUANDO É PARA ATUALIZAR OU INSERIR
+            $create = $this->store($data); 
+
+            //verificar se é para enviar para o RM
+            if($discount->send_rm)
+            {
+                $dataServer = 'EduBolsaAlunoData';
+                $xmlRequest = [
+                        'SBolsaAluno' => [
+                            ['IDBOLSAALUNO'   => 'xsi'], //verificar se o idbolsaaluno foi inserido
+                            ['CODCOLIGADA'    => 1],
+                            ['PARCELAINICIAL' => $discount->first_installment],
+                            ['PARCELAFINAL'   => $discount->last_installment],
+                            ['RA'             => $discount->ra],
+                            ['IDPERLET'       => $discount->period],
+                            ['CODCONTRATO'    => $discount->contract],
+                            ['CODBOLSA'       => $discount->schoolarship],
+                            ['CODSERVICO'     => $discount->service],
+                            ['DESCONTO'       => $discount->value],
+                            ['TIPODESC'       => 'P'],
+                            ['CODUSUARIO'     => 'wsgestaodedesconto'],
+                            ['ATIVA'          => 'S']
+                        
+                        ],
+                ];
+    
+                $result = (string) $this->saveRecord($dataServer, $xmlRequest);
                 
-                ],
-        ];
+                //separa a string em array tendo o denominador :
+                $search = (string) explode(':', $result)[1];
+                //faz busca na string caso não tenha os dois pontos significa que a resposta não foi 1;215456(CODCOLIGADA;IDSBOLSAALUNO)
+                if(! strchr($search, ';'))
+                {
+                    //separa a string em array tendo como demoninador \n faz isso para obter apenas a mensagem de erro
+                    $error = explode('\n', $result);
+                    $error = $error[0];
+                    //faz o replace 
+                    $error = str_replace('{"SaveRecordResult":', '', $error);
+                    //array para converter os erros nos caracteres especiais da mensagem
+                    $convert = ['\u00ed' => 'í', '\u00e7' => 'ç', '\u00e3' => 'ã', '\u00e9' => 'é'];
+                    //substitui as notações pelos caracteres informados acima
+                    $error = strtr($error, $convert);
+                    //retira as aspas duplas da mensagem 
+                    $error = str_replace('"', '', $error); 
+                    $requestSoap[$discount->ra]['erro'] = $error;
+                    //excluir o registro inserido por meio da API
+                    $id = $create->getData()->response->content->id;
+                    $delete = $this->destroy($id);
+                    $requestSoap[$discount->ra][] = $delete->getData()->response->content;
+                    
+                }
+                else{
+                    //formata o idsbolaaluno recebido como resposta do webservice
+                    $studentSchoolarship = explode(';', $search);
+                    $studentSchoolarship = $studentSchoolarship[1];
+                    $studentSchoolarship = str_replace('"', '', $studentSchoolarship);
+                    $studentSchoolarship = str_replace('}', '', $studentSchoolarship);
+                    //fazer o update do registro passando o id da bolsa aluno
+                    $id = $create->getData()->response->content->id;
+                    //adiciona o id da bolsa do aluno junto aos dados enviados
+                    $discount->student_schoolarship = $studentSchoolarship;
+                    $discount = (array) $discount;
+                    $dataUpdate = new Request($discount);
+                    $discount = (object) $discount;
+                    //atualiza o registro inserido acima
+                    $update = $this->update($dataUpdate, $id);
+                    //obtem a resposta (API) por meio da classe jsonresponse por meio do getData()
+                    $requestSoap[$discount->ra][] = $update->getData()->response->content;
+                
+                }
+    
+            }
+            else {
+                $requestSoap[$discount->ra][] = $create->getData()->response->content;
+            }
 
-        $result = (string) $this->saveRecord($dataServer, $xmlRequest);
-        //cria no response a resposta para cada RA , com a requisição do webservice e da API
-        $requestSoap[$discount->ra][] = $result;
-        dd(explode(':', $result)[1]);
-        //obtem a resposta (API) por meio da classe jsonresponse por meio do getData()
-        $requestSoap[$discount->ra][] = $create->getData();
-      
+         
+           
+        }
+
+     
     }
     
     return $requestSoap;
+
+  }
+
+  protected function getInstallmentContract($contract)
+  {
+    $name = self::$nameQuery['WEB010'];
+
+    $parameters = [
+                    'CODCONTRATO' => $contract, 
+                ];
+
+    $requestSoap = (array) $this->query($name, $parameters);
+    return $requestSoap['Resultado'];
 
   }
 

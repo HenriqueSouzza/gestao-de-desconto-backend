@@ -35,7 +35,8 @@ class StudentSchoolarship extends Model
         'id_rm_service_student_schoolarship',
         'detail_student_schoolarship',
         'active_student_schoolarship',
-        'send_rm_student_schoolarship'       
+        'send_rm_student_schoolarship',
+        'id_rm_student_schoolarship'       
     ];
 
     /**
@@ -88,6 +89,7 @@ class StudentSchoolarship extends Model
         'detail_student_schoolarship'                           => 'nullable|max:250',
         'active_student_schoolarship'                           => 'required|boolean',
         'send_rm_student_schoolarship'                          => 'required|boolean',
+        'id_rm_student_schoolarship'                            => 'nullable|numeric',
         
     ];
 
@@ -122,26 +124,27 @@ class StudentSchoolarship extends Model
      * OBS: este atributo é utilizado no Metodo store e update da ApiControllerTrait
      */
     public $map = [
-        'id'                 => 'id_student_schoolarship',
-        'ra'                 => 'ra_rm_student_schoolarship',
-        'establishment'      => 'id_rm_establishment_student_schoolarship',
-        'schoolarship'       => 'id_rm_schoolarship_student_schoolarship',
-        'schoolarship_order' => 'schoolarship_order_student_schoolarship',
-        'value'              => 'value_student_schoolarship',
-        'first_installment'  => 'first_installment_student_schoolarship',
-        'last_installment'   => 'last_installment_student_schoolarship',
-        'service'            => 'id_rm_service_student_schoolarship',
-        'period'             => 'id_rm_period_student_schoolarship',
-        'contract'           => 'id_rm_contract_student_schoolarship',
-        'habilitation'       => 'id_rm_habilitation_establishment_student_schoolarship',
-        'modality_major'     => 'id_rm_modality_major_student_schoolarship',
-        'course_type'        => 'id_rm_course_type_student_schoolarship',
-        'detail'             => 'detail_student_schoolarship',
-        'active'             => 'active_student_schoolarship',
-        'send_rm'            => 'send_rm_student_schoolarship',
-        'created_at'         => 'created_at_student_schoolarship', 
-        'updated_at'         => 'updated_at_student_schoolarship', 
-        'deleted_at'         => 'deleted_at_student_schoolarship'        
+        'id'                   => 'id_student_schoolarship',
+        'ra'                   => 'ra_rm_student_schoolarship',
+        'establishment'        => 'id_rm_establishment_student_schoolarship',
+        'schoolarship'         => 'id_rm_schoolarship_student_schoolarship',
+        'schoolarship_order'   => 'schoolarship_order_student_schoolarship',
+        'student_schoolarship' => 'id_rm_student_schoolarship',
+        'value'                => 'value_student_schoolarship',
+        'first_installment'    => 'first_installment_student_schoolarship',
+        'last_installment'     => 'last_installment_student_schoolarship',
+        'service'              => 'id_rm_service_student_schoolarship',
+        'period'               => 'id_rm_period_student_schoolarship',
+        'contract'             => 'id_rm_contract_student_schoolarship',
+        'habilitation'         => 'id_rm_habilitation_establishment_student_schoolarship',
+        'modality_major'       => 'id_rm_modality_major_student_schoolarship',
+        'course_type'          => 'id_rm_course_type_student_schoolarship',
+        'detail'               => 'detail_student_schoolarship',
+        'active'               => 'active_student_schoolarship',
+        'send_rm'              => 'send_rm_student_schoolarship',
+        'created_at'           => 'created_at_student_schoolarship', 
+        'updated_at'           => 'updated_at_student_schoolarship', 
+        'deleted_at'           => 'deleted_at_student_schoolarship'        
     ];
 
 
@@ -169,7 +172,16 @@ class StudentSchoolarship extends Model
    ///////////////////////////////////////////////////////////////////
 
    /**
-    * 
+    * <b>ruleDuplicateSchoolarship</b> Regra de négócio responsável por verificar se a bolsa que esta sendo inserida já existe, 
+    * caso exista irá desativar as bolsas e retornar os IDBOLSAALUNO(dado referente a TABELA SBOLSAALUNO DO TOTVS) para poder desativar
+    * lá também 
+    * @param $ra (matricula do aluno)
+    * @param $contract (contrato do aluno)
+    * @param $schoolarship (bolsa)
+    * @param $period (pérido letivo)
+    * @param $firstInstallment (parcela inicial)
+    * @param $lastInstallment (parcela final)
+    * @return false (caso não exista) ou array caso exista
     */
    public function ruleDuplicateSchoolarship($ra, $contract, $schoolarship, $period, $firstInstallment, $lastInstallment)
    {
