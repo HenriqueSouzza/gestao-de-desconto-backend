@@ -227,8 +227,7 @@ class StudentSchoolarShipController extends Controller
    * OBS: Ajuda a "mergiar" os dados tendo em vista que nos dados de bolsas  é retornado apenas o RA do aluno
    */
   protected function formatResponse(Array $dataStudent, Array $dataSchoolarship)
-  {
-    dd($dataStudent);
+  {    
     $beforeSchoolarship = [];
     $afterSchoolarship = [];
     //caso so tenha um registro irá contar os objetos
@@ -367,6 +366,8 @@ class StudentSchoolarShipController extends Controller
             'codfilial'         => (string) $result->CODFILIAL,
             'filial'            => (string) $result->FILIAL,
             'codcurso'          => (string) $result->CODCURSO,
+            'codContrato'       => (string) $result->CODCONTRATO,
+            'habilitacao'       => (string) "123456",
             'curso'             => (string) $result->CURSO,
             'codperlet'         => (string) $result->CODPERLET,
             'idperlet'          => (string) $result->IDPERLET,
