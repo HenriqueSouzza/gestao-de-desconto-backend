@@ -323,7 +323,7 @@ class StudentSchoolarShipController extends Controller
     $validator = Validator::make($request->all(), [
         'codfilial' => 'required|numeric|min:1',
         'codcurso'  => 'required|string',
-        // 'codpolo'  => 'required|string',
+        'codpolo'   => 'required',
         'codperlet' => 'required',
         'ra'        => 'required|numeric',
         'nomealuno' => 'required|'
@@ -342,7 +342,7 @@ class StudentSchoolarShipController extends Controller
     $parameters = [
                     'CODFILIAL' => $request->codfilial, 
                     'CODCURSO'  => $request->codcurso, 
-                    // 'CODPOLO'  => $request->codpolo, 
+                    'CODPOLO'  => $request->codpolo, 
                     'CODPERLET' => $request->codperlet, 
                     'RA'        => $request->ra, 
                     'NOMEALUNO' => $request->nomealuno
