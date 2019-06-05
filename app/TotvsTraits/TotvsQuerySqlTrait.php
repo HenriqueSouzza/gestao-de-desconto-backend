@@ -69,21 +69,19 @@ Trait TotvsQuerySqlTrait
             'codAplicacao' => 'S',         
             'parameters'   =>  $this->transformParams($params)       
         ];
-
+     
         $url = env('URL_WS_DEVELOPER').$this->wsdl;
+        
         $client = new ZendClient($url, 
                     ['login' => env('USER_WS_TOTVS'), 'password' => env('PASS_WS_TOTVS')]
                 );
-        
+    
         $result = ($client->RealizarConsultaSQL($parameters));
 
-        //dd($client->getLastResponse(), $client->getLastResponseHeaders());
-       
         //transforma o xml em string e obtem o resultado
         $response = simplexml_load_string($result->RealizarConsultaSQLResult);   
       
         return $response;
-        //return $this->transformResponse($response);
 
     
     }
@@ -124,9 +122,9 @@ Trait TotvsQuerySqlTrait
           
 
         }
-      
+        
         //transforma o array em string
-        return implode('',$stringParams);
+        return dd(implode('',$stringParams));
     
         
     }

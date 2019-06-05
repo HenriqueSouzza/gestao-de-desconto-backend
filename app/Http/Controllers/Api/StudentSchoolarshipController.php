@@ -187,6 +187,7 @@ class StudentSchoolarShipController extends Controller
     $validator = Validator::make($request->all(), [
         'codfilial' => 'required|numeric|min:1',
         'codcurso'  => 'required|string',
+        'codpolo'   => 'required|numeric',
         'codperlet' => 'required',
         'ra'        => 'required|numeric',
         'nomealuno' => 'required|'
@@ -204,14 +205,15 @@ class StudentSchoolarShipController extends Controller
 
     $parameters = [
                     'CODFILIAL' => $request->codfilial, 
-                    'CODCURSO'  => $request->codcurso, 
+                    'CODCURSO'  => $request->codcurso,
+                    'CODPOLO'   => $request->codpolo, 
                     'CODPERLET' => $request->codperlet, 
                     'RA'        => $request->ra, 
                     'NOMEALUNO' => $request->nomealuno
                 ];
 
     $requestSoap = (array) $this->query($name, $parameters);
-
+  
     $schoolarship = $this->getSchoolarship($request);
 
     $responseSoap = $this->formatResponse($requestSoap, $schoolarship);
@@ -228,7 +230,6 @@ class StudentSchoolarShipController extends Controller
    */
   protected function formatResponse(Array $dataStudent, Array $dataSchoolarship)
   {
-    dd($dataStudent);
     $beforeSchoolarship = [];
     $afterSchoolarship = [];
     //caso so tenha um registro irá contar os objetos
@@ -322,6 +323,7 @@ class StudentSchoolarShipController extends Controller
     $validator = Validator::make($request->all(), [
         'codfilial' => 'required|numeric|min:1',
         'codcurso'  => 'required|string',
+        'codpolo'   => 'required|numeric',
         'codperlet' => 'required',
         'ra'        => 'required|numeric',
         'nomealuno' => 'required|'
@@ -340,12 +342,14 @@ class StudentSchoolarShipController extends Controller
     $parameters = [
                     'CODFILIAL' => $request->codfilial, 
                     'CODCURSO'  => $request->codcurso, 
+                    'CODPOLO'   => $request->codpolo, 
                     'CODPERLET' => $request->codperlet, 
                     'RA'        => $request->ra, 
                     'NOMEALUNO' => $request->nomealuno
                 ];
 
     $requestSoap = (array) $this->query($name, $parameters);
+  
     return $requestSoap['Resultado'];
 
 
@@ -426,19 +430,20 @@ class StudentSchoolarShipController extends Controller
     foreach($request->discounts as $discount)
     {
         $validator = Validator::make($discount, [
-            'ra'                 => 'required',
-            'establishment'      => 'required',
-            'schoolarship'       => 'required',
-            'schoolarship_order' => 'required',
-            'value'              => 'required',
-            'first_installment'  => 'required|numeric|min:1',
-            'last_installment'   => 'required|numeric|max:12',
-            'period'             => 'required',
-            'contract'           => 'required',
-            'habilitation'       => 'required',
-            'modality_major'     => 'required',
-            'course_type'        => 'required',
-            'detail'             => 'nullable',
+            'ra'                   => 'required',
+            'establishment'        => 'required',
+            'schoolarship'         => 'required',
+            'schoolarship_order'   => 'required',
+            'student_schoolarship' => 'nullable|numeric',
+            'value'                => 'required',
+            'first_installment'    => 'required|numeric|min:1',
+            'last_installment'     => 'required|numeric|max:12',
+            'period'               => 'required',
+            'contract'             => 'required',
+            'habilitation'         => 'required',
+            'modality_major'       => 'required',
+            'course_type'          => 'required',
+            'detail'               => 'nullable',
         ]);
      
         if($validator->fails())
@@ -450,7 +455,8 @@ class StudentSchoolarShipController extends Controller
         }
 
         //verificar se o contrato possui parcelas em abertos
-        $installments = $this->getInstallmentContract($discount['contract']);
+        $installments = $this->getInstallmentContract($discount['first_installment'], $discount['last_installment'], $discount['contract']);
+       
         if((string) $installments->POSSUI_LANCAMENTO == 1)
         {
             $error = "O Contrato {$discount['contract']} possui parcelas geradas, não sendo possível lançar o desconto";
@@ -465,16 +471,19 @@ class StudentSchoolarShipController extends Controller
             // dd($rule = $this->model->ruleDuplicateSchoolarship($discount->ra, $discount->contract, 
             //                         $discount->schoolarship, $discount->period, $discount->first_installment, $discount->last_installment));
 
-            //VERIFICAR QUANDO É PARA ATUALIZAR OU INSERIR
-            $create = $this->store($data); 
+           
+            $update = isset($discount->id);
 
-            //verificar se é para enviar para o RM
+            $action = ($update ? $this->update($data, $discount->id) : $this->store($data));
+           
             if($discount->send_rm)
-            {
+            {   //caso passe o idbolsaaluno o registro irá ser atualizado se não sera criado
+                $studentSchoolarship = (isset($discount->student_schoolarship) ? $discount->student_schoolarship : 'xsi');
+                //dd($studentSchoolarship);
                 $dataServer = 'EduBolsaAlunoData';
                 $xmlRequest = [
                         'SBolsaAluno' => [
-                            ['IDBOLSAALUNO'   => 'xsi'], //verificar se o idbolsaaluno foi inserido
+                            ['IDBOLSAALUNO'   => $studentSchoolarship],
                             ['CODCOLIGADA'    => 1],
                             ['PARCELAINICIAL' => $discount->first_installment],
                             ['PARCELAFINAL'   => $discount->last_installment],
@@ -511,7 +520,7 @@ class StudentSchoolarShipController extends Controller
                     $error = str_replace('"', '', $error); 
                     $requestSoap[$discount->ra]['erro'] = $error;
                     //excluir o registro inserido por meio da API
-                    $id = $create->getData()->response->content->id;
+                    $id = $action->getData()->response->content->id;
                     $delete = $this->destroy($id);
                     $requestSoap[$discount->ra][] = $delete->getData()->response->content;
                     
@@ -523,7 +532,7 @@ class StudentSchoolarShipController extends Controller
                     $studentSchoolarship = str_replace('"', '', $studentSchoolarship);
                     $studentSchoolarship = str_replace('}', '', $studentSchoolarship);
                     //fazer o update do registro passando o id da bolsa aluno
-                    $id = $create->getData()->response->content->id;
+                    $id = $action->getData()->response->content->id;
                     //adiciona o id da bolsa do aluno junto aos dados enviados
                     $discount->student_schoolarship = $studentSchoolarship;
                     $discount = (array) $discount;
@@ -537,8 +546,9 @@ class StudentSchoolarShipController extends Controller
                 }
     
             }
-            else {
-                $requestSoap[$discount->ra][] = $create->getData()->response->content;
+            else{
+                //dd('aqui');
+                $requestSoap[$discount->ra][] = $action->getData()->response->content;
             }
 
          
@@ -552,17 +562,59 @@ class StudentSchoolarShipController extends Controller
 
   }
 
-  protected function getInstallmentContract($contract)
+  /**
+   * <b>getInstallmentContract</b>
+   */
+  protected function getInstallmentContract($firstInstallment, $lastInstallment, $contract)
   {
     $name = self::$nameQuery['WEB010'];
 
     $parameters = [
-                    'CODCONTRATO' => $contract, 
+                    'PARCELAINICIAL' => $firstInstallment, 
+                    'PARCELAFINAL'   => $lastInstallment,
+                    'CODCONTRATO'    => $contract, 
                 ];
 
     $requestSoap = (array) $this->query($name, $parameters);
     return $requestSoap['Resultado'];
 
+  }
+
+
+  /**
+   * <b>getProfitCourse</b> Método responsável por obter a receita de acordo com a filial, curso mes e ano informados
+   * @param Request $request (filial, curso mes e ano)
+   * @return Array $requestSoap
+   */
+  protected function getProfitCourse(Request $request)
+  {
+    $validator = Validator::make($request->all(), [
+        'codfilial' => 'required',
+        'codcurso'  => 'required',
+        'mes'       => 'required',
+        'ano'       => 'required'
+    ]);
+
+    if($validator->fails())
+    {    
+        $error['message'] = $validator->errors();
+        $error['error']   = true;
+
+        return  $this->createResponse($error, 422);
+    }
+    
+    $name = self::$nameQuery['WEB007'];
+
+    $parameters = [
+        'CODFILIAL' => $request->codfilial, 
+        'CODCURSO'  => $request->codcurso,
+        'MES'       => $request->mes, 
+        'ANO'       => $request->ano
+    ];
+
+    $requestSoap = (array) $this->query($name, $parameters);
+
+    return $this->createResponse($requestSoap['Resultado']);
   }
 
 

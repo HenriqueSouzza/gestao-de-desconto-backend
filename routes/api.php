@@ -37,9 +37,12 @@ Route::group(['middleware' => ['auth:api']], function(){
     Route::post('/discount-margin-schoolarships/list', 'Api\DiscountMarginSchoolarshipController@listMargins'); // lista de periodos letivos dado filial, e modalidade
     Route::post('/student-schoolarships/list-students', 'Api\StudentSchoolarShipController@getStudents');
     Route::post('/student-schoolarships/students', 'Api\StudentSchoolarShipController@postSchoolarship');
+    Route::post('/student-schoolarships/profit', 'Api\StudentSchoolarShipController@getProfitCourse');
     
 });
 
+// Route::post('/student-schoolarships/list-students', 'Api\StudentSchoolarShipController@getStudents');
+// Route::post('/student-schoolarships/students', 'Api\StudentSchoolarShipController@postSchoolarship');
 Route::post('/totvs-queries/query', 'Api\TotvsQuerySqlController@totvsQuery');
 Route::post('/totvs-queries/read', 'Api\TotvsQuerySqlController@read');
 
