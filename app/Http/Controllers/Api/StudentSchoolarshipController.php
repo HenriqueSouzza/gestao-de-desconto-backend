@@ -205,6 +205,7 @@ class StudentSchoolarShipController extends Controller
     $parameters = [
                     'CODFILIAL' => $request->codfilial, 
                     'CODCURSO'  => $request->codcurso, 
+                    'CODPOLO'  => $request->codpolo, 
                     'CODPERLET' => $request->codperlet, 
                     'RA'        => $request->ra, 
                     'NOMEALUNO' => $request->nomealuno
@@ -339,12 +340,15 @@ class StudentSchoolarShipController extends Controller
     $parameters = [
                     'CODFILIAL' => $request->codfilial, 
                     'CODCURSO'  => $request->codcurso, 
+                    'CODPOLO'  => $request->codpolo, 
                     'CODPERLET' => $request->codperlet, 
                     'RA'        => $request->ra, 
                     'NOMEALUNO' => $request->nomealuno
                 ];
 
     $requestSoap = (array) $this->query($name, $parameters);
+    if(!key_exists('Resultado',$requestSoap))
+        dd($requestSoap);
     return $requestSoap['Resultado'];
 
 
