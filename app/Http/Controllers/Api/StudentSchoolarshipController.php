@@ -187,6 +187,7 @@ class StudentSchoolarShipController extends Controller
     $validator = Validator::make($request->all(), [
         'codfilial' => 'required|numeric|min:1',
         'codcurso'  => 'required|string',
+        'codpolo'  => 'required|string',
         'codperlet' => 'required',
         'ra'        => 'required|numeric',
         'nomealuno' => 'required|'
@@ -322,6 +323,7 @@ class StudentSchoolarShipController extends Controller
     $validator = Validator::make($request->all(), [
         'codfilial' => 'required|numeric|min:1',
         'codcurso'  => 'required|string',
+        // 'codpolo'  => 'required|string',
         'codperlet' => 'required',
         'ra'        => 'required|numeric',
         'nomealuno' => 'required|'
@@ -340,15 +342,15 @@ class StudentSchoolarShipController extends Controller
     $parameters = [
                     'CODFILIAL' => $request->codfilial, 
                     'CODCURSO'  => $request->codcurso, 
-                    'CODPOLO'  => $request->codpolo, 
+                    // 'CODPOLO'  => $request->codpolo, 
                     'CODPERLET' => $request->codperlet, 
                     'RA'        => $request->ra, 
                     'NOMEALUNO' => $request->nomealuno
                 ];
 
     $requestSoap = (array) $this->query($name, $parameters);
-    if(!key_exists('Resultado',$requestSoap))
-        dd($requestSoap);
+    // if(!key_exists('Resultado',$requestSoap))
+    //     dd("oi");
     return $requestSoap['Resultado'];
 
 
