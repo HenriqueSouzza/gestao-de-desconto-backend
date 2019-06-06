@@ -23,6 +23,11 @@ Trait TotvsQuerySqlTrait
         'WEB004' => 'WEB.0004',
         'WEB005' => 'WEB.0005',
         'WEB006' => 'WEB.0006',
+        'WEB007' => 'WEB.0007',
+        'WEB008' => 'WEB.0008',
+        'WEB009' => 'WEB.0009',
+        'WEB010' => 'WEB.0010',
+        'WEB011' => 'WEB.0011'
         
     ];
 
@@ -65,21 +70,19 @@ Trait TotvsQuerySqlTrait
             'codAplicacao' => 'S',         
             'parameters'   =>  $this->transformParams($params)       
         ];
-
+     
         $url = env('URL_WS_DEVELOPER').$this->wsdl;
+        
         $client = new ZendClient($url, 
                     ['login' => env('USER_WS_TOTVS'), 'password' => env('PASS_WS_TOTVS')]
                 );
-          
+        
         $result = ($client->RealizarConsultaSQL($parameters));
-
-        //dd($client->getLastResponse(), $client->getLastResponseHeaders());
-       
+        
         //transforma o xml em string e obtem o resultado
         $response = simplexml_load_string($result->RealizarConsultaSQLResult);   
-      
+        
         return $response;
-        //return $this->transformResponse($response);
 
     
     }
@@ -115,12 +118,12 @@ Trait TotvsQuerySqlTrait
            
             //formata a string no padrão chave=valor; 
             $string = (string) strtoupper($keys[$i]).'='.$values[$i].';';
-         
-            $stringParams[$i] = $string;
+            
+            $stringParams[$i] = (string) $string;
           
 
         }
-      
+     
         //transforma o array em string
         return implode('',$stringParams);
     

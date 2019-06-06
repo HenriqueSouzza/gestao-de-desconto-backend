@@ -78,6 +78,22 @@ class DiscountMarginMajor extends Model
         'fk_user'                                           => 'required'
         
     ];
+    /**
+     * <b>map</b> Atributo responsável em atribuir um alias(Apelido), para a colunas do banco de dados
+     * OBS: este atributo é utilizado no Metodo store e update da ApiControllerTrait
+     */
+    public $map = [        
+        'id_rm_establishment_discount_margin_major'  => 'required',
+        'id_rm_course_type_discount_margin_major'    => 'required',
+        'id_rm_modality_discount_margin_major'       => 'required',
+        'id_rm_major_discount_margin_major'          => 'required',
+        'id_rm_period_discount_margin_major'         => 'required',
+        'id_rm_period_code_discount_margin_major'    => 'required',
+        'max_value_discount_margin_major'            => 'required',
+        'is_exact_value_discount_margin_major'       => 'required',
+        'fk_user'                                           => 'required'
+        
+    ];
 
     /**
      * <b>messages</b>  Atributo responsável em definir mensagem de validação de acordo com as regras especificadas no atributo $rules
