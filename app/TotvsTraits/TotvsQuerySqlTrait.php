@@ -76,12 +76,12 @@ Trait TotvsQuerySqlTrait
         $client = new ZendClient($url, 
                     ['login' => env('USER_WS_TOTVS'), 'password' => env('PASS_WS_TOTVS')]
                 );
-    
+        
         $result = ($client->RealizarConsultaSQL($parameters));
-
+        
         //transforma o xml em string e obtem o resultado
         $response = simplexml_load_string($result->RealizarConsultaSQLResult);   
-      
+        
         return $response;
 
     
@@ -118,12 +118,12 @@ Trait TotvsQuerySqlTrait
            
             //formata a string no padrão chave=valor; 
             $string = (string) strtoupper($keys[$i]).'='.$values[$i].';';
-         
-            $stringParams[$i] = $string;
+            
+            $stringParams[$i] = (string) $string;
           
 
         }
-        
+     
         //transforma o array em string
         return implode('',$stringParams);
     

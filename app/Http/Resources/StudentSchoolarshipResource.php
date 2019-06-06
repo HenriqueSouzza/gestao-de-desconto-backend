@@ -26,6 +26,7 @@ class StudentSchoolarshipResource extends JsonResource
             'last_installment'     => $this->last_installment_student_schoolarship,
             'service'              => $this->id_rm_service_student_schoolarship,
             'period'               => $this->id_rm_period_student_schoolarship,
+            'period_code'          => $this->id_rm_period_code_student_schoolarship,
             'contract'             => $this->id_rm_contract_student_schoolarship,
             'habilitation'         => $this->id_rm_habilitation_establishment_student_schoolarship,
             'modality_major'       => $this->id_rm_modality_major_student_schoolarship,

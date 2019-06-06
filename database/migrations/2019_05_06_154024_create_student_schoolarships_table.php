@@ -17,7 +17,8 @@ class CreateStudentSchoolarshipsTable extends Migration
             $table->bigIncrements('id_student_schoolarship');
             $table->bigInteger('ra_rm_student_schoolarship')->comment('RA do estudante tabela SALUNO RM TOTVS -- CAMPO: RA');
             $table->bigInteger('id_rm_schoolarship_student_schoolarship')->comment('ID da bolsa tabela SBOLSA RM TOTVS -- CAMPO: CODBOLSA');
-            $table->bigInteger('id_rm_period_student_schoolarship')->comment('ID do periodo letivo tabela ? -- CAMPO: IDPERLET');
+            $table->bigInteger('id_rm_period_student_schoolarship')->comment('ID do periodo letivo tabela ?   -- CAMPO: IDPERLET');
+            $table->char('id_rm_period_code_student_schoolarship',20)->comment('ID do periodo letivo tabela ? -- CAMPO: CODPERLET');
             $table->bigInteger('id_rm_contract_student_schoolarship')->comment('ID do contrato tabela SCONTRATO -- CAMPO: CODCONTRATO');
             $table->integer('id_rm_habilitation_establishment_student_schoolarship')->comment('ID da habilitação unidade tabela SHABILITACAOFILIAL RM TOTVS -- CAMPO: IDHABILITACAOFILIAL');
             $table->bigInteger('id_rm_establishment_student_schoolarship')->comment('ID da unidade do estudante tabela GFILIAL RM TOTVS -- CAMPO: CODFILIAL');
