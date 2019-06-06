@@ -187,7 +187,7 @@ class StudentSchoolarShipController extends Controller
     $validator = Validator::make($request->all(), [
         'codfilial' => 'required|numeric|min:1',
         'codcurso'  => 'required|string',
-        'codpolo'   => 'required|numeric',
+        'codpolo'   => 'required|string',
         'codperlet' => 'required',
         'ra'        => 'required|numeric',
         'nomealuno' => 'required|'
@@ -371,6 +371,8 @@ class StudentSchoolarShipController extends Controller
             'codfilial'         => (string) $result->CODFILIAL,
             'filial'            => (string) $result->FILIAL,
             'codcurso'          => (string) $result->CODCURSO,
+            'codContrato'       => (string) $result->CODCONTRATO,
+            'habilitacao'       => (string) "123456",
             'curso'             => (string) $result->CURSO,
             'codperlet'         => (string) $result->CODPERLET,
             'idperlet'          => (string) $result->IDPERLET,
@@ -563,7 +565,12 @@ class StudentSchoolarShipController extends Controller
   }
 
   /**
-   * <b>getInstallmentContract</b>
+   * <b>getInstallmentContract</b> Método responsável por obter a resposta se o contrato, possui 
+   * ou não parcela gerada em um determinado intervalo: exemplo: 1-6
+   * @param int $firstInstallment (parcela inicial)
+   * @param int $lastInstallment (parcela final)
+   * @param int $contract (contrato)
+   * @return array $requestSoap
    */
   protected function getInstallmentContract($firstInstallment, $lastInstallment, $contract)
   {
