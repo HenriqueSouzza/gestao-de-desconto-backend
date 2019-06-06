@@ -124,7 +124,7 @@ Trait TotvsQuerySqlTrait
         }
         
         //transforma o array em string
-        return dd(implode('',$stringParams));
+        return implode('',$stringParams);
     
         
     }
