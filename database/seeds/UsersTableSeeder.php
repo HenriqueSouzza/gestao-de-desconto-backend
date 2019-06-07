@@ -63,11 +63,7 @@ class UsersTableSeeder extends Seeder
                 [
                 'name' => 'Carla Stefania Silveira Carneiro',
                 'email' => '0647.carlosalexandre@cnec.br'
-                ],
-                [
-                'name' => 'Carlos Alexandre Thalheimer',
-                'email' => '0647.carlosalexandre@cnec.br'
-                ],
+                ],                
                 [
                 'name' => 'Liane Teresinha Machado Guimarâes',
                 'email' => '0647.lianeguimaraes@cnec.br'
@@ -259,11 +255,7 @@ class UsersTableSeeder extends Seeder
                 [
                 'name' => 'Patrícia dos Santos Araújo',
                 'email' => 'ceadcoord.joaopessoageisel@cnec.br'
-                ],
-                [
-                'name' => 'Maria das Neves Farias Sousa de Lima',
-                'email' => '0214.marialima@cnec.br'
-                ],
+                ],                
                 [
                 'name' => 'Maria de Fátima Pontes dos Santos',
                 'email' => '0214.marialima@cnec.br'
@@ -331,11 +323,7 @@ class UsersTableSeeder extends Seeder
                 [
                 'name' => 'ERICA PESSOA DO MONTE',
                 'email' => 'cead.ericapessoa@cnec.br'
-                ],
-                [
-                'name' => 'PRISCILA GUIMARÃES MIRANDA',
-                'email' => 'cead.ericapessoa@cnec.br'
-                ],
+                ],                
                 [
                 'name' => 'DARIO TAVARES DA SILVA',
                 'email' => '0912.dariotavares@cnec.br'
