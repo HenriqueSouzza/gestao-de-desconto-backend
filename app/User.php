@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Passport\HasApiTokens;
 
-use App\Models\RoleUser;
+use App\Models\Role;
 
 class User extends Authenticatable
 {
@@ -136,5 +136,10 @@ class User extends Authenticatable
          return $this->primaryKey;
      }
 
-     
+     /**
+     * Relacionamento de user roles
+     */
+    public function roles(){
+        return $this->belongsToMany(Role::class, 'role_users', 'fk_user', 'fk_role');
+    }
 }

@@ -67,14 +67,20 @@ class ConcessionPeriodController extends Controller
     public function listPeriods(Request $request){
         $now = date('Y-m-d');        
         $codFilial = $request->codFilial;
-        $modality = $request->modality;
+        $modality = $request->modality;        
         $periods = ConcessionPeriod::where('date_start_concession_period', '<=', $now)
                          ->where('date_end_concession_period', '>=', $now)
                          ->where('id_rm_establishment_concession_period', $codFilial)
                          ->where('id_rm_modality_concession_period', $modality)
                          ->get();
+        if($periods->count() == 0){
+            $error['message'] = "Não está dentro do periodo de concessão.";
+            $error['error']   = true;
+            return $this->createResponse($error, 422);    
+        }
+            
         
-        return $this->createResponse($periods, 201);
+        return $this->createResponse($periods);
     }
 
     /**
