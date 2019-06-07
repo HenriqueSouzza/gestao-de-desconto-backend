@@ -45,8 +45,6 @@ class ConcessionPeriod extends Model
      */
     const DELETED_AT = 'deleted_at_concession_period';
 
-   
-
     /**
      * <b>primaryKey</b> Informa qual a é a chave primaria da tabela
      */
@@ -126,7 +124,10 @@ class ConcessionPeriod extends Model
     {
         return $this->primaryKey;
     }
-    public function user(){
+
+
+    public function user()
+    {
         return $this->belongsTo(User::class, 'fk_user', 'id');
     }
 
