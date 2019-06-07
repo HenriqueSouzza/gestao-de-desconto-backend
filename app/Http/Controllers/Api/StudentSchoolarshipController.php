@@ -612,6 +612,7 @@ class StudentSchoolarShipController extends Controller
             'first_installment'    => 'required|numeric|min:1',
             'last_installment'     => 'required|numeric|max:12',
             'period'               => 'required',
+            'period_code'          => 'required',
             'contract'             => 'required',
             'habilitation'         => 'required',
             'modality_major'       => 'required',
