@@ -76,11 +76,11 @@ class ConcessionPeriodController extends Controller
         if($periods->count() == 0){
             $error['message'] = "Não está dentro do periodo de concessão.";
             $error['error']   = true;
-            return $this->createResponse($error, 201);    
+            return $this->createResponse($error, 422);    
         }
             
         
-        return $this->createResponse($periods, 201);
+        return $this->createResponse($periods);
     }
 
     /**
