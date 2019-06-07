@@ -41,7 +41,6 @@ class CreateStudentSchoolarshipsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('student_schoolarship');
         Schema::dropIfExists('student_schoolarships');
     }
 }
