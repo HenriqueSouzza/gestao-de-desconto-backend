@@ -22,7 +22,7 @@ class CreateStudentSchoolarshipsTable extends Migration
             $table->bigInteger('id_rm_contract_student_schoolarship')->comment('ID do contrato tabela SCONTRATO -- CAMPO: CODCONTRATO');
             $table->integer('id_rm_habilitation_establishment_student_schoolarship')->comment('ID da habilitação unidade tabela SHABILITACAOFILIAL RM TOTVS -- CAMPO: IDHABILITACAOFILIAL');
             $table->bigInteger('id_rm_establishment_student_schoolarship')->comment('ID da unidade do estudante tabela GFILIAL RM TOTVS -- CAMPO: CODFILIAL');
-            $table->bigInteger('id_rm_modality_major_student_schoolarship')->comment('ID da modalidade do curso (PRESENCIAL OU EAD) tabela ? RM TOTVS -- CAMPO: CODCURSO');
+            $table->char('id_rm_modality_major_student_schoolarship', 2)->comment('ID da modalidade do curso (PRESENCIAL OU EAD) tabela ? RM TOTVS -- CAMPO: CODCURSO');
             $table->integer('id_rm_course_type_student_schoolarship')->comment('ID do tipo do curso tabela STIPOCURSO RM TOTVS -- CAMPO: IDTIPOCURSO');
             $table->integer('schoolarship_order_student_schoolarship')->comment('ID ordem da bolsa tabela ? RM TOTVS');
             $table->decimal('value_student_schoolarship', 8,2)->comment('Valor percentual da bolsa do estudante');
