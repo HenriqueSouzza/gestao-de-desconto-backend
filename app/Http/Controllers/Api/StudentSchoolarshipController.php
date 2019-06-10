@@ -191,6 +191,7 @@ class StudentSchoolarShipController extends Controller
             'id_rm_period_code_student_schoolarship'   => $request->codperlet,
             'send_rm_student_schoolarship'             => false
         ])->get()->toArray();
+        
     }
     
 
@@ -246,9 +247,8 @@ class StudentSchoolarShipController extends Controller
     $requestSoap = (array) $this->query($name, $parameters);
   
     $schoolarship       =  (array) $this->getSchoolarship($request);
-    $tempLocals         =  (array) $this->getLocalSchoolarships($request);
-    $localScholarships  =  $this->schoolarshipToKeyContract($tempLocals);
-    
+    $tempLocals         =  (array) $this->getLocalSchoolarships($request);    
+    $localScholarships  =  $this->schoolarshipToKeyContract($tempLocals);    
     $responseSoap = $this->formatResponse($requestSoap, $schoolarship, $localScholarships);
     return $this->createResponse($responseSoap);
    
@@ -537,21 +537,23 @@ class StudentSchoolarShipController extends Controller
   private function formatToRMResponse(Array $schoolarships){
 
     $newArray = [];
+    $count = 0;    
     foreach($schoolarships as $schoolarship)
     {
       $temp = [
-          'RA'              => $schoolarship['ra_rm_student_schoolarship'],
-          'CODCONTRATO'     => $schoolarship['id_rm_contract_student_schoolarship'],
-          'IDPERLET'        => $schoolarship['id_rm_period_student_schoolarship'],
-          'CODPERLET'       => $schoolarship['id_rm_period_code_student_schoolarship'],
-          'CODBOLSA'        => $schoolarship['id_rm_schoolarship_student_schoolarship'],                
-          'DESCONTO'        => $schoolarship['value_student_schoolarship'],        
-          'PARCELAINICIAL'  => $schoolarship['first_installment_student_schoolarship'],
-          'PARCELAFINAL'    => $schoolarship['last_installment_student_schoolarship'],
+          'RA'              => $schoolarship[$count]['ra_rm_student_schoolarship'],
+          'CODCONTRATO'     => $schoolarship[$count]['id_rm_contract_student_schoolarship'],
+          'IDPERLET'        => $schoolarship[$count]['id_rm_period_student_schoolarship'],
+          'CODPERLET'       => $schoolarship[$count]['id_rm_period_code_student_schoolarship'],
+          'CODBOLSA'        => $schoolarship[$count]['id_rm_schoolarship_student_schoolarship'],                
+          'DESCONTO'        => $schoolarship[$count]['value_student_schoolarship'],        
+          'PARCELAINICIAL'  => $schoolarship[$count]['first_installment_student_schoolarship'],
+          'PARCELAFINAL'    => $schoolarship[$count]['last_installment_student_schoolarship'],
           'CONCESSAO'       => 'LOCAL'
       ];
 
       array_push($newArray, $temp);
+      $count++;
     }      
     return $newArray;
     
