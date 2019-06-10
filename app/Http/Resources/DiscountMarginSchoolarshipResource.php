@@ -17,6 +17,7 @@ class DiscountMarginSchoolarshipResource extends JsonResource
         return [
             'id_discount_margin_schoolarship'                          => $this->id_discount_margin_schoolarship,
             'id_rm_schoolarship_discount_margin_schoolarship'          => $this->id_rm_schoolarship_discount_margin_schoolarship,
+            'id_rm_schoolarship_name_discount_margin_schoolarship'     => $this->id_rm_schoolarship_name_discount_margin_schoolarship,
             'id_rm_establishment_discount_margin_schoolarship'         => $this->id_rm_establishment_discount_margin_schoolarship,
             'id_rm_course_type_discount_margin_schoolarship'           => $this->id_rm_course_type_discount_margin_schoolarship,
             'id_rm_modality_discount_margin_schoolarship'              => $this->id_rm_modality_discount_margin_schoolarship,

@@ -12,7 +12,7 @@ class ConcessionPeriodsSeeder extends Seeder
     public function run()
     {
         $date_start = '2019-01-01';
-        $date_end = '2019-06-06';
+        $date_end = '2019-07-07';
 
         $data = [
             [ 'id_rm_establishment_concession_period'=> 49,  'id_rm_period_concession_period' =>    3, 'id_rm_period_code_concession_period'    =>	'2019-1',  'id_rm_modality_concession_period' => 'P','date_start_concession_period' => $date_start, 'date_end_concession_period' => $date_end, 'fk_user' => 1],

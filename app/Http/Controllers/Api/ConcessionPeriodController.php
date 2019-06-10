@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Api\ApiControllerTrait;
@@ -61,23 +62,6 @@ class ConcessionPeriodController extends Controller
     }
 
     /**
-     * Lista os periodos vigentes com os parametros passados
-     * CODFILIAL(codFilial), MODALIDADE(P/D)(modality)
-     */
-    public function listPeriods(Request $request){
-        $now = date('Y-m-d');        
-        $codFilial = $request->codFilial;
-        $modality = $request->modality;
-        $periods = ConcessionPeriod::where('date_start_concession_period', '<=', $now)
-                         ->where('date_end_concession_period', '>=', $now)
-                         ->where('id_rm_establishment_concession_period', $codFilial)
-                         ->where('id_rm_modality_concession_period', $modality)
-                         ->get();
-        
-        return $this->createResponse($periods, 201);
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -123,4 +107,49 @@ class ConcessionPeriodController extends Controller
         return $destroy;
 
     }
+
+    /**
+     * <b>listPeriods</b> Lista os periodos vigentes de acordo com os dados informados caso não exista irá retornar um erro (retornando status code 422), 
+     * caso contrário ira retornar os periodos. 
+     * CODFILIAL(codFilial), MODALIDADE(P/D)(modality)
+     * @param Request $request
+     * @return $periods
+     */
+    public function listPeriods(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'codfilial' => 'required|numeric|min:1',
+            'modality'  => 'required|string'
+        ]);
+    
+        if($validator->fails())
+        {    
+            $error['message'] = $validator->errors();
+            $error['error']   = true;
+    
+            return  $this->createResponse($error, 422);
+        }
+    
+        $now = date('Y-m-d');        
+        $codFilial = $request->codfilial;
+        $modality = $request->modality;
+
+        $periods = $this->model->where('date_start_concession_period', '<=', $now)
+                         ->where('date_end_concession_period', '>=', $now)
+                         ->where('id_rm_establishment_concession_period', $codFilial)
+                         ->where('id_rm_modality_concession_period', $modality)
+                         ->get();
+
+        if($periods->count() == 0)
+        {
+            $error['message'] = 'Não está dentro do periodo de concessão.';
+            $error['error']   = true;
+
+            return $this->createResponse($error, 422);    
+        }
+            
+        
+        return $this->createResponse($periods);
+    }
+
 }

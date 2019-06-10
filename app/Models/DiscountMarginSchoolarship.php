@@ -21,6 +21,7 @@ class DiscountMarginSchoolarship extends Model
      */
     protected $fillable = [                
             'id_rm_schoolarship_discount_margin_schoolarship'  ,
+            'id_rm_schoolarship_name_discount_margin_schoolarship',
             'id_rm_establishment_discount_margin_schoolarship' ,
             'id_rm_course_type_discount_margin_schoolarship'   ,
             'id_rm_modality_discount_margin_schoolarship'      ,
@@ -81,7 +82,7 @@ class DiscountMarginSchoolarship extends Model
     */
 
     public $rules = [        
-        'id_rm_schoolarship_discount_margin_schoolarship' => 'required' ,
+        'id_rm_schoolarship_discount_margin_schoolarship' => 'required' ,        
         'id_rm_establishment_discount_margin_schoolarship'=> 'required' ,
         'id_rm_course_type_discount_margin_schoolarship'  => 'required' ,
         'id_rm_modality_discount_margin_schoolarship'     => 'required' ,
@@ -100,17 +101,18 @@ class DiscountMarginSchoolarship extends Model
      * OBS: este atributo é utilizado no Metodo store e update da ApiControllerTrait
      */
     public $map = [        
-        'id_rm_schoolarship_discount_margin_schoolarship' => 'id_rm_schoolarship_discount_margin_schoolarship'  ,
-        'id_rm_establishment_discount_margin_schoolarship'=> 'id_rm_establishment_discount_margin_schoolarship' ,
-        'id_rm_course_type_discount_margin_schoolarship'  => 'id_rm_course_type_discount_margin_schoolarship'   ,
-        'id_rm_modality_discount_margin_schoolarship'     => 'id_rm_modality_discount_margin_schoolarship'      ,
-        'id_rm_major_discount_margin_schoolarship'        => 'id_rm_major_discount_margin_schoolarship'         ,
-        'id_rm_period_discount_margin_schoolarship'       => 'id_rm_period_discount_margin_schoolarship'        ,
-        'id_rm_period_code_discount_margin_schoolarship'  => 'id_rm_period_code_discount_margin_schoolarship'   ,
-        'max_value_discount_margin_schoolarship'          => 'max_value_discount_margin_schoolarship'           ,
-        'is_exact_value_discount_margin_schoolarship'     => 'is_exact_value_discount_margin_schoolarship'      ,
-        'first_installment_discount_margin_schoolarship'  => 'first_installment_discount_margin_schoolarship'   ,
-        'last_installment_discount_margin_schoolarship'   => 'last_installment_discount_margin_schoolarship'    ,
+        'id_rm_schoolarship_discount_margin_schoolarship'      => 'id_rm_schoolarship_discount_margin_schoolarship'  ,
+        'id_rm_establishment_discount_margin_schoolarship'     => 'id_rm_establishment_discount_margin_schoolarship' ,
+        'id_rm_schoolarship_name_discount_margin_schoolarship' => 'id_rm_schoolarship_name_discount_margin_schoolarship',
+        'id_rm_course_type_discount_margin_schoolarship'       => 'id_rm_course_type_discount_margin_schoolarship'   ,
+        'id_rm_modality_discount_margin_schoolarship'          => 'id_rm_modality_discount_margin_schoolarship'      ,
+        'id_rm_major_discount_margin_schoolarship'             => 'id_rm_major_discount_margin_schoolarship'         ,
+        'id_rm_period_discount_margin_schoolarship'            => 'id_rm_period_discount_margin_schoolarship'        ,
+        'id_rm_period_code_discount_margin_schoolarship'       => 'id_rm_period_code_discount_margin_schoolarship'   ,
+        'max_value_discount_margin_schoolarship'               => 'max_value_discount_margin_schoolarship'           ,
+        'is_exact_value_discount_margin_schoolarship'          => 'is_exact_value_discount_margin_schoolarship'      ,
+        'first_installment_discount_margin_schoolarship'       => 'first_installment_discount_margin_schoolarship'   ,
+        'last_installment_discount_margin_schoolarship'        => 'last_installment_discount_margin_schoolarship'    ,
         'fk_user'
         
     ];

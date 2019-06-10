@@ -97,7 +97,7 @@ trait ApiControllerTrait
         $values = $this->columnsInsert($request);
        
         $validate = validator($values, $this->model->rules, $this->model->messages);
-       
+    
         if($validate->fails())
         {
             $errors['messages'] = $this->columnsShow($validate->errors());
