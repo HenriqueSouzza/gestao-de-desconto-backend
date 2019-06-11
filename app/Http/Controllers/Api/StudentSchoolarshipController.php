@@ -15,7 +15,7 @@ use App\Models\StudentSchoolarship;
 use App\TotvsTraits\TotvsQuerySqlTrait;
 
 use App\TotvsTraits\TotvsSaveRecordTrait;
-
+use App\Models\DiscountMarginSchoolarship;
 
 class StudentSchoolarShipController extends Controller
 {
@@ -538,6 +538,11 @@ class StudentSchoolarShipController extends Controller
 
     $newArray = [];
     $count = 0;    
+    $discounts = DiscountMarginSchoolarship::get();
+    $names = [];
+    foreach($discounts as $discount){
+        $names[$discount->id_rm_schoolarship_discount_margin_schoolarship] = $discount->id_rm_schoolarship_name_discount_margin_schoolarship;
+    }
     foreach($schoolarships as $schoolarship)
     {
       $temp = [
@@ -545,6 +550,7 @@ class StudentSchoolarShipController extends Controller
           'CODCONTRATO'     => $schoolarship[$count]['id_rm_contract_student_schoolarship'],
           'IDPERLET'        => $schoolarship[$count]['id_rm_period_student_schoolarship'],
           'CODPERLET'       => $schoolarship[$count]['id_rm_period_code_student_schoolarship'],
+          'BOLSA'           => $names[$schoolarship[$count]['id_rm_schoolarship_student_schoolarship']], 
           'CODBOLSA'        => $schoolarship[$count]['id_rm_schoolarship_student_schoolarship'],                
           'DESCONTO'        => $schoolarship[$count]['value_student_schoolarship'],        
           'PARCELAINICIAL'  => $schoolarship[$count]['first_installment_student_schoolarship'],
