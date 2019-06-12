@@ -285,8 +285,7 @@ class StudentSchoolarShipController extends Controller
     
     $schoolarship = $this->getSchoolarship($request);
     $tempLocals = $this->getLocalSchoolarships($request);
-    $localScholarships = $this->schoolarshipToKeyContract($tempLocals);
-    dd($schoolarship);
+    $localScholarships = $this->schoolarshipToKeyContract($tempLocals);    
     $responseSoap = $this->formatResponse($requestSoap, $schoolarship, $localScholarships);
 
     $localStudents = [];
