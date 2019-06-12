@@ -246,9 +246,9 @@ class StudentSchoolarShipController extends Controller
 
     $requestSoap = (array) $this->query($name, $parameters);
   
-    $schoolarship       =  (array) $this->getSchoolarship($request);
+    $schoolarship       =  (array) $this->getSchoolarship($request);    
     $tempLocals         =  (array) $this->getLocalSchoolarships($request);    
-    $localScholarships  =  $this->schoolarshipToKeyContract($tempLocals);    
+    $localScholarships  =  $this->schoolarshipToKeyContract($tempLocals);      
     $responseSoap = $this->formatResponse($requestSoap, $schoolarship, $localScholarships);
     return $this->createResponse($responseSoap);
    
@@ -350,21 +350,19 @@ class StudentSchoolarShipController extends Controller
     $localScholarship = [];
     
     //verifica se possui o indice resultado e se o mesmo é um array caso for veio mais de um resultado caso contrario veio apenas um se retornar 0 é porque não houve resultado
-    $size = (isset($dataStudent['Resultado']) ? (is_array($dataStudent['Resultado']) ? count($dataStudent['Resultado']) : 1) : 0);
-  
+    $size = (isset($dataStudent['Resultado']) ? (is_array($dataStudent['Resultado']) ? count($dataStudent['Resultado']) : 1) : 0);    
     //caso so tenha um registro irá contar os objetos
     if(isset($dataStudent['Resultado']) && $size == 1)
     {
          $result = $dataStudent['Resultado'];
          $ra = (string) $result->RA;
          $contract = (string) $result->CODCONTRATO;
-       
+         
          //pesquisa se nas bolsas obtidas possui o RA do aluno 
          for($i = 0; $i <count($dataSchoolarship); $i++)
-         {
-            $dataSchoolarship[$i] = $dataSchoolarship;
-          
-             $data = (array) $dataSchoolarship[$i];
+         {                         
+            //  $dataSchoolarship[$i] = $dataSchoolarship;          
+             $data = $dataSchoolarship;
 
              if(in_array($ra, $data))
              {
@@ -390,8 +388,10 @@ class StudentSchoolarShipController extends Controller
         
     }
     //caso tenha mais de um aluno 
+    
     if(isset($dataStudent['Resultado']) && $size > 1)
     {
+        
         foreach($dataStudent['Resultado'] as $result)
         {
             $check = false;
@@ -400,6 +400,7 @@ class StudentSchoolarShipController extends Controller
             //pesquisa se nas bolsas obtidas possui o RA do aluno 
             for($i = 0; $i <count($dataSchoolarship); $i++)
             {
+                
                 $data = (array) $dataSchoolarship[$i];
                 //verificar o que ele faz com os outros itens do array
                 if(in_array($ra, $data))
@@ -488,8 +489,7 @@ class StudentSchoolarShipController extends Controller
                     'NOMEALUNO' => $request->nomealuno
                 ];
     
-    $requestSoap = (array) $this->query($name, $parameters);
-    
+    $requestSoap = (array) $this->query($name, $parameters);    
     return (isset($requestSoap['Resultado']) ? $requestSoap['Resultado'] : $requestSoap);
 
 
