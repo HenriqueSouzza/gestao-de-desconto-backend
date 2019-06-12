@@ -286,6 +286,7 @@ class StudentSchoolarShipController extends Controller
     $schoolarship = $this->getSchoolarship($request);
     $tempLocals = $this->getLocalSchoolarships($request);
     $localScholarships = $this->schoolarshipToKeyContract($tempLocals);
+    dd($schoolarship);
     $responseSoap = $this->formatResponse($requestSoap, $schoolarship, $localScholarships);
 
     $localStudents = [];
@@ -347,22 +348,26 @@ class StudentSchoolarShipController extends Controller
   {
     $beforeSchoolarship = [];
     $afterSchoolarship = [];
-    $localScholarship = [];        
+    $localScholarship = [];  
+
+    
+    if(!isset($dataStudent['Resultado'])){
+        return $this->response;
+    };        
     //verifica se possui o indice resultado e se o mesmo é um array caso for veio mais de um resultado caso contrario veio apenas um se retornar 0 é porque não houve resultado
     $size = is_array($dataStudent['Resultado']) ? count($dataStudent['Resultado']) :  1;
     //caso so tenha um registro irá contar os objetos
-    if(isset($dataStudent['Resultado']) && $size == 1)
-    {
-         $result = $dataStudent['Resultado'];
+    if($size == 1)
+    {        
+         $result = $dataStudent['Resultado'];         
          $ra = (string) $result->RA;
          $contract = (string) $result->CODCONTRATO;
          
          //pesquisa se nas bolsas obtidas possui o RA do aluno 
-         for($i = 0; $i < $size; $i++)
-         {                         
-            //  $dataSchoolarship[$i] = $dataSchoolarship;          
-             $data = $dataSchoolarship;
-
+         for($i = 0; $i < count($dataSchoolarship); $i++)
+         {                        
+             $data = (array)$dataSchoolarship[$i];  
+             
              if(in_array($ra, $data))
              {
                  //obtem as bolsas anteriores
@@ -388,9 +393,8 @@ class StudentSchoolarShipController extends Controller
     }
     //caso tenha mais de um aluno 
     
-    if(isset($dataStudent['Resultado']) && $size > 1)
-    {
-        
+    if($size > 1)
+    {        
         foreach($dataStudent['Resultado'] as $result)
         {
             $check = false;
