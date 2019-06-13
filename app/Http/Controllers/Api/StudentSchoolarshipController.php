@@ -797,7 +797,8 @@ class StudentSchoolarShipController extends Controller
     $parameters = [
         'CODFILIAL' => $request->codfilial, 
         'CODCURSO'  => $request->codcurso,
-        'MES'       => $request->mes, 
+        'MES_INICAL'       => $request->mes, 
+        'MES_FINAL'       => $request->mes, 
         'ANO'       => $request->ano
     ];
 
