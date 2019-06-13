@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(RoleUsersTableSeeder::class);
         $this->call(ConcessionPeriodsSeeder::class);
         $this->call(DiscountMarginSchoolarshipsTableSeeder::class);
+        $this->call(ActionsTableSeeder::class);
         //$this->call(CnecTableSeeder::class);
     }
 }

@@ -60,6 +60,8 @@ class DiscountMarginSchoolarshipsTableSeeder extends Seeder
 
             ['id_rm_establishment_discount_margin_schoolarship' => 169, 'id_rm_schoolarship_discount_margin_schoolarship' => 9, 'id_rm_schoolarship_name_discount_margin_schoolarship' => 'Desconto Comercial','id_rm_course_type_discount_margin_schoolarship' => 3, 'id_rm_modality_discount_margin_schoolarship' => 'P', 'id_rm_major_discount_margin_schoolarship' => 'GP011',              'id_rm_period_discount_margin_schoolarship' => 2419, 'id_rm_period_code_discount_margin_schoolarship' => '2019-2', 'max_value_discount_margin_schoolarship' => 30, 'is_exact_value_discount_margin_schoolarship'                       => false, 'fk_user' => 1, 'first_installment_discount_margin_schoolarship' => 2, 'last_installment_discount_margin_schoolarship' => 6],
             
+
+            ['id_rm_establishment_discount_margin_schoolarship' => 187, 'id_rm_schoolarship_discount_margin_schoolarship' => 9,  'id_rm_schoolarship_name_discount_margin_schoolarship' => 'Desconto Comercial','id_rm_course_type_discount_margin_schoolarship' => 3, 'id_rm_modality_discount_margin_schoolarship' => 'P', 'id_rm_major_discount_margin_schoolarship' => 'GP011', 'id_rm_period_discount_margin_schoolarship' => 2529, 'id_rm_period_code_discount_margin_schoolarship' => '2019-2',  'max_value_discount_margin_schoolarship' => 30, 'is_exact_value_discount_margin_schoolarship'              => false, 'fk_user' => 1, 'first_installment_discount_margin_schoolarship' => 1, 'last_installment_discount_margin_schoolarship' => 6]
         ];  
         
         $realData =[

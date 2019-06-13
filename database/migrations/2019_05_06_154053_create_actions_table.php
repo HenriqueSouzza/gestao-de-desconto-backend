@@ -16,9 +16,9 @@ class CreateActionsTable extends Migration
         Schema::create('actions', function (Blueprint $table) {
             $table->bigIncrements('id_action')->autoIncrement();
             $table->string('name_action', 100)->comment('Nome da ação que o usuario possa fazer');
-            $table->timestamp('created_at_user_branch')->useCurrent();
-            $table->timestamp('updated_at_user_branch')->nullable();
-            $table->timestamp('deleted_at_user_branch')->nullable();
+            $table->timestamp('created_at_action')->useCurrent();
+            $table->timestamp('updated_at_action')->nullable();
+            $table->timestamp('deleted_at_action')->nullable();
         });
     }
 
