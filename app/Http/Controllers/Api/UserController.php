@@ -221,7 +221,7 @@ class UserController extends Controller
      */
     public function callback(Request $request)
     {
-
+        
        try
         {
              $googleUser = Socialite::driver('google')->stateless()->user();

@@ -11,6 +11,9 @@ use Laravel\Passport\HasApiTokens;
 
 use App\Models\Role;
 
+use App\Models\Permission;
+
+
 class User extends Authenticatable
 {
     use Notifiable, SoftDeletes, HasApiTokens;
@@ -159,10 +162,7 @@ class User extends Authenticatable
      */
     public function hasPermission(Permission $permission)
     {
-    
-        return $this->hasAnyRoles($permission->roles);
-        
-        
+        return $this->hasAnyRoles($permission->roles); 
         
     }
     

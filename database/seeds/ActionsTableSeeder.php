@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\Role;
+use App\Models\Action;
 
 class ActionsTableSeeder extends Seeder
 {
@@ -12,12 +12,19 @@ class ActionsTableSeeder extends Seeder
      */
     public function run()
     {
-        $action = Role::create([
-            'name_actions'  => 'Inserção'
+        $action = Action::create([
+            'name_action'  => 'Inserção'
+        ]);
+        
+        $action = Action::create([
+            'name_action'  => 'Edição'            
         ]);
 
-        $action = Role::create([
-            'name_actions'  => 'Aprovação'            
+        $action = Action::create([
+            'name_action'  => 'Aprovação'            
+        ]);
+        $action = Action::create([
+            'name_action'  => 'Deleção'            
         ]);
 
     }
