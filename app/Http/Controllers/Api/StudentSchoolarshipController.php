@@ -512,6 +512,7 @@ class StudentSchoolarShipController extends Controller
             // caso seja apenas uma bolsa
             if(!isset($schoolarship[$count])){
                 $temp = [
+                    'ID'              => $schoolarship['id_student_schoolarship'],
                     'RA'              => $schoolarship['ra_rm_student_schoolarship'],
                     'CODCONTRATO'     => $schoolarship['id_rm_contract_student_schoolarship'],
                     'IDPERLET'        => $schoolarship['id_rm_period_student_schoolarship'],
