@@ -26,6 +26,9 @@ class ActionsTableSeeder extends Seeder
         $action = Action::create([
             'name_action'  => 'Deleção'            
         ]);
+        $action = Action::create([
+            'name_action'  => 'Tentativa de Aprovação'            
+        ]);
 
     }
 }
