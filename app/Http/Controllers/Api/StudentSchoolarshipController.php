@@ -186,9 +186,11 @@ class StudentSchoolarShipController extends Controller
 
         return $this->model->where([
             'id_rm_establishment_student_schoolarship' => $request->codfilial,
-            'id_rm_period_code_student_schoolarship'   => $request->codperlet,
+            'id_rm_period_code_student_schoolarship'   => $request->codperlet,            
             'send_rm_student_schoolarship'             => false
-        ])->get()->toArray();
+        ])
+        ->whereNull('id_rm_student_schoolarship')
+        ->get()->toArray();
     }
 
 
@@ -510,6 +512,7 @@ class StudentSchoolarShipController extends Controller
             // caso seja apenas uma bolsa
             if(!isset($schoolarship[$count])){
                 $temp = [
+                    'ID'              => $schoolarship['id_student_schoolarship'],
                     'RA'              => $schoolarship['ra_rm_student_schoolarship'],
                     'CODCONTRATO'     => $schoolarship['id_rm_contract_student_schoolarship'],
                     'IDPERLET'        => $schoolarship['id_rm_period_student_schoolarship'],
@@ -543,7 +546,7 @@ class StudentSchoolarShipController extends Controller
         }
         return $newArray;
     }
-    public function getLog(){        
+    public function getLog(){         
         return $this->createResponse(SchoolarshipWorkflow::all());
     }
 
@@ -636,18 +639,57 @@ class StudentSchoolarShipController extends Controller
                 if ($discount->send_rm) {   //caso passe o idbolsaaluno o registro irá ser atualizado se não sera criado
                     $studentSchoolarship = (isset($discount->student_schoolarship) ? $discount->student_schoolarship : 'xsi');
                     //dd($studentSchoolarship);
-                    $dataServer = 'EduBolsaAlunoData';
+                    $dataServer = 'EduBolsaAlunoData';                   
+                    if($discount->first_installment == 1){
+                        $xmlRequestServico1 = [
+                            'SBolsaAluno' => [
+                                ['IDBOLSAALUNO'   => $studentSchoolarship],
+                                ['CODCOLIGADA'    => 1],
+                                ['PARCELAINICIAL' => '1'],
+                                ['PARCELAFINAL'   => '1'],
+                                ['RA'             => $discount->ra],
+                                ['IDPERLET'       => $discount->period],
+                                ['CODCONTRATO'    => $discount->contract],
+                                ['CODBOLSA'       => $discount->schoolarship],
+                                ['CODSERVICO'     => 1],
+                                ['DESCONTO'       => $discount->value],
+                                ['TIPODESC'       => 'P'],
+                                ['CODUSUARIO'     => 'wsgestaodedesconto'],
+                                ['ATIVA'          => 'S']
+    
+                            ],
+                        ];
+                        $result = (string)$this->saveRecord($dataServer, $xmlRequestServico1);
+                        $search = (string)explode(':', $result)[1];                    
+                        if (!strchr($search, ';')) {
+                            $requestSoap[$discount->ra]['erro'] = "(E001) ERRO AO SALVAR NA PRIMEIRA PARCELA";                        
+                            $id = $action->getData()->response->content->id;
+                            $delete = $this->destroy($id);
+                            $requestSoap[$discount->ra][] = $delete->getData()->response->content;
+                            return $requestSoap;
+                            
+                        }
+                        else{
+                            $id = $action->getData()->response->content->id;                        
+                            $discount->student_schoolarship = $studentSchoolarship;
+                            $discount = (array)$discount;
+                            $dataUpdate = new Request($discount);
+                            $discount = (object)$discount;                            
+                            $update = $this->update($dataUpdate, $id);    
+                        }
+                    }
+                     
                     $xmlRequest = [
                         'SBolsaAluno' => [
                             ['IDBOLSAALUNO'   => $studentSchoolarship],
                             ['CODCOLIGADA'    => 1],
-                            ['PARCELAINICIAL' => $discount->first_installment],
+                            ['PARCELAINICIAL' => $discount->first_installment == '1' ? '2' : $discount->first_installment],
                             ['PARCELAFINAL'   => $discount->last_installment],
                             ['RA'             => $discount->ra],
                             ['IDPERLET'       => $discount->period],
                             ['CODCONTRATO'    => $discount->contract],
                             ['CODBOLSA'       => $discount->schoolarship],
-                            ['CODSERVICO'     => $discount->service],
+                            ['CODSERVICO'     => 2],
                             ['DESCONTO'       => $discount->value],
                             ['TIPODESC'       => 'P'],
                             ['CODUSUARIO'     => 'wsgestaodedesconto'],
@@ -657,7 +699,6 @@ class StudentSchoolarShipController extends Controller
                     ];
 
                     $result = (string)$this->saveRecord($dataServer, $xmlRequest);
-
                     //separa a string em array tendo o denominador :
                     $search = (string)explode(':', $result)[1];
                     //faz busca na string caso não tenha os dois pontos significa que a resposta não foi 1;215456(CODCOLIGADA;IDSBOLSAALUNO)
@@ -674,6 +715,14 @@ class StudentSchoolarShipController extends Controller
                         //retira as aspas duplas da mensagem 
                         $error = str_replace('"', '', $error);
                         $requestSoap[$discount->ra]['erro'] = $error;
+                        // SchoolarshipWorkflow::create(
+                        //     [
+                        //         'fk_student_schoolarship'      => $discount->id,
+                        //         'fk_action'                    => 5, // tentativa de insercao
+                        //         'fk_user'                      => $request->user, //TODO: Pegar id do usuario
+                        //         'detail_schoolarship_workflow' => $error
+                        //     ]
+                        // );
                         //excluir o registro inserido por meio da API
                         $id = $action->getData()->response->content->id;
                         $delete = $this->destroy($id);
@@ -692,19 +741,20 @@ class StudentSchoolarShipController extends Controller
                         $dataUpdate = new Request($discount);
                         $discount = (object)$discount;
                         //atualiza o registro inserido acima
-                        $update = $this->update($dataUpdate, $id);
-                        SchoolarshipWorkflow::create(
-                            [
-                                'fk_student_schoolarship'      => $discount->id,
-                                'fk_action'                    => $update ? 2 : 1, // CRIACAO
-                                'fk_user'                      => 1, //TODO: Pegar id do usuario
-                                'detail_schoolarship_workflow' => 'Detalhe sobre o passo'
-                            ]
-                        );
+                        $update = $this->update($dataUpdate, $id);                        
                         //obtem a resposta (API) por meio da classe jsonresponse por meio do getData()
                         $requestSoap[$discount->ra][] = $update->getData()->response->content;
                     }
                 } else {
+                    $id = $action->getData()->response->content->id;
+                    SchoolarshipWorkflow::create(
+                        [
+                            'fk_student_schoolarship'      => $id,
+                            'fk_action'                    => $update ? 2 : 1, // CRIACAO
+                            'fk_user'                      => 1, //TODO: Pegar id do usuario
+                            'detail_schoolarship_workflow' => 'exemplo'
+                        ]
+                    );
 
                     $requestSoap[$discount->ra][] = $action->getData()->response->content;
                 }
