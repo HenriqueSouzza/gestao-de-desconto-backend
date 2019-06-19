@@ -221,8 +221,8 @@ class StudentSchoolarShipController extends Controller
             'codpolo'   => 'required|string',
             'codperlet' => 'required',
             'ra'        => 'required|numeric',
-            'nomealuno' => 'required|'
-            // 'tipoaluno' => 'required|'
+            'nomealuno' => 'required|',
+            'tipoaluno' => 'required|'
         ]);
 
         if ($validator->fails()) {
@@ -241,7 +241,7 @@ class StudentSchoolarShipController extends Controller
             'CODPERLET' => $request->codperlet,
             'RA'        => $request->ra,
             'NOMEALUNO' => $request->nomealuno,
-            'TIPOALUNO' => "-1"
+            'TIPOALUNO' => $request->tipoaluno
         ];
 
         $requestSoap = (array)$this->query($name, $parameters);
