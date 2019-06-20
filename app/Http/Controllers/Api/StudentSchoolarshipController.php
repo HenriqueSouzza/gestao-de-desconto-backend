@@ -186,11 +186,11 @@ class StudentSchoolarShipController extends Controller
 
         return $this->model->where([
             'id_rm_establishment_student_schoolarship' => $request->codfilial,
-            'id_rm_period_code_student_schoolarship'   => $request->codperlet,            
+            'id_rm_period_code_student_schoolarship'   => $request->codperlet,
             'send_rm_student_schoolarship'             => false
         ])
-        ->whereNull('id_rm_student_schoolarship')
-        ->get()->toArray();
+            ->whereNull('id_rm_student_schoolarship')
+            ->get()->toArray();
     }
 
 
@@ -221,7 +221,8 @@ class StudentSchoolarShipController extends Controller
             'codpolo'   => 'required|string',
             'codperlet' => 'required',
             'ra'        => 'required|numeric',
-            'nomealuno' => 'required|'
+            'nomealuno' => 'required|',
+            'tipoaluno' => 'required|'
         ]);
 
         if ($validator->fails()) {
@@ -239,11 +240,11 @@ class StudentSchoolarShipController extends Controller
             'CODPOLO'   => $request->codpolo,
             'CODPERLET' => $request->codperlet,
             'RA'        => $request->ra,
-            'NOMEALUNO' => $request->nomealuno
+            'NOMEALUNO' => $request->nomealuno,
+            'TIPOALUNO' => $request->tipoaluno
         ];
 
         $requestSoap = (array)$this->query($name, $parameters);
-
         $schoolarship       =  (array)$this->getSchoolarship($request);
         $tempLocals         =  (array)$this->getLocalSchoolarships($request);
         $localScholarships  =  $this->schoolarshipToKeyContract($tempLocals);
@@ -354,9 +355,24 @@ class StudentSchoolarShipController extends Controller
             $contract = (string)$result->CODCONTRATO;
 
             //pesquisa se nas bolsas obtidas possui o RA do aluno 
-            for ($i = 0; $i < count($dataSchoolarship); $i++) {
-                $data = (array)$dataSchoolarship[$i];
+            if (array_key_exists(0, $dataSchoolarship)) {
+                for ($i = 0; $i < count($dataSchoolarship); $i++) {
+                    $data = (array)$dataSchoolarship[$i];
+                    if (in_array($ra, $data)) {
+                        //obtem as bolsas anteriores
+                        if (in_array('ANTERIOR', $data)) {
+                            $beforeSchoolarship[] = $data;
+                        } else {
+                            $afterSchoolarship[] = $data;
+                        }
+                    }
 
+                    if (array_key_exists($contract, $localScholarships)) {
+                        $localScholarship[$ra] = [$localScholarships[$contract]];
+                    }
+                }
+            } else {
+                $data = (array)$dataSchoolarship;
                 if (in_array($ra, $data)) {
                     //obtem as bolsas anteriores
                     if (in_array('ANTERIOR', $data)) {
@@ -370,7 +386,6 @@ class StudentSchoolarShipController extends Controller
                     $localScholarship[$ra] = [$localScholarships[$contract]];
                 }
             }
-
             $this->response[] = $this->printResponse($result, $beforeSchoolarship, $afterSchoolarship, $localScholarship);
         }
         //caso tenha mais de um aluno 
@@ -507,10 +522,10 @@ class StudentSchoolarShipController extends Controller
         foreach ($discounts as $discount) {
             $names[$discount->id_rm_schoolarship_discount_margin_schoolarship] = $discount->id_rm_schoolarship_name_discount_margin_schoolarship;
         }
-        
+
         foreach ($schoolarships as $schoolarship) {
             // caso seja apenas uma bolsa
-            if(!isset($schoolarship[$count])){
+            if (!isset($schoolarship[$count])) {
                 $temp = [
                     'ID'              => $schoolarship['id_student_schoolarship'],
                     'RA'              => $schoolarship['ra_rm_student_schoolarship'],
@@ -541,12 +556,11 @@ class StudentSchoolarShipController extends Controller
             ];
             array_push($newArray, $temp);
             $count++;
-        
-           
         }
         return $newArray;
     }
-    public function getLog(){         
+    public function getLog()
+    {
         return $this->createResponse(SchoolarshipWorkflow::all());
     }
 
@@ -639,8 +653,8 @@ class StudentSchoolarShipController extends Controller
                 if ($discount->send_rm) {   //caso passe o idbolsaaluno o registro irá ser atualizado se não sera criado
                     $studentSchoolarship = (isset($discount->student_schoolarship) ? $discount->student_schoolarship : 'xsi');
                     //dd($studentSchoolarship);
-                    $dataServer = 'EduBolsaAlunoData';                   
-                    if($discount->first_installment == 1){
+                    $dataServer = 'EduBolsaAlunoData';
+                    if ($discount->first_installment == 1) {
                         $xmlRequestServico1 = [
                             'SBolsaAluno' => [
                                 ['IDBOLSAALUNO'   => $studentSchoolarship],
@@ -656,29 +670,27 @@ class StudentSchoolarShipController extends Controller
                                 ['TIPODESC'       => 'P'],
                                 ['CODUSUARIO'     => 'wsgestaodedesconto'],
                                 ['ATIVA'          => 'S']
-    
+
                             ],
                         ];
                         $result = (string)$this->saveRecord($dataServer, $xmlRequestServico1);
-                        $search = (string)explode(':', $result)[1];                    
+                        $search = (string)explode(':', $result)[1];
                         if (!strchr($search, ';')) {
-                            $requestSoap[$discount->ra]['erro'] = "(E001) ERRO AO SALVAR NA PRIMEIRA PARCELA";                        
+                            $requestSoap[$discount->ra]['erro'] = "(E001) ERRO AO SALVAR NA PRIMEIRA PARCELA";
                             $id = $action->getData()->response->content->id;
                             $delete = $this->destroy($id);
                             $requestSoap[$discount->ra][] = $delete->getData()->response->content;
                             return $requestSoap;
-                            
-                        }
-                        else{
-                            $id = $action->getData()->response->content->id;                        
+                        } else {
+                            $id = $action->getData()->response->content->id;
                             $discount->student_schoolarship = $studentSchoolarship;
                             $discount = (array)$discount;
                             $dataUpdate = new Request($discount);
-                            $discount = (object)$discount;                            
-                            $update = $this->update($dataUpdate, $id);    
+                            $discount = (object)$discount;
+                            $update = $this->update($dataUpdate, $id);
                         }
                     }
-                     
+
                     $xmlRequest = [
                         'SBolsaAluno' => [
                             ['IDBOLSAALUNO'   => $studentSchoolarship],
@@ -741,7 +753,7 @@ class StudentSchoolarShipController extends Controller
                         $dataUpdate = new Request($discount);
                         $discount = (object)$discount;
                         //atualiza o registro inserido acima
-                        $update = $this->update($dataUpdate, $id);                        
+                        $update = $this->update($dataUpdate, $id);
                         //obtem a resposta (API) por meio da classe jsonresponse por meio do getData()
                         $requestSoap[$discount->ra][] = $update->getData()->response->content;
                     }
