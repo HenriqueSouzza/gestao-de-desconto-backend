@@ -561,7 +561,7 @@ class StudentSchoolarShipController extends Controller
         return $newArray;
     }
     public function getLog()
-    {        
+    {
         return $this->createResponse(StudentSchoolarship::with('workflows')->withTrashed()->get());
     }
 
@@ -613,14 +613,6 @@ class StudentSchoolarShipController extends Controller
                 $error = "O Contrato {$discount['contract']} possui parcelas geradas, não sendo possível lançar o desconto";
                 $requestSoap[$discount['ra']][] = $discount;
                 $requestSoap[$discount['ra']]['erro'] = $error;
-                SchoolarshipWorkflow::create(
-                    [
-                        'fk_student_schoolarship'      => $discount->id,
-                        'fk_action'                    => 5, // FALHA
-                        'fk_user'                      => 1, //TODO: Pegar id do usuario
-                        'detail_schoolarship_workflow' => $error
-                    ]
-                );
             } else {
 
                 //identificar qual ra esta faltando o dado, fazer o map das colunas e gravar na tabela, depois enviar para o totvs
@@ -650,16 +642,16 @@ class StudentSchoolarShipController extends Controller
                                 ['ATIVA'          => 'S']
 
                             ],
-                        ];                        
+                        ];
                         $result = (string)$this->saveRecord($dataServer, $xmlRequest);
                         $mensagem = $this->tratarMensagemRM($result);
                         if (!is_numeric($mensagem)) {
-                            $requestSoap[$discount->ra]['erro'] = $mensagem;                                                        
-                            $requestSoap[$discount->ra][] = $discount;         
-                            $hasError = 1;                   
+                            $requestSoap[$discount->ra]['erro'] = $mensagem;
+                            $requestSoap[$discount->ra][] = $discount;
+                            $hasError = 1;
                             break;
-                        } else {                         
-                            $action = $update ? $this->update($data, $discount->id) : $this->store($data);   
+                        } else {
+                            $action = $update ? $this->update($data, $discount->id) : $this->store($data);
                             //fazer o update do registro passando o id da bolsa aluno
                             $id = $action->getData()->response->content->id;
                             //adiciona o id da bolsa do aluno junto aos dados enviados
@@ -674,16 +666,15 @@ class StudentSchoolarShipController extends Controller
                         }
                     }
                     $detail = $i == $discount->last_installment && !$hasError ? 'Todas parcelas inseridas' : 'Inserido Parcialmente';
-                    SchoolarshipWorkflow::create(
-                        [
+                    if ($discount->id)
+                        SchoolarshipWorkflow::create([
                             'fk_student_schoolarship'      => $discount->id,
                             'fk_action'                    => 3, // Aprovado
                             'fk_user'                      => 1, //TODO: Pegar id do usuario
                             'detail_schoolarship_workflow' => $detail
-                        ]
-                    );
+                        ]);
                 } else {
-                    $action = $update ? $this->update($data, $discount->id) : $this->store($data);   
+                    $action = $update ? $this->update($data, $discount->id) : $this->store($data);
                     $id = $action->getData()->response->content->id;
                     $requestSoap[$discount->ra][] = $action->getData()->response->content;
                     SchoolarshipWorkflow::create(
@@ -783,7 +774,8 @@ class StudentSchoolarShipController extends Controller
         return $this->createResponse($requestSoap['Resultado']);
     }
 
-    public function rejectScholarships(Request $request){
+    public function rejectScholarships(Request $request)
+    {
         $validator = Validator::make($request->all(), [
             'discounts' => 'required'
         ]);
@@ -792,7 +784,7 @@ class StudentSchoolarShipController extends Controller
             $error['error']   = true;
             return  $this->createResponse($error, 422);
         }
-        foreach($request->discounts as $discount){            
+        foreach ($request->discounts as $discount) {
             SchoolarshipWorkflow::create(
                 [
                     'fk_student_schoolarship'      => $discount['id'],
@@ -803,6 +795,5 @@ class StudentSchoolarShipController extends Controller
             );
             $this->destroy($discount['id']);
         }
-
     }
 }
