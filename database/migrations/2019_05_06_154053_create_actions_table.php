@@ -14,11 +14,11 @@ class CreateActionsTable extends Migration
     public function up()
     {
         Schema::create('actions', function (Blueprint $table) {
-            $table->bigIncrements('id_actions')->autoIncrement();
-            $table->string('name_actions', 100)->comment('Nome da ação que o usuario possa fazer');
-            $table->timestamp('created_at_user_branch')->useCurrent();
-            $table->timestamp('updated_at_user_branch')->nullable();
-            $table->timestamp('deleted_at_user_branch')->nullable();
+            $table->bigIncrements('id_action')->autoIncrement();
+            $table->string('name_action', 100)->comment('Nome da ação que o usuario possa fazer');
+            $table->timestamp('created_at_action')->useCurrent();
+            $table->timestamp('updated_at_action')->nullable();
+            $table->timestamp('deleted_at_action')->nullable();
         });
     }
 

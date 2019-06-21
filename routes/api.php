@@ -19,23 +19,35 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-Route::group(['middleware' => ['auth:api']], function(){
+Route::group(['middleware' => ['auth:api' /*, 'check.user.acl'*/]], function(){
     
     Route::resources([
-        'permissions'      => 'Api\PermissionController',
-        'permission-roles' => 'Api\PermissionRoleController',
-        'roles'            => 'Api\RoleController',
-        'role-users'       => 'Api\RoleUserController',
-        'users'            => 'Api\UserController',
-        'totvs-queries'    => 'Api\TotvsQuerySqlController'
+        'permissions'                 => 'Api\PermissionController',
+        'permission-roles'            => 'Api\PermissionRoleController',
+        'roles'                       => 'Api\RoleController',        
+        'role-users'                  => 'Api\RoleUserController',
+        'student-schoolarships'       => 'Api\StudentSchoolarshipController',
+        'users'                       => 'Api\UserController',
+        'totvs-queries'               => 'Api\TotvsQuerySqlController'
     ]);
 
     Route::get('/permissions/update/all', 'Api\PermissionController@updateAllPermissions');
+    Route::post('/concession-periods/list', 'Api\ConcessionPeriodController@listPeriods'); // lista de periodos letivos dado filial, e modalidade
+    Route::post('/discount-margin-schoolarships/list', 'Api\DiscountMarginSchoolarshipController@listMargins'); // lista de periodos letivos dado filial, e modalidade
+    Route::post('/student-schoolarships/list-students', 'Api\StudentSchoolarShipController@getStudents');
+    Route::post('/student-schoolarships/list-local-students', 'Api\StudentSchoolarShipController@getLocalStudents');
+    Route::post('/student-schoolarships/students', 'Api\StudentSchoolarShipController@postSchoolarship');
+    Route::post('/student-schoolarships/profit', 'Api\StudentSchoolarShipController@getProfitCourse');
+    Route::post('/student-schoolarships/reject', 'Api\StudentSchoolarShipController@rejectScholarships');
+    Route::get('/log', 'Api\StudentSchoolarShipController@getLog');
+
+
+    Route::post('/totvs-queries/query', 'Api\TotvsQuerySqlController@totvsQuery');
+    Route::post('/totvs-queries/read', 'Api\TotvsQuerySqlController@read');
+    Route::post('/totvs-queries/save', 'Api\TotvsQuerySqlController@save');
     
 });
-
-
+    
 Route::post('login', 'Api\UserController@login');
 Route::post('register', 'Api\UserController@register');
 
@@ -48,79 +60,4 @@ Route::group(['middleware' => 'auth:api'], function() {
 });
 
 
-Route::get('google', function(){
-    $url = \Socialite::driver('google')->stateless()->setScopes(['openid', 'email'])->redirect()->getTargetUrl();
-  
-    //$google = \Socialite::with('google')->stateless()->user();
-    $google = \Socialite::driver('google')->stateless()->getTokenUrl();
-    dd($google);
-   
-});
 
-
-
-Route::get('soap-tcu', function(){
-
-    $client = new \Zend\Soap\Client('http://contas.tcu.gov.br/debito/CalculoDebito?wsdl');
-
-    //obtendo informações do servidor SOAP
-    echo "informações do servidor SOAP: ";
-    print_r($client->getOptions());
-
-    //obtem quais são as funções
-    echo "funcionalidades/recursos: ";
-    print_r($client->getFunctions());
-
-    //obtem os tipos de dados(struct) dos recursos (especificação dos recursos)
-    echo "Tipos:";
-    print_r($client->getTypes());
-
-    //echo "Consumo/Resultado: ";
-
-    //RPC - Chamada de procedimento remoto
-
-    print_r($client->obterSaldoAtualizado([
-        'parcelas' => [
-            'parcela' => [
-                'data' => '1995-01-01', //data da divida,
-                'tipo' => 'D',
-                'valor'=> 35
-            ],
-        ],
-        'aplicaJuros'     => true,
-        'dataAtualizacao' => '2019-02-20'
-
-    ]));
-
-
-});
-
-Route::get('totvs', function (){
-
-    $client = new \Zend\Soap\Client('http://10.254.44.175/TOTVSBusinessConnect/wsConsultaSQL.asmx?wsdl', ['login' => 'wsgestaodedesconto', 'password' => 'MjAxOUBjbmVjMDE=']);
-
-    $params = [
-        'codSentenca'=> 'WEBS001', // SELECT CHAPA , NOME FROM PFUNC
-        'codColigada'=>'1',         
-        'codAplicacao'=>'V',         
-        'parameters'=>'CPF=04203638151'       
-    ];
-
-    //obtendo informações do servidor SOAP
-   /* echo "informações do servidor SOAP: ";
-    print_r($client->getOptions());
-
-    //obtem quais são as funções
-    echo "funcionalidades/recursos: ";
-    print_r($client->getFunctions());
-
-    //obtem os tipos de dados(struct) dos recursos (especificação dos recursos)
-    echo "Tipos:";
-    print_r($client->getTypes());*/
-
-    $result = ($client->RealizarConsultaSQL($params));
-    $response = simplexml_load_string($result->RealizarConsultaSQLResult);
-
-    return json_encode($response->Resultado);
-
-});

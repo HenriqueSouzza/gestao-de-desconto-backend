@@ -9,7 +9,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Passport\HasApiTokens;
 
-use App\Models\RoleUser;
+use App\Models\Role;
+
+use App\Models\Permission;
+
 
 class User extends Authenticatable
 {
@@ -70,7 +73,7 @@ class User extends Authenticatable
      /**
       * <b>primaryKey</b> Informa qual a é a chave primaria da tabela
       */
-     protected $primaryKey = "id";
+     protected $primaryKey = 'id';
 
     /**
      * <b>dates</b> Serve para tratar todos os campos de data para serem também um objeto do tipo Carbon(biblioteca de datas)
@@ -136,5 +139,50 @@ class User extends Authenticatable
          return $this->primaryKey;
      }
 
-     
+
+    /**
+     * <b>roles</b> Metodo responsável por realizar o relacionamento de muitos para muitos entre as tabelas de users, roles e users_roles
+     * Sendo o primeiro parametro a model e o segundo a tabela
+     */
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'role_users', 'fk_user', 'fk_role');
+    }
+
+
+
+    ///////////////////////////////////////////////////////////////////
+    //////////////////////// ACL METHODS //////////////////////////////
+    ///////////////////////////////////////////////////////////////////
+       
+    /**
+     * <b>hasPermission</b> Recupera todas as permissões atribuidas a um papel
+     * exemplo: permissão visualizar papel: administrador  
+     * @param Permission $permission
+     */
+    public function hasPermission(Permission $permission)
+    {
+        return $this->hasAnyRoles($permission->roles); 
+        
+    }
+    
+    /**
+     * <b>hasAnyRoles</b> Verifica se o usuário que esta logado tem a permissão adequada para realizar o acesso 
+     *
+     * @param type $roles
+     */
+    public function hasAnyRoles($roles)
+    {
+        // So cai nesse if, se um ou mais papeis,for passado
+        if(is_array($roles) || is_object($roles))
+        {
+        
+    
+            return !! $roles->intersect($this->roles)->count();
+          
+          
+        }
+        return $this->roles->contains('name_role', $roles);
+    }
+
 }
