@@ -38,6 +38,8 @@ Route::group(['middleware' => ['auth:api', 'check.user.acl']], function(){
     Route::post('/student-schoolarships/list-local-students', 'Api\StudentSchoolarShipController@getLocalStudents');
     Route::post('/student-schoolarships/students', 'Api\StudentSchoolarShipController@postSchoolarship');
     Route::post('/student-schoolarships/profit', 'Api\StudentSchoolarShipController@getProfitCourse');
+    Route::post('/student-schoolarships/reject', 'Api\StudentSchoolarShipController@rejectScholarships');
+    Route::get('/log', 'Api\StudentSchoolarShipController@getLog');
 
 
     Route::post('/totvs-queries/query', 'Api\TotvsQuerySqlController@totvsQuery');

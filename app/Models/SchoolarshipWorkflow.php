@@ -82,6 +82,8 @@ class SchoolarshipWorkflow extends Model
     protected $hidden  = [
         
     ];    
+    
+
     /**
      * <b>getPrimaryKey</b> Método responsável em retornar o nome da primaryKey.
      * OBS: Não é recomendado que este atributo seja publico, por isso foi realizado o encapsulamento
@@ -90,7 +92,7 @@ class SchoolarshipWorkflow extends Model
     {
         return $this->primaryKey;
     }
-    public function schoolarships(){
+    public function schoolarship(){
         return $this->belongsTo(StudentSchoolarship::class, 'fk_student_schoolarship', 'id_student_schoolarship');
     }
     public function user(){

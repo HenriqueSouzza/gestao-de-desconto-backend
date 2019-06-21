@@ -12,14 +12,14 @@ class ImportBolsas extends Command
      *
      * @var string
      */
-    protected $signature = 'import:bolsas';
+    protected $signature = 'import:bolsas {filename}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Faz importacao das bolsas passando nome do arquivo/ utilize "import:bolsas clear" para limpar todas';
 
     /**
      * Create a new command instance.
@@ -38,11 +38,17 @@ class ImportBolsas extends Command
      */   
     public function handle()
     {
-        echo 'Importando bolsas\n';
+        
         $row = 0;
         $insert = [[]];
-
-        if (($fp = fopen("./app/Console/Commands/bolsas.CSV", "r")) !== FALSE) {
+        $fileName = $this->argument('filename');
+        if($fileName == 'clear'){
+            echo 'Limpando as bolsas';
+            DB::table('discount_margin_schoolarships')->truncate();
+            return;
+        }
+        echo 'Importando bolsas\n';
+        if (($fp = fopen("./app/Console/Commands/".$fileName, "r")) !== FALSE) {
             $data = fgetcsv($fp, 0, ";");  // lendo os headers
             while (($data = fgetcsv($fp, 0, ";")) !== FALSE) {
                 if ($data[9] != '') {

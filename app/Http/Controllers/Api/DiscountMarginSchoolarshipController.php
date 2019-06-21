@@ -77,7 +77,7 @@ class DiscountMarginSchoolarshipController extends Controller
                          ->get();
         
         
-        return $this->createResponse($margins, 201);
+        return $this->createResponse($margins, 200);
     }
 
     /**
