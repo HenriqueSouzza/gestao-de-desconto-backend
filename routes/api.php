@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['middleware' => ['auth:api', 'check.user.acl']], function(){
+Route::group(['middleware' => ['auth:api' /*, 'check.user.acl'*/]], function(){
     
     Route::resources([
         'permissions'                 => 'Api\PermissionController',
