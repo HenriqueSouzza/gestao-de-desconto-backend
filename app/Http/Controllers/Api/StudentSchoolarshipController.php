@@ -543,6 +543,7 @@ class StudentSchoolarShipController extends Controller
             }
             // caso tenha varias bolsas locais
             $temp = [
+                'ID'              => $schoolarship[$count]['id_student_schoolarship'],
                 'RA'              => $schoolarship[$count]['ra_rm_student_schoolarship'],
                 'CODCONTRATO'     => $schoolarship[$count]['id_rm_contract_student_schoolarship'],
                 'IDPERLET'        => $schoolarship[$count]['id_rm_period_student_schoolarship'],
@@ -561,35 +562,12 @@ class StudentSchoolarShipController extends Controller
     }
     public function getLog()
     {
-        return $this->createResponse(SchoolarshipWorkflow::all());
+        return $this->createResponse(StudentSchoolarship::with('workflows')->withTrashed()->get());
     }
 
     /**
-     * <b>postSchoolarship</b> Método responsável por cadastrar as bolsas recebidas no banco de dados da API e envia 
-     * a requisição para o Webservice (dataserver método SaveRecord). Para realizar esta ação recebe a requisição no seguinte formato:
-     * 	"discounts" : {
-     *   "0":{ (chave do json)
-     *  	"ra" : "02112385", (matricula do aluno)
-     *	"establishment" : 169, (filial/estabelecimento)
-     *	"schoolarship" : "2", (bolsa)
-     *	"schoolarship_order": "1", (ordem da bolsa)
-     *	"value" : "25", (valor da bolsa)
-     *	"first_installment" : 4,(parcela inicial)
-     *	"last_installment": 4, (parcela final)
-     *	"service" : 2, (codigo do serviço)
-     *	"period" : "2272", (periodo letivo)
-     *	"contract" : "393445", (codigo do contrato)
-     *	"habilitation" : 2092, (id da habilitação)
-     *	"modality_major" : 2, (código da modalidade)
-     *	"course_type" : 3, (código do tipo de curso)
-     *	"detail" : "boolsa", (detalhes da bolsa)
-     *	"send_rm" : true, (se foi enviado ou não para o RM TOTVS)
-     *	"active" : true (se a bolsa esta ativa ou não)
-     *  }
-     *
      * @param Request $request (com os dados acima no formato JSON)
-     * @return array $requestSoap
-     * }
+     * @return array $requestSoap     * 
      */
     protected function postSchoolarship(Request $request)
     {
@@ -626,13 +604,11 @@ class StudentSchoolarShipController extends Controller
             if ($validator->fails()) {
                 $error['message'] = $validator->errors();
                 $error['error']   = true;
-
                 return  $this->createResponse($error, 422);
             }
 
             //verificar se o contrato possui parcelas em abertos
             $installments = $this->getInstallmentContract($discount['first_installment'], $discount['last_installment'], $discount['contract']);
-
             if ((string)$installments->POSSUI_LANCAMENTO == 1) {
                 $error = "O Contrato {$discount['contract']} possui parcelas geradas, não sendo possível lançar o desconto";
                 $requestSoap[$discount['ra']][] = $discount;
@@ -641,31 +617,25 @@ class StudentSchoolarShipController extends Controller
 
                 //identificar qual ra esta faltando o dado, fazer o map das colunas e gravar na tabela, depois enviar para o totvs
                 $data = new Request($discount);
+                $hasError = 0;
                 $discount = (Object)$discount;
-                // dd($rule = $this->model->ruleDuplicateSchoolarship($discount->ra, $discount->contract, 
-                //                         $discount->schoolarship, $discount->period, $discount->first_installment, $discount->last_installment));
-
-
                 $update = isset($discount->id);
-
-                $action = $update ? $this->update($data, $discount->id) : $this->store($data);
-
                 if ($discount->send_rm) {   //caso passe o idbolsaaluno o registro irá ser atualizado se não sera criado
                     $studentSchoolarship = (isset($discount->student_schoolarship) ? $discount->student_schoolarship : 'xsi');
-                    //dd($studentSchoolarship);
                     $dataServer = 'EduBolsaAlunoData';
-                    if ($discount->first_installment == 1) {
-                        $xmlRequestServico1 = [
+                    for ($i = $discount->first_installment; $i <= $discount->last_installment; $i++) {
+
+                        $xmlRequest = [
                             'SBolsaAluno' => [
                                 ['IDBOLSAALUNO'   => $studentSchoolarship],
                                 ['CODCOLIGADA'    => 1],
-                                ['PARCELAINICIAL' => '1'],
-                                ['PARCELAFINAL'   => '1'],
+                                ['PARCELAINICIAL' => $i],
+                                ['PARCELAFINAL'   => $i],
                                 ['RA'             => $discount->ra],
                                 ['IDPERLET'       => $discount->period],
                                 ['CODCONTRATO'    => $discount->contract],
                                 ['CODBOLSA'       => $discount->schoolarship],
-                                ['CODSERVICO'     => 1],
+                                ['CODSERVICO'     => $i == 1 ? 1 : 2],
                                 ['DESCONTO'       => $discount->value],
                                 ['TIPODESC'       => 'P'],
                                 ['CODUSUARIO'     => 'wsgestaodedesconto'],
@@ -673,109 +643,78 @@ class StudentSchoolarShipController extends Controller
 
                             ],
                         ];
-                        $result = (string)$this->saveRecord($dataServer, $xmlRequestServico1);
-                        $search = (string)explode(':', $result)[1];
-                        if (!strchr($search, ';')) {
-                            $requestSoap[$discount->ra]['erro'] = "(E001) ERRO AO SALVAR NA PRIMEIRA PARCELA";
-                            $id = $action->getData()->response->content->id;
-                            $delete = $this->destroy($id);
-                            $requestSoap[$discount->ra][] = $delete->getData()->response->content;
-                            return $requestSoap;
+                        $result = (string)$this->saveRecord($dataServer, $xmlRequest);
+                        $mensagem = $this->tratarMensagemRM($result);
+                        if (!is_numeric($mensagem)) {
+                            $requestSoap[$discount->ra]['erro'] = $mensagem;
+                            $requestSoap[$discount->ra][] = $discount;
+                            $hasError = 1;
+                            break;
                         } else {
+                            $action = $update ? $this->update($data, $discount->id) : $this->store($data);
+                            //fazer o update do registro passando o id da bolsa aluno
                             $id = $action->getData()->response->content->id;
-                            $discount->student_schoolarship = $studentSchoolarship;
+                            //adiciona o id da bolsa do aluno junto aos dados enviados
+                            $discount->student_schoolarship = $mensagem;
                             $discount = (array)$discount;
                             $dataUpdate = new Request($discount);
                             $discount = (object)$discount;
+                            //atualiza o registro inserido acima
                             $update = $this->update($dataUpdate, $id);
+                            //obtem a resposta (API) por meio da classe jsonresponse por meio do getData()
+                            $requestSoap[$discount->ra][] = $update->getData()->response->content;
                         }
                     }
-
-                    $xmlRequest = [
-                        'SBolsaAluno' => [
-                            ['IDBOLSAALUNO'   => $studentSchoolarship],
-                            ['CODCOLIGADA'    => 1],
-                            ['PARCELAINICIAL' => $discount->first_installment == '1' ? '2' : $discount->first_installment],
-                            ['PARCELAFINAL'   => $discount->last_installment],
-                            ['RA'             => $discount->ra],
-                            ['IDPERLET'       => $discount->period],
-                            ['CODCONTRATO'    => $discount->contract],
-                            ['CODBOLSA'       => $discount->schoolarship],
-                            ['CODSERVICO'     => 2],
-                            ['DESCONTO'       => $discount->value],
-                            ['TIPODESC'       => 'P'],
-                            ['CODUSUARIO'     => 'wsgestaodedesconto'],
-                            ['ATIVA'          => 'S']
-
-                        ],
-                    ];
-
-                    $result = (string)$this->saveRecord($dataServer, $xmlRequest);
-                    //separa a string em array tendo o denominador :
-                    $search = (string)explode(':', $result)[1];
-                    //faz busca na string caso não tenha os dois pontos significa que a resposta não foi 1;215456(CODCOLIGADA;IDSBOLSAALUNO)
-                    if (!strchr($search, ';')) {
-                        //separa a string em array tendo como demoninador \n faz isso para obter apenas a mensagem de erro
-                        $error = explode('\n', $result);
-                        $error = $error[0];
-                        //faz o replace 
-                        $error = str_replace('{"SaveRecordResult":', '', $error);
-                        //array para converter os erros nos caracteres especiais da mensagem
-                        $convert = ['\u00ed' => 'í', '\u00e7' => 'ç', '\u00e3' => 'ã', '\u00e9' => 'é'];
-                        //substitui as notações pelos caracteres informados acima
-                        $error = strtr($error, $convert);
-                        //retira as aspas duplas da mensagem 
-                        $error = str_replace('"', '', $error);
-                        $requestSoap[$discount->ra]['erro'] = $error;
-                        // SchoolarshipWorkflow::create(
-                        //     [
-                        //         'fk_student_schoolarship'      => $discount->id,
-                        //         'fk_action'                    => 5, // tentativa de insercao
-                        //         'fk_user'                      => $request->user, //TODO: Pegar id do usuario
-                        //         'detail_schoolarship_workflow' => $error
-                        //     ]
-                        // );
-                        //excluir o registro inserido por meio da API
-                        $id = $action->getData()->response->content->id;
-                        $delete = $this->destroy($id);
-                        $requestSoap[$discount->ra][] = $delete->getData()->response->content;
-                    } else {
-                        //formata o idsbolaaluno recebido como resposta do webservice
-                        $studentSchoolarship = explode(';', $search);
-                        $studentSchoolarship = $studentSchoolarship[1];
-                        $studentSchoolarship = str_replace('"', '', $studentSchoolarship);
-                        $studentSchoolarship = str_replace('}', '', $studentSchoolarship);
-                        //fazer o update do registro passando o id da bolsa aluno
-                        $id = $action->getData()->response->content->id;
-                        //adiciona o id da bolsa do aluno junto aos dados enviados
-                        $discount->student_schoolarship = $studentSchoolarship;
-                        $discount = (array)$discount;
-                        $dataUpdate = new Request($discount);
-                        $discount = (object)$discount;
-                        //atualiza o registro inserido acima
-                        $update = $this->update($dataUpdate, $id);
-                        //obtem a resposta (API) por meio da classe jsonresponse por meio do getData()
-                        $requestSoap[$discount->ra][] = $update->getData()->response->content;
-                    }
+                    $detail = $i == $discount->last_installment && !$hasError ? 'Todas parcelas inseridas' : 'Inserido Parcialmente';
+                    if ($discount->id)
+                        SchoolarshipWorkflow::create([
+                            'fk_student_schoolarship'      => $discount->id,
+                            'fk_action'                    => 3, // Aprovado
+                            'fk_user'                      => 1, //TODO: Pegar id do usuario
+                            'detail_schoolarship_workflow' => $detail
+                        ]);
                 } else {
+                    $action = $update ? $this->update($data, $discount->id) : $this->store($data);
                     $id = $action->getData()->response->content->id;
+                    $requestSoap[$discount->ra][] = $action->getData()->response->content;
                     SchoolarshipWorkflow::create(
                         [
                             'fk_student_schoolarship'      => $id,
-                            'fk_action'                    => $update ? 2 : 1, // CRIACAO
+                            'fk_action'                    => $update ? 2 : 1, // EDICAO ou delecao
                             'fk_user'                      => 1, //TODO: Pegar id do usuario
-                            'detail_schoolarship_workflow' => 'exemplo'
+                            'detail_schoolarship_workflow' => ''
                         ]
                     );
-
-                    $requestSoap[$discount->ra][] = $action->getData()->response->content;
                 }
             }
         }
-
         return $requestSoap;
     }
-
+    private function tratarMensagemRM($mensagem)
+    {
+        $search = (string)explode(':', $mensagem)[1];
+        // caso de error
+        if (!strchr($search, ';')) {
+            $error = explode('\n', $mensagem);
+            $error = $error[0];
+            //faz o replace 
+            $error = str_replace('{"SaveRecordResult":', '', $error);
+            //array para converter os erros nos caracteres especiais da mensagem
+            $convert = ['\u00ed' => 'í', '\u00e7' => 'ç', '\u00e3' => 'ã', '\u00e9' => 'é', '\u00fa' => 'ú'];
+            //substitui as notações pelos caracteres informados acima
+            $error = strtr($error, $convert);
+            //retira as aspas duplas da mensagem 
+            $error = str_replace('"', '', $error);
+            return $error;
+        } else {
+            // retorna id do que foi inseriod
+            $studentSchoolarship = explode(';', $search);
+            $studentSchoolarship = $studentSchoolarship[1];
+            $studentSchoolarship = str_replace('"', '', $studentSchoolarship);
+            $studentSchoolarship = str_replace('}', '', $studentSchoolarship);
+            return $studentSchoolarship;
+        }
+    }
     /**
      * <b>getInstallmentContract</b> Método responsável por obter a resposta se o contrato, possui 
      * ou não parcela gerada em um determinado intervalo: exemplo: 1-6
@@ -833,5 +772,28 @@ class StudentSchoolarShipController extends Controller
         $requestSoap = (array)$this->query($name, $parameters);
 
         return $this->createResponse($requestSoap['Resultado']);
+    }
+
+    public function rejectScholarships(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'discounts' => 'required'
+        ]);
+        if ($validator->fails()) {
+            $error['message'] = $validator->errors();
+            $error['error']   = true;
+            return  $this->createResponse($error, 422);
+        }
+        foreach ($request->discounts as $discount) {
+            SchoolarshipWorkflow::create(
+                [
+                    'fk_student_schoolarship'      => $discount['id'],
+                    'fk_action'                    => 4, // DELECAO
+                    'fk_user'                      => 1, //TODO: Pegar id do usuario
+                    'detail_schoolarship_workflow' => 'Rejeitado'
+                ]
+            );
+            $this->destroy($discount['id']);
+        }
     }
 }
