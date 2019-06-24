@@ -624,6 +624,8 @@ class StudentSchoolarShipController extends Controller
                 $hasError = 0;
                 $discount = (Object)$discount;
                 $update = isset($discount->id);
+                $action = $update ? $this->update($data, $discount->id) : $this->store($data);
+                $id = $action->getData()->response->content->id;
                 if ($discount->send_rm) {   //caso passe o idbolsaaluno o registro irá ser atualizado se não sera criado
                     $studentSchoolarship = (isset($discount->student_schoolarship) ? $discount->student_schoolarship : 'xsi');
                     $dataServer = 'EduBolsaAlunoData';
@@ -653,12 +655,14 @@ class StudentSchoolarShipController extends Controller
                             $requestSoap[$discount->ra]['erro'] = $mensagem;
                             $requestSoap[$discount->ra][] = $discount;
                             $hasError = 1;
+                            //remove o que foi criado caso seja criacao                            
+                            if (!$update)
+                                $this->destroy($id);
+                            else{                                                                
+                                $this->model->find($id)->update(['send_rm_student_schoolarship' => false]);
+                            }
                             break;
-                        } else {
-                            $action = $update ? $this->update($data, $discount->id) : $this->store($data);
-                            //fazer o update do registro passando o id da bolsa aluno
-                            $id = $action->getData()->response->content->id;
-                            $discount['id'] = $id;
+                        } else {                                                        
                             //adiciona o id da bolsa do aluno junto aos dados enviados
                             $discount->student_schoolarship = $mensagem;
                             $discount = (array)$discount;
@@ -671,26 +675,20 @@ class StudentSchoolarShipController extends Controller
                         }
                     }
                     $detail = $i == $discount->last_installment && !$hasError ? 'Todas parcelas inseridas' : 'Inserido Parcialmente';
-                    if ($discount['id']) {
-                        SchoolarshipWorkflow::create([
-                            'fk_student_schoolarship'      => $discount->id,
-                            'fk_action'                    => 3, // Aprovado
-                            'fk_user'                      => 1, //TODO: Pegar id do usuario
-                            'detail_schoolarship_workflow' => $detail
-                        ]);
-                    }
-                } else {
-                    $action = $update ? $this->update($data, $discount->id) : $this->store($data);
-                    $id = $action->getData()->response->content->id;
+                    SchoolarshipWorkflow::create([
+                        'fk_student_schoolarship'      => $id,
+                        'fk_action'                    => 3, // Aprovado
+                        'fk_user'                      => 1, //TODO: Pegar id do usuario
+                        'detail_schoolarship_workflow' => $detail
+                    ]);
+                } else {                                        
                     $requestSoap[$discount->ra][] = $action->getData()->response->content;
-                    SchoolarshipWorkflow::create(
-                        [
+                    SchoolarshipWorkflow::create([
                             'fk_student_schoolarship'      => $id,
                             'fk_action'                    => $update ? 2 : 1, // EDICAO ou delecao
                             'fk_user'                      => 1, //TODO: Pegar id do usuario
                             'detail_schoolarship_workflow' => ''
-                        ]
-                    );
+                        ]);
                 }
             }
         }
