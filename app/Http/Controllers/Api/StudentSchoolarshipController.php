@@ -63,6 +63,10 @@ class StudentSchoolarShipController extends Controller
 
     protected $response = [];
 
+    
+    protected $names = [];
+        
+
     /**
      * <b>__construct</b> Método construtor da classe. O mesmo é utilizado, para que atribuir qual a model será utilizada.
      * Essa informação atribuida aqui, fica disponivel na ApiControllerTrait e é utilizada pelos seus metodos.
@@ -70,6 +74,10 @@ class StudentSchoolarShipController extends Controller
     public function __construct(StudentSchoolarship $model)
     {
         $this->model = $model;
+        $globaldiscounts = DiscountMarginSchoolarship::get();
+        foreach ($globaldiscounts as $discount) {
+            $this->names[$discount->id_rm_schoolarship_discount_margin_schoolarship] = $discount->id_rm_schoolarship_name_discount_margin_schoolarship;
+        }
     }
     /**
      * Display a listing of the resource.
@@ -248,7 +256,9 @@ class StudentSchoolarShipController extends Controller
         $schoolarship       =  (array)$this->getSchoolarship($request);
         $tempLocals         =  (array)$this->getLocalSchoolarships($request);
         $localScholarships  =  $this->schoolarshipToKeyContract($tempLocals);
-        $responseSoap = $this->formatResponse($requestSoap, $schoolarship, $localScholarships);
+        
+        $responseSoap = $this->formatResponse($requestSoap, $schoolarship, $localScholarships); // ta lento
+
         return $this->createResponse($responseSoap);
     }
 
@@ -280,6 +290,8 @@ class StudentSchoolarShipController extends Controller
         $name = self::$nameQuery['WEB006'];
         $parameters = $this->getStudentsParams($request);
         $requestSoap = (array)$this->query($name, $parameters);
+
+
 
         $schoolarship = $this->getSchoolarship($request);
         $tempLocals = $this->getLocalSchoolarships($request);
@@ -353,7 +365,9 @@ class StudentSchoolarShipController extends Controller
             $result = $dataStudent['Resultado'];
             $ra = (string)$result->RA;
             $contract = (string)$result->CODCONTRATO;
-
+            if (array_key_exists($contract, $localScholarships)) {
+                $localScholarship[$ra] = [$localScholarships[$contract]];
+            }
             //pesquisa se nas bolsas obtidas possui o RA do aluno 
             if (array_key_exists(0, $dataSchoolarship)) {
                 for ($i = 0; $i < count($dataSchoolarship); $i++) {
@@ -381,47 +395,42 @@ class StudentSchoolarShipController extends Controller
                         $afterSchoolarship[] = $data;
                     }
                 }
-
-                if (array_key_exists($contract, $localScholarships)) {
-                    $localScholarship[$ra] = [$localScholarships[$contract]];
-                }
             }
             $this->response[] = $this->printResponse($result, $beforeSchoolarship, $afterSchoolarship, $localScholarship);
         }
         //caso tenha mais de um aluno 
 
         if ($size > 1) {
+            // inicializando vazio
             foreach ($dataStudent['Resultado'] as $result) {
-                $check = false;
+               $ra = (string)$result->RA;
+               $beforeSchoolarship[$ra] = [];
+               $afterSchoolarship[$ra]  =[];
+               $localScholarship[$ra]  = [];
+            }
+            // coloccando todas bolsas no aluno
+            foreach ($dataSchoolarship as $data) {
+                $data = (array)$data;                
+                if (in_array('ANTERIOR', $data)) {
+                    $beforeSchoolarship[(string)$data['RA']][] = $data;
+                } else {
+                    $afterSchoolarship[(string)$data['RA']][] = $data;
+                }
+            }
+            foreach ($dataStudent['Resultado'] as $result) {
+                
                 $ra = (string)$result->RA;
                 $contract = (string)$result->CODCONTRATO;
                 //pesquisa se nas bolsas obtidas possui o RA do aluno 
-                for ($i = 0; $i < count($dataSchoolarship); $i++) {
-
-                    $data = (array)$dataSchoolarship[$i];
-                    //verificar o que ele faz com os outros itens do array
-                    if (in_array($ra, $data)) {
-                        $check = true;
-                        //obtem as bolsas anteriores
-                        if (in_array('ANTERIOR', $data)) {
-                            $beforeSchoolarship[$ra][] = $data;
-                        } else {
-                            $afterSchoolarship[$ra][] = $data;
-                        }
-                    }
-
-
-                    if (array_key_exists($contract, $localScholarships)) {
-                        $localScholarship[$ra] = [$localScholarships[$contract]];
-                    }
+                if (array_key_exists($contract, $localScholarships)) {
+                    $localScholarship[$ra] = [$localScholarships[$contract]];
                 }
-
-                if ($check) {
-                    $before = (array_key_exists($ra, $beforeSchoolarship) ? $beforeSchoolarship[$ra] : []);
-                    $after = (array_key_exists($ra, $afterSchoolarship) ? $afterSchoolarship[$ra] : []);
-                    $local = (array_key_exists($ra, $localScholarship) ? $localScholarship[$ra] : []);
-                    $this->response[] = $this->printResponse($result, $before, $after, $local);
-                }
+                
+                $before = $beforeSchoolarship[$ra];
+                $after = $afterSchoolarship[$ra];
+                $local = $localScholarship[$ra];
+                $this->response[] = $this->printResponse($result, $before, $after, $local);
+            
             }
         }
 
@@ -516,12 +525,8 @@ class StudentSchoolarShipController extends Controller
     {
 
         $newArray = [];
-        $count = 0;
-        $discounts = DiscountMarginSchoolarship::get();
-        $names = [];
-        foreach ($discounts as $discount) {
-            $names[$discount->id_rm_schoolarship_discount_margin_schoolarship] = $discount->id_rm_schoolarship_name_discount_margin_schoolarship;
-        }
+        $count = 0;        
+        
 
         foreach ($schoolarships as $schoolarship) {
             // caso seja apenas uma bolsa
@@ -532,7 +537,7 @@ class StudentSchoolarShipController extends Controller
                     'CODCONTRATO'     => $schoolarship['id_rm_contract_student_schoolarship'],
                     'IDPERLET'        => $schoolarship['id_rm_period_student_schoolarship'],
                     'CODPERLET'       => $schoolarship['id_rm_period_code_student_schoolarship'],
-                    'BOLSA'           => $names[$schoolarship['id_rm_schoolarship_student_schoolarship']],
+                    'BOLSA'           => $this->names[$schoolarship['id_rm_schoolarship_student_schoolarship']],
                     'CODBOLSA'        => $schoolarship['id_rm_schoolarship_student_schoolarship'],
                     'DESCONTO'        => $schoolarship['value_student_schoolarship'],
                     'PARCELAINICIAL'  => $schoolarship['first_installment_student_schoolarship'],
@@ -548,7 +553,7 @@ class StudentSchoolarShipController extends Controller
                 'CODCONTRATO'     => $schoolarship[$count]['id_rm_contract_student_schoolarship'],
                 'IDPERLET'        => $schoolarship[$count]['id_rm_period_student_schoolarship'],
                 'CODPERLET'       => $schoolarship[$count]['id_rm_period_code_student_schoolarship'],
-                'BOLSA'           => $names[$schoolarship[$count]['id_rm_schoolarship_student_schoolarship']],
+                'BOLSA'           => $this->names[$schoolarship[$count]['id_rm_schoolarship_student_schoolarship']],
                 'CODBOLSA'        => $schoolarship[$count]['id_rm_schoolarship_student_schoolarship'],
                 'DESCONTO'        => $schoolarship[$count]['value_student_schoolarship'],
                 'PARCELAINICIAL'  => $schoolarship[$count]['first_installment_student_schoolarship'],

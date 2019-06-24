@@ -9,7 +9,7 @@ use Zend\Soap\Client as ZendClient;
  * Essa chamada RPC consiste em utilizar consultas armazenadas no banco de dados da TOTVS, todas essas consultas são armazenadas 
  * em uma tabela no banco de dados da TOTVS chamada GCONSQL. Essas consultas são chamadas por meio do alias(nome, apelido ) atrelada a mesma
  */
-Trait TotvsQuerySqlTrait
+trait TotvsQuerySqlTrait
 {
 
     /**
@@ -28,15 +28,15 @@ Trait TotvsQuerySqlTrait
         'WEB009' => 'WEB.0009',
         'WEB010' => 'WEB.0010',
         'WEB011' => 'WEB.0011'
-        
+
     ];
 
-   
+
     /**
      * <b>wsdl</b> Endereço relativo do WSDL. O Restante da URL será concatenado no momento das CHAMADAS RPC remote procedure call ou chamada de procedimento remoto
      */
     private $wsdl = 'TOTVSBusinessConnect/wsConsultaSQL.asmx?wsdl';
-    
+
     /**
      * <b>__set</b> Método mágico do PHP utilizado para setar as propriedades de uma classe. Sem a necessidade de 
      * um metodo set especifico. Responsável por verificar se um determinado atributo existe na trait se existir irá setar os 
@@ -45,8 +45,7 @@ Trait TotvsQuerySqlTrait
      */
     public function __set($property, $value)
     {
-        if(property_exists('TotvsQuerySqlTrait', (string) $property))
-        {
+        if (property_exists('TotvsQuerySqlTrait', (string)$property)) {
             $this->property = $value;
         }
 
@@ -61,30 +60,33 @@ Trait TotvsQuerySqlTrait
      */
     protected function query($name, $params, $context = null)
     {
-     
+
         $context = (!is_null($context) ? $context : 'CODCOLIGADA=1;CODSISTEMA=S;');
-        
+
         $parameters = [
-            'codSentenca'  => $name, 
-            'codColigada'  => '1',         
-            'codAplicacao' => 'S',         
-            'parameters'   =>  $this->transformParams($params)       
+            'codSentenca'  => $name,
+            'codColigada'  => '1',
+            'codAplicacao' => 'S',
+            'parameters'   =>  $this->transformParams($params)
         ];
-     
-        $url = env('URL_WS_DEVELOPER').$this->wsdl;
-        
-        $client = new ZendClient($url, 
-                    ['login' => env('USER_WS_TOTVS'), 'password' => env('PASS_WS_TOTVS')]
-                );
+
+        $url = env('URL_WS_DEVELOPER') . $this->wsdl;
+
+
+        $client = new ZendClient(
+            $url,
+            ['login' => env('USER_WS_TOTVS'), 'password' => env('PASS_WS_TOTVS')]
+        );
         
         $result = ($client->RealizarConsultaSQL($parameters));
         
-        //transforma o xml em string e obtem o resultado
-        $response = simplexml_load_string($result->RealizarConsultaSQLResult);   
-        
-        return $response;
 
-    
+        //The result will be in seconds and milliseconds.
+        
+        //transforma o xml em string e obtem o resultado
+        $response = simplexml_load_string($result->RealizarConsultaSQLResult);
+
+        return $response;
     }
 
     /**
@@ -105,33 +107,23 @@ Trait TotvsQuerySqlTrait
      * @param Array $params;
      * @return strin'CODCURSO' => '-1', g $stringParams
      */
-    protected function transformParams(Array $params)
+    protected function transformParams(array $params)
     {
-       
+
         $stringParams = [];
 
-        for($i=0; $i<count($params); $i++)
-        {
-           
+        for ($i = 0; $i < count($params); $i++) {
+
             $keys   = array_keys($params);
             $values = array_values($params);
-           
+
             //formata a string no padrão chave=valor; 
-            $string = (string) strtoupper($keys[$i]).'='.$values[$i].';';
-            
-            $stringParams[$i] = (string) $string;
-          
+            $string = (string)strtoupper($keys[$i]) . '=' . $values[$i] . ';';
 
+            $stringParams[$i] = (string)$string;
         }
-     
+
         //transforma o array em string
-        return implode('',$stringParams);
-    
-        
+        return implode('', $stringParams);
     }
-
-
-
-  
-
 }
