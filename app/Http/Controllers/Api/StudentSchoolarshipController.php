@@ -658,6 +658,9 @@ class StudentSchoolarShipController extends Controller
                             //remove o que foi criado caso seja criacao                            
                             if (!$update)
                                 $this->destroy($id);
+                            else{                                                                
+                                $this->model->update(['send_rm_student_schoolarship' => false], $discount->id);
+                            }
                             break;
                         } else {                                                        
                             //adiciona o id da bolsa do aluno junto aos dados enviados
