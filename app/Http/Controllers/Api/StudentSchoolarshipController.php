@@ -658,6 +658,11 @@ class StudentSchoolarShipController extends Controller
                             //remove o que foi criado caso seja criacao                            
                             if (!$update)
                                 $this->destroy($id);
+                            else{
+                                $discount->send_rm = false;
+                                $temp = new Request($discount);
+                                $this->update($temp, $discount->id);
+                            }
                             break;
                         } else {                                                        
                             //adiciona o id da bolsa do aluno junto aos dados enviados
