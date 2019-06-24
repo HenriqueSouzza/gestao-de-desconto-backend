@@ -659,7 +659,7 @@ class StudentSchoolarShipController extends Controller
                             if (!$update)
                                 $this->destroy($id);
                             else{                                                                
-                                $this->model->update(['send_rm_student_schoolarship' => false], $discount->id);
+                                $this->model->find($id)->update(['send_rm_student_schoolarship' => false]);
                             }
                             break;
                         } else {                                                        
