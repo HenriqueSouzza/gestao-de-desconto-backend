@@ -658,10 +658,8 @@ class StudentSchoolarShipController extends Controller
                             //remove o que foi criado caso seja criacao                            
                             if (!$update)
                                 $this->destroy($id);
-                            else{
-                                $discount->send_rm = false;
-                                $temp = new Request($discount);
-                                $this->update($temp, $discount->id);
+                            else{                                                                
+                                $this->model->update(['send_rm_student_schoolarship' => false], $discount->id);
                             }
                             break;
                         } else {                                                        
