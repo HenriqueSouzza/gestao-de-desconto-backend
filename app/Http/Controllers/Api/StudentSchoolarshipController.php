@@ -798,6 +798,7 @@ class StudentSchoolarShipController extends Controller
                 ]
             );
             $this->destroy($discount['id']);
+            return $this->createResponse($request->discounts, 200);
         }
     }
 }
