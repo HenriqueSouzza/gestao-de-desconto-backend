@@ -45,6 +45,8 @@ Route::group(['middleware' => ['auth:api' /*, 'check.user.acl'*/]], function(){
     Route::post('/totvs-queries/query', 'Api\TotvsQuerySqlController@totvsQuery');
     Route::post('/totvs-queries/read', 'Api\TotvsQuerySqlController@read');
     Route::post('/totvs-queries/save', 'Api\TotvsQuerySqlController@save');
+
+    Route::post('become', 'Api\UserController@become');
     
 });
     
