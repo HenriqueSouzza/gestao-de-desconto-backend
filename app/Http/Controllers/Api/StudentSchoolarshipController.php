@@ -222,7 +222,7 @@ class StudentSchoolarShipController extends Controller
      */
     protected function getStudents(Request $request)
     {
-
+        
         $validator = Validator::make($request->all(), [
             'codfilial' => 'required|numeric|min:1',
             'codcurso'  => 'required|string',
@@ -678,7 +678,7 @@ class StudentSchoolarShipController extends Controller
                     SchoolarshipWorkflow::create([
                         'fk_student_schoolarship'      => $id,
                         'fk_action'                    => 3, // Aprovado
-                        'fk_user'                      => 1, //TODO: Pegar id do usuario
+                        'fk_user'                      => $request->user()->id, //TODO: Pegar id do usuario
                         'detail_schoolarship_workflow' => $detail
                     ]);
                 } else {                                        
@@ -686,7 +686,7 @@ class StudentSchoolarShipController extends Controller
                     SchoolarshipWorkflow::create([
                             'fk_student_schoolarship'      => $id,
                             'fk_action'                    => $update ? 2 : 1, // EDICAO ou delecao
-                            'fk_user'                      => 1, //TODO: Pegar id do usuario
+                            'fk_user'                      => $request->user()->id, //TODO: Pegar id do usuario
                             'detail_schoolarship_workflow' => ''
                         ]);
                 }
@@ -793,7 +793,7 @@ class StudentSchoolarShipController extends Controller
                 [
                     'fk_student_schoolarship'      => $discount['id'],
                     'fk_action'                    => 4, // DELECAO
-                    'fk_user'                      => 1, //TODO: Pegar id do usuario
+                    'fk_user'                      => $request->user()->id, //TODO: Pegar id do usuario
                     'detail_schoolarship_workflow' => 'Rejeitado'
                 ]
             );
