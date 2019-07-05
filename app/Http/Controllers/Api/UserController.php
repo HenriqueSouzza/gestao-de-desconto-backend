@@ -117,12 +117,36 @@ class UserController extends Controller
     }
 
 
+    
     /**
-     * <b>login</b> Método responsável por efetuar o login da autenticação básica
-     * Ou seja a autenticação sem o Google
-     * @param Request $request
-     * @return JSON $response
+     * Se torna outro usuário
      */
+    public function become(Request $request)
+    {   
+        $allowedUsers = [
+            'caio.oliveira@cnec.br',
+            'henrique.souza@cnec.br'
+        ];
+        $user = User::where('email', $request->email)->first();        
+        if(!$user || !in_array($request->user()->email,$allowedUsers)) 
+        {
+          return $this->createResponse('Email não encontrado ou usuário nao permitido para se tornar outro!', 500);
+        }
+        else
+        {            
+            //cria o token com base em uma string randomica, o time e o id do usuário
+            $token = $user->createToken(Str::random(10) . time() . $user->id);
+
+            //cria o response com os dados do token tais como: access_token (token de acesso) expires_at (data e hora de expiração do token)
+            $response['access_token'] = $token->accessToken;
+            $response['token_type']   = 'Bearer';
+            $response['expires_at']   = Carbon::parse(
+                $token->token->expires_at
+            )->toDateTimeString();            
+            return $this->createResponse($response);
+        }
+    }
+
 
     public function login(Request $request)
     {   
