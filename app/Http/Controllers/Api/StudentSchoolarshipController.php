@@ -63,7 +63,7 @@ class StudentSchoolarShipController extends Controller
 
     protected $response = [];
 
-
+    // nomes das bolsas pelo codigo
     protected $names = [];
 
 
@@ -97,27 +97,7 @@ class StudentSchoolarShipController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
         return $this->storeTrait($request);
-        // dd($schoolarship);
-        // if($request->first_installment_student_schoolarship == $request->last_installment_student_schoolarship)
-        // {
-        //     $schoolarship = $this->storeOne($request);
-        //     return $this->createResponse($schoolarship, 201);
-        // }
-        // else
-        // {
-        //     // Criando varias entradas com parcela inicial e final igual
-        //     $first = $request->first_installment_student_schoolarship;
-        //     $last = $request->last_installment_student_schoolarship;
-        //     for($i = $first; $i <= $last; $i=$i+1 )
-        //     {                
-        //         $temp = clone $request;                
-        //         $temp['first_installment_student_schoolarship'] = $temp['last_installment_student_schoolarship'] = $i;                                       
-        //         $schoolarship = $this->storeOne($temp);
-        //     }
-        //     return $this->createResponse($schoolarship, 201);
-        // }
     }
 
 
@@ -186,19 +166,11 @@ class StudentSchoolarShipController extends Controller
      */
     public function getLocalSchoolarships(Request $request)
     {
-        // return StudentSchoolarship::where([
-        //     'id_rm_establishment_student_schoolarship' => $request->codfilial, 
-        //     'id_rm_period_code_student_schoolarship' => $request->codperlet,
-        //     'send_rm_student_schoolarship' => false
-        // ])->get()->toArray(); 
-
         return $this->model->where([
             'id_rm_establishment_student_schoolarship' => $request->codfilial,
             'id_rm_period_code_student_schoolarship'   => $request->codperlet,
             'send_rm_student_schoolarship'             => false
-        ])
-            ->whereNull('id_rm_student_schoolarship')
-            ->get()->toArray();
+        ])->whereNull('id_rm_student_schoolarship')->get()->toArray();
     }
 
 
@@ -257,7 +229,7 @@ class StudentSchoolarShipController extends Controller
         $tempLocals         =  (array)$this->getLocalSchoolarships($request);
         $localScholarships  =  $this->schoolarshipToKeyContract($tempLocals);
 
-        $responseSoap = $this->formatResponse($requestSoap, $schoolarship, $localScholarships); // ta lento
+        $responseSoap = $this->formatResponse($requestSoap, $schoolarship, $localScholarships);
 
         return $this->createResponse($responseSoap);
     }
@@ -566,9 +538,17 @@ class StudentSchoolarShipController extends Controller
     }
     public function getLog()
     {
+        // return $this->createResponse()
         return $this->createResponse(StudentSchoolarship::with('workflows')->withTrashed()->get());
     }
 
+
+    private function firstInstallmentCodBolsa($codBolsa){
+        switch($codBolsa){
+            default: return $codBolsa;
+        }
+
+    }
     /**
      * @param Request $request (com os dados acima no formato JSON)
      * @return array $requestSoap     * 
@@ -674,7 +654,7 @@ class StudentSchoolarShipController extends Controller
                             $requestSoap[$discount->ra][] = $update->getData()->response->content;
                         }
                     }
-                    $detail = $i == $discount->last_installment && !$hasError ? 'Todas parcelas inseridas' : 'Inserido Parcialmente';
+                    $detail = $i == ($discount->last_installment + 1) && !$hasError ? 'Todas parcelas inseridas' : 'Inserido Parcialmente';
                     SchoolarshipWorkflow::create([
                         'fk_student_schoolarship'      => $id,
                         'fk_action'                    => 3, // Aprovado
