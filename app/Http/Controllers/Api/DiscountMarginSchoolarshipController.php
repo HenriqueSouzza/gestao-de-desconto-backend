@@ -74,6 +74,11 @@ class DiscountMarginSchoolarshipController extends Controller
                           'id_rm_modality_discount_margin_schoolarship' => $modality,
                           'id_rm_major_discount_margin_schoolarship' => $codCurso,
                           'id_rm_period_code_discount_margin_schoolarship' => $codPerlet])
+                         ->where('id_rm_schoolarship_discount_margin_schoolarship', '<>', 8) // removendo as bolsas que sao do cct
+                         ->where('id_rm_schoolarship_discount_margin_schoolarship', '<>', 2)
+                         ->where('id_rm_schoolarship_discount_margin_schoolarship', '<>', 29)
+                         ->where('id_rm_schoolarship_discount_margin_schoolarship', '<>', 3)
+
                          ->get();
         
         
