@@ -74,7 +74,9 @@ class ImportBolsas extends Command
             }
             fclose($fp);
         }
+        foreach (array_chunk($insert,1000) as $t) {
+            DB::table('discount_margin_schoolarships')->insert($t);
+        }
 
-        DB::table('discount_margin_schoolarships')->insert($insert);
     }
 }
