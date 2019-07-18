@@ -1,0 +1,1331 @@
+CODFILIAL;FILIAL;IDPERLET;PERIODO_LETIVO;CODBOLSA;BOLSA;CODCURSO;CURSO;MODALIDADE;PERCENTUAL;FIXO_MAX;PARCELA_INICIAL;PARCELA_FINAL
+169;Centro Universitário Cenecista de Osório;2398;2019-21;31;2ª Graduação - CNEC;GD001;Administração;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;31;2ª Graduação - CNEC;GD057;Análise e Desenvolvimento de Sistemas;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;31;2ª Graduação - CNEC;GD007;Ciências Contábeis;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;31;2ª Graduação - CNEC;GD015;Educação Física;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;31;2ª Graduação - CNEC;GD020;Engenharia de Produção;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;31;2ª Graduação - CNEC;GD071;Gestão Ambiental;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;31;2ª Graduação - CNEC;GD072;Gestão Comercial;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;31;2ª Graduação - CNEC;GD075;Gestão de Recursos Humanos;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;31;2ª Graduação - CNEC;GD073;Gestão Financeira;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;31;2ª Graduação - CNEC;GD074;Gestão Pública;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;31;2ª Graduação - CNEC;GD037;Letras;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;31;2ª Graduação - CNEC;GD077;Logística;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;31;2ª Graduação - CNEC;GD078;Marketing;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;31;2ª Graduação - CNEC;GD041;Matemática;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;31;2ª Graduação - CNEC;GD045;Pedagogia;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;31;2ª Graduação - CNEC;GD046;Pedagogia - Segunda Licenciatura;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;31;2ª Graduação - CNEC;GD079;Processos Gerenciais;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;31;2ª Graduação - CNEC;GD055;Sistemas de Informação;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;31;2ª Graduação - CNEC;GD084;Teologia;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;32;2ª Graduação - Outras IES;GD001;Administração;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;32;2ª Graduação - Outras IES;GD057;Análise e Desenvolvimento de Sistemas;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;32;2ª Graduação - Outras IES;GD007;Ciências Contábeis;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;32;2ª Graduação - Outras IES;GD015;Educação Física;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;32;2ª Graduação - Outras IES;GD020;Engenharia de Produção;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;32;2ª Graduação - Outras IES;GD071;Gestão Ambiental;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;32;2ª Graduação - Outras IES;GD072;Gestão Comercial;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;32;2ª Graduação - Outras IES;GD075;Gestão de Recursos Humanos;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;32;2ª Graduação - Outras IES;GD073;Gestão Financeira;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;32;2ª Graduação - Outras IES;GD074;Gestão Pública;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;32;2ª Graduação - Outras IES;GD037;Letras;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;32;2ª Graduação - Outras IES;GD077;Logística;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;32;2ª Graduação - Outras IES;GD078;Marketing;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;32;2ª Graduação - Outras IES;GD041;Matemática;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;32;2ª Graduação - Outras IES;GD045;Pedagogia;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;32;2ª Graduação - Outras IES;GD046;Pedagogia - Segunda Licenciatura;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;32;2ª Graduação - Outras IES;GD079;Processos Gerenciais;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;32;2ª Graduação - Outras IES;GD055;Sistemas de Informação;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;32;2ª Graduação - Outras IES;GD084;Teologia;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;1;Bolsa CNEC 100%;GD001;Administração;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;1;Bolsa CNEC 100%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;1;Bolsa CNEC 100%;GD007;Ciências Contábeis;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;1;Bolsa CNEC 100%;GD015;Educação Física;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;1;Bolsa CNEC 100%;GD020;Engenharia de Produção;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;1;Bolsa CNEC 100%;GD071;Gestão Ambiental;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;1;Bolsa CNEC 100%;GD072;Gestão Comercial;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;1;Bolsa CNEC 100%;GD075;Gestão de Recursos Humanos;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;1;Bolsa CNEC 100%;GD073;Gestão Financeira;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;1;Bolsa CNEC 100%;GD074;Gestão Pública;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;1;Bolsa CNEC 100%;GD037;Letras;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;1;Bolsa CNEC 100%;GD077;Logística;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;1;Bolsa CNEC 100%;GD078;Marketing;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;1;Bolsa CNEC 100%;GD041;Matemática;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;1;Bolsa CNEC 100%;GD045;Pedagogia;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;1;Bolsa CNEC 100%;GD046;Pedagogia - Segunda Licenciatura;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;1;Bolsa CNEC 100%;GD079;Processos Gerenciais;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;1;Bolsa CNEC 100%;GD055;Sistemas de Informação;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;1;Bolsa CNEC 100%;GD084;Teologia;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;2;Bolsa CNEC 50%;GD001;Administração;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;2;Bolsa CNEC 50%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;2;Bolsa CNEC 50%;GD007;Ciências Contábeis;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;2;Bolsa CNEC 50%;GD015;Educação Física;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;2;Bolsa CNEC 50%;GD020;Engenharia de Produção;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;2;Bolsa CNEC 50%;GD071;Gestão Ambiental;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;2;Bolsa CNEC 50%;GD072;Gestão Comercial;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;2;Bolsa CNEC 50%;GD075;Gestão de Recursos Humanos;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;2;Bolsa CNEC 50%;GD073;Gestão Financeira;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;2;Bolsa CNEC 50%;GD074;Gestão Pública;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;2;Bolsa CNEC 50%;GD037;Letras;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;2;Bolsa CNEC 50%;GD077;Logística;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;2;Bolsa CNEC 50%;GD078;Marketing;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;2;Bolsa CNEC 50%;GD041;Matemática;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;2;Bolsa CNEC 50%;GD045;Pedagogia;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;2;Bolsa CNEC 50%;GD046;Pedagogia - Segunda Licenciatura;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;2;Bolsa CNEC 50%;GD079;Processos Gerenciais;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;2;Bolsa CNEC 50%;GD055;Sistemas de Informação;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;2;Bolsa CNEC 50%;GD084;Teologia;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;5;Bolsa Desconto Folha;GD001;Administração;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;5;Bolsa Desconto Folha;GD057;Análise e Desenvolvimento de Sistemas;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;5;Bolsa Desconto Folha;GD007;Ciências Contábeis;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;5;Bolsa Desconto Folha;GD015;Educação Física;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;5;Bolsa Desconto Folha;GD020;Engenharia de Produção;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;5;Bolsa Desconto Folha;GD071;Gestão Ambiental;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;5;Bolsa Desconto Folha;GD072;Gestão Comercial;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;5;Bolsa Desconto Folha;GD075;Gestão de Recursos Humanos;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;5;Bolsa Desconto Folha;GD073;Gestão Financeira;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;5;Bolsa Desconto Folha;GD074;Gestão Pública;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;5;Bolsa Desconto Folha;GD037;Letras;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;5;Bolsa Desconto Folha;GD077;Logística;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;5;Bolsa Desconto Folha;GD078;Marketing;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;5;Bolsa Desconto Folha;GD041;Matemática;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;5;Bolsa Desconto Folha;GD045;Pedagogia;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;5;Bolsa Desconto Folha;GD046;Pedagogia - Segunda Licenciatura;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;5;Bolsa Desconto Folha;GD079;Processos Gerenciais;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;5;Bolsa Desconto Folha;GD055;Sistemas de Informação;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;5;Bolsa Desconto Folha;GD084;Teologia;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;8;CCT/ACT;GD001;Administração;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;8;CCT/ACT;GD057;Análise e Desenvolvimento de Sistemas;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;8;CCT/ACT;GD007;Ciências Contábeis;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;8;CCT/ACT;GD015;Educação Física;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;8;CCT/ACT;GD020;Engenharia de Produção;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;8;CCT/ACT;GD071;Gestão Ambiental;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;8;CCT/ACT;GD072;Gestão Comercial;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;8;CCT/ACT;GD075;Gestão de Recursos Humanos;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;8;CCT/ACT;GD073;Gestão Financeira;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;8;CCT/ACT;GD074;Gestão Pública;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;8;CCT/ACT;GD037;Letras;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;8;CCT/ACT;GD077;Logística;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;8;CCT/ACT;GD078;Marketing;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;8;CCT/ACT;GD041;Matemática;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;8;CCT/ACT;GD045;Pedagogia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;8;CCT/ACT;GD046;Pedagogia - Segunda Licenciatura;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;8;CCT/ACT;GD079;Processos Gerenciais;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;8;CCT/ACT;GD055;Sistemas de Informação;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;8;CCT/ACT;GD084;Teologia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;15;Cnec Antecipação;GD001;Administração;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;15;Cnec Antecipação;GD057;Análise e Desenvolvimento de Sistemas;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;15;Cnec Antecipação;GD007;Ciências Contábeis;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;15;Cnec Antecipação;GD015;Educação Física;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;15;Cnec Antecipação;GD020;Engenharia de Produção;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;15;Cnec Antecipação;GD071;Gestão Ambiental;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;15;Cnec Antecipação;GD072;Gestão Comercial;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;15;Cnec Antecipação;GD075;Gestão de Recursos Humanos;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;15;Cnec Antecipação;GD073;Gestão Financeira;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;15;Cnec Antecipação;GD074;Gestão Pública;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;15;Cnec Antecipação;GD037;Letras;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;15;Cnec Antecipação;GD077;Logística;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;15;Cnec Antecipação;GD078;Marketing;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;15;Cnec Antecipação;GD041;Matemática;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;15;Cnec Antecipação;GD045;Pedagogia;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;15;Cnec Antecipação;GD046;Pedagogia - Segunda Licenciatura;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;15;Cnec Antecipação;GD079;Processos Gerenciais;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;15;Cnec Antecipação;GD055;Sistemas de Informação;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;15;Cnec Antecipação;GD084;Teologia;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;12;CNEC Colaborador;GD001;Administração;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;12;CNEC Colaborador;GD057;Análise e Desenvolvimento de Sistemas;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;12;CNEC Colaborador;GD007;Ciências Contábeis;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;12;CNEC Colaborador;GD015;Educação Física;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;12;CNEC Colaborador;GD020;Engenharia de Produção;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;12;CNEC Colaborador;GD071;Gestão Ambiental;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;12;CNEC Colaborador;GD072;Gestão Comercial;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;12;CNEC Colaborador;GD075;Gestão de Recursos Humanos;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;12;CNEC Colaborador;GD073;Gestão Financeira;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;12;CNEC Colaborador;GD074;Gestão Pública;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;12;CNEC Colaborador;GD037;Letras;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;12;CNEC Colaborador;GD077;Logística;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;12;CNEC Colaborador;GD078;Marketing;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;12;CNEC Colaborador;GD041;Matemática;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;12;CNEC Colaborador;GD045;Pedagogia;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;12;CNEC Colaborador;GD046;Pedagogia - Segunda Licenciatura;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;12;CNEC Colaborador;GD079;Processos Gerenciais;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;12;CNEC Colaborador;GD055;Sistemas de Informação;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;12;CNEC Colaborador;GD084;Teologia;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;11;CNEC Parcerias;GD001;Administração;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;11;CNEC Parcerias;GD057;Análise e Desenvolvimento de Sistemas;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;11;CNEC Parcerias;GD007;Ciências Contábeis;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;11;CNEC Parcerias;GD015;Educação Física;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;11;CNEC Parcerias;GD020;Engenharia de Produção;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;11;CNEC Parcerias;GD071;Gestão Ambiental;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;11;CNEC Parcerias;GD072;Gestão Comercial;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;11;CNEC Parcerias;GD075;Gestão de Recursos Humanos;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;11;CNEC Parcerias;GD073;Gestão Financeira;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;11;CNEC Parcerias;GD074;Gestão Pública;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;11;CNEC Parcerias;GD037;Letras;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;11;CNEC Parcerias;GD077;Logística;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;11;CNEC Parcerias;GD078;Marketing;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;11;CNEC Parcerias;GD041;Matemática;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;11;CNEC Parcerias;GD045;Pedagogia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;11;CNEC Parcerias;GD046;Pedagogia - Segunda Licenciatura;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;11;CNEC Parcerias;GD079;Processos Gerenciais;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;11;CNEC Parcerias;GD055;Sistemas de Informação;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;11;CNEC Parcerias;GD084;Teologia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;9;Desconto Comercial;GD001;Administração;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;9;Desconto Comercial;GD057;Análise e Desenvolvimento de Sistemas;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;9;Desconto Comercial;GD007;Ciências Contábeis;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;9;Desconto Comercial;GD015;Educação Física;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;9;Desconto Comercial;GD020;Engenharia de Produção;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;9;Desconto Comercial;GD071;Gestão Ambiental;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;9;Desconto Comercial;GD072;Gestão Comercial;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;9;Desconto Comercial;GD075;Gestão de Recursos Humanos;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;9;Desconto Comercial;GD073;Gestão Financeira;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;9;Desconto Comercial;GD074;Gestão Pública;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;9;Desconto Comercial;GD037;Letras;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;9;Desconto Comercial;GD077;Logística;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;9;Desconto Comercial;GD078;Marketing;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;9;Desconto Comercial;GD041;Matemática;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;9;Desconto Comercial;GD045;Pedagogia;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;9;Desconto Comercial;GD046;Pedagogia - Segunda Licenciatura;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;9;Desconto Comercial;GD079;Processos Gerenciais;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;9;Desconto Comercial;GD055;Sistemas de Informação;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;9;Desconto Comercial;GD084;Teologia;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;20;Desconto Comercial Incondicional;GD001;Administração;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;20;Desconto Comercial Incondicional;GD057;Análise e Desenvolvimento de Sistemas;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;20;Desconto Comercial Incondicional;GD007;Ciências Contábeis;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;20;Desconto Comercial Incondicional;GD015;Educação Física;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;20;Desconto Comercial Incondicional;GD020;Engenharia de Produção;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;20;Desconto Comercial Incondicional;GD071;Gestão Ambiental;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;20;Desconto Comercial Incondicional;GD072;Gestão Comercial;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;20;Desconto Comercial Incondicional;GD075;Gestão de Recursos Humanos;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;20;Desconto Comercial Incondicional;GD073;Gestão Financeira;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;20;Desconto Comercial Incondicional;GD074;Gestão Pública;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;20;Desconto Comercial Incondicional;GD037;Letras;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;20;Desconto Comercial Incondicional;GD077;Logística;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;20;Desconto Comercial Incondicional;GD078;Marketing;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;20;Desconto Comercial Incondicional;GD041;Matemática;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;20;Desconto Comercial Incondicional;GD045;Pedagogia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;20;Desconto Comercial Incondicional;GD046;Pedagogia - Segunda Licenciatura;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;20;Desconto Comercial Incondicional;GD079;Processos Gerenciais;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;20;Desconto Comercial Incondicional;GD055;Sistemas de Informação;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;20;Desconto Comercial Incondicional;GD084;Teologia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;42;Desconto Família - 10%;GD001;Administração;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;42;Desconto Família - 10%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;42;Desconto Família - 10%;GD007;Ciências Contábeis;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;42;Desconto Família - 10%;GD015;Educação Física;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;42;Desconto Família - 10%;GD020;Engenharia de Produção;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;42;Desconto Família - 10%;GD071;Gestão Ambiental;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;42;Desconto Família - 10%;GD072;Gestão Comercial;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;42;Desconto Família - 10%;GD075;Gestão de Recursos Humanos;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;42;Desconto Família - 10%;GD073;Gestão Financeira;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;42;Desconto Família - 10%;GD074;Gestão Pública;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;42;Desconto Família - 10%;GD037;Letras;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;42;Desconto Família - 10%;GD077;Logística;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;42;Desconto Família - 10%;GD078;Marketing;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;42;Desconto Família - 10%;GD041;Matemática;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;42;Desconto Família - 10%;GD045;Pedagogia;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;42;Desconto Família - 10%;GD046;Pedagogia - Segunda Licenciatura;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;42;Desconto Família - 10%;GD079;Processos Gerenciais;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;42;Desconto Família - 10%;GD055;Sistemas de Informação;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;42;Desconto Família - 10%;GD084;Teologia;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;43;Desconto Família - 15%;GD001;Administração;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;43;Desconto Família - 15%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;43;Desconto Família - 15%;GD007;Ciências Contábeis;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;43;Desconto Família - 15%;GD015;Educação Física;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;43;Desconto Família - 15%;GD020;Engenharia de Produção;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;43;Desconto Família - 15%;GD071;Gestão Ambiental;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;43;Desconto Família - 15%;GD072;Gestão Comercial;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;43;Desconto Família - 15%;GD075;Gestão de Recursos Humanos;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;43;Desconto Família - 15%;GD073;Gestão Financeira;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;43;Desconto Família - 15%;GD074;Gestão Pública;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;43;Desconto Família - 15%;GD037;Letras;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;43;Desconto Família - 15%;GD077;Logística;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;43;Desconto Família - 15%;GD078;Marketing;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;43;Desconto Família - 15%;GD041;Matemática;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;43;Desconto Família - 15%;GD045;Pedagogia;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;43;Desconto Família - 15%;GD046;Pedagogia - Segunda Licenciatura;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;43;Desconto Família - 15%;GD079;Processos Gerenciais;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;43;Desconto Família - 15%;GD055;Sistemas de Informação;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;43;Desconto Família - 15%;GD084;Teologia;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;44;Desconto Família - 20%;GD001;Administração;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;44;Desconto Família - 20%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;44;Desconto Família - 20%;GD007;Ciências Contábeis;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;44;Desconto Família - 20%;GD015;Educação Física;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;44;Desconto Família - 20%;GD020;Engenharia de Produção;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;44;Desconto Família - 20%;GD071;Gestão Ambiental;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;44;Desconto Família - 20%;GD072;Gestão Comercial;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;44;Desconto Família - 20%;GD075;Gestão de Recursos Humanos;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;44;Desconto Família - 20%;GD073;Gestão Financeira;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;44;Desconto Família - 20%;GD074;Gestão Pública;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;44;Desconto Família - 20%;GD037;Letras;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;44;Desconto Família - 20%;GD077;Logística;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;44;Desconto Família - 20%;GD078;Marketing;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;44;Desconto Família - 20%;GD041;Matemática;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;44;Desconto Família - 20%;GD045;Pedagogia;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;44;Desconto Família - 20%;GD046;Pedagogia - Segunda Licenciatura;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;44;Desconto Família - 20%;GD079;Processos Gerenciais;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;44;Desconto Família - 20%;GD055;Sistemas de Informação;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;44;Desconto Família - 20%;GD084;Teologia;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;45;Desconto Família - 25%;GD001;Administração;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;45;Desconto Família - 25%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;45;Desconto Família - 25%;GD007;Ciências Contábeis;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;45;Desconto Família - 25%;GD015;Educação Física;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;45;Desconto Família - 25%;GD020;Engenharia de Produção;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;45;Desconto Família - 25%;GD071;Gestão Ambiental;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;45;Desconto Família - 25%;GD072;Gestão Comercial;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;45;Desconto Família - 25%;GD075;Gestão de Recursos Humanos;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;45;Desconto Família - 25%;GD073;Gestão Financeira;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;45;Desconto Família - 25%;GD074;Gestão Pública;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;45;Desconto Família - 25%;GD037;Letras;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;45;Desconto Família - 25%;GD077;Logística;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;45;Desconto Família - 25%;GD078;Marketing;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;45;Desconto Família - 25%;GD041;Matemática;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;45;Desconto Família - 25%;GD045;Pedagogia;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;45;Desconto Família - 25%;GD046;Pedagogia - Segunda Licenciatura;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;45;Desconto Família - 25%;GD079;Processos Gerenciais;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;45;Desconto Família - 25%;GD055;Sistemas de Informação;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;45;Desconto Família - 25%;GD084;Teologia;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;46;Desconto Família - 30%;GD001;Administração;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;46;Desconto Família - 30%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;46;Desconto Família - 30%;GD007;Ciências Contábeis;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;46;Desconto Família - 30%;GD015;Educação Física;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;46;Desconto Família - 30%;GD020;Engenharia de Produção;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;46;Desconto Família - 30%;GD071;Gestão Ambiental;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;46;Desconto Família - 30%;GD072;Gestão Comercial;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;46;Desconto Família - 30%;GD075;Gestão de Recursos Humanos;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;46;Desconto Família - 30%;GD073;Gestão Financeira;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;46;Desconto Família - 30%;GD074;Gestão Pública;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;46;Desconto Família - 30%;GD037;Letras;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;46;Desconto Família - 30%;GD077;Logística;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;46;Desconto Família - 30%;GD078;Marketing;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;46;Desconto Família - 30%;GD041;Matemática;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;46;Desconto Família - 30%;GD045;Pedagogia;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;46;Desconto Família - 30%;GD046;Pedagogia - Segunda Licenciatura;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;46;Desconto Família - 30%;GD079;Processos Gerenciais;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;46;Desconto Família - 30%;GD055;Sistemas de Informação;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;46;Desconto Família - 30%;GD084;Teologia;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;47;Desconto Família - 35%;GD001;Administração;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;47;Desconto Família - 35%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;47;Desconto Família - 35%;GD007;Ciências Contábeis;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;47;Desconto Família - 35%;GD015;Educação Física;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;47;Desconto Família - 35%;GD020;Engenharia de Produção;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;47;Desconto Família - 35%;GD071;Gestão Ambiental;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;47;Desconto Família - 35%;GD072;Gestão Comercial;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;47;Desconto Família - 35%;GD075;Gestão de Recursos Humanos;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;47;Desconto Família - 35%;GD073;Gestão Financeira;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;47;Desconto Família - 35%;GD074;Gestão Pública;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;47;Desconto Família - 35%;GD037;Letras;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;47;Desconto Família - 35%;GD077;Logística;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;47;Desconto Família - 35%;GD078;Marketing;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;47;Desconto Família - 35%;GD041;Matemática;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;47;Desconto Família - 35%;GD045;Pedagogia;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;47;Desconto Família - 35%;GD046;Pedagogia - Segunda Licenciatura;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;47;Desconto Família - 35%;GD079;Processos Gerenciais;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;47;Desconto Família - 35%;GD055;Sistemas de Informação;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;47;Desconto Família - 35%;GD084;Teologia;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;48;Desconto Família - 40%;GD001;Administração;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;48;Desconto Família - 40%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;48;Desconto Família - 40%;GD007;Ciências Contábeis;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;48;Desconto Família - 40%;GD015;Educação Física;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;48;Desconto Família - 40%;GD020;Engenharia de Produção;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;48;Desconto Família - 40%;GD071;Gestão Ambiental;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;48;Desconto Família - 40%;GD072;Gestão Comercial;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;48;Desconto Família - 40%;GD075;Gestão de Recursos Humanos;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;48;Desconto Família - 40%;GD073;Gestão Financeira;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;48;Desconto Família - 40%;GD074;Gestão Pública;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;48;Desconto Família - 40%;GD037;Letras;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;48;Desconto Família - 40%;GD077;Logística;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;48;Desconto Família - 40%;GD078;Marketing;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;48;Desconto Família - 40%;GD041;Matemática;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;48;Desconto Família - 40%;GD045;Pedagogia;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;48;Desconto Família - 40%;GD046;Pedagogia - Segunda Licenciatura;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;48;Desconto Família - 40%;GD079;Processos Gerenciais;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;48;Desconto Família - 40%;GD055;Sistemas de Informação;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;48;Desconto Família - 40%;GD084;Teologia;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;49;Desconto Família - 45%;GD001;Administração;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;49;Desconto Família - 45%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;49;Desconto Família - 45%;GD007;Ciências Contábeis;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;49;Desconto Família - 45%;GD015;Educação Física;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;49;Desconto Família - 45%;GD020;Engenharia de Produção;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;49;Desconto Família - 45%;GD071;Gestão Ambiental;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;49;Desconto Família - 45%;GD072;Gestão Comercial;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;49;Desconto Família - 45%;GD075;Gestão de Recursos Humanos;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;49;Desconto Família - 45%;GD073;Gestão Financeira;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;49;Desconto Família - 45%;GD074;Gestão Pública;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;49;Desconto Família - 45%;GD037;Letras;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;49;Desconto Família - 45%;GD077;Logística;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;49;Desconto Família - 45%;GD078;Marketing;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;49;Desconto Família - 45%;GD041;Matemática;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;49;Desconto Família - 45%;GD045;Pedagogia;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;49;Desconto Família - 45%;GD046;Pedagogia - Segunda Licenciatura;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;49;Desconto Família - 45%;GD079;Processos Gerenciais;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;49;Desconto Família - 45%;GD055;Sistemas de Informação;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;49;Desconto Família - 45%;GD084;Teologia;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;50;Desconto Família - 50%;GD001;Administração;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;50;Desconto Família - 50%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;50;Desconto Família - 50%;GD007;Ciências Contábeis;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;50;Desconto Família - 50%;GD015;Educação Física;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;50;Desconto Família - 50%;GD020;Engenharia de Produção;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;50;Desconto Família - 50%;GD071;Gestão Ambiental;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;50;Desconto Família - 50%;GD072;Gestão Comercial;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;50;Desconto Família - 50%;GD075;Gestão de Recursos Humanos;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;50;Desconto Família - 50%;GD073;Gestão Financeira;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;50;Desconto Família - 50%;GD074;Gestão Pública;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;50;Desconto Família - 50%;GD037;Letras;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;50;Desconto Família - 50%;GD077;Logística;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;50;Desconto Família - 50%;GD078;Marketing;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;50;Desconto Família - 50%;GD041;Matemática;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;50;Desconto Família - 50%;GD045;Pedagogia;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;50;Desconto Família - 50%;GD046;Pedagogia - Segunda Licenciatura;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;50;Desconto Família - 50%;GD079;Processos Gerenciais;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;50;Desconto Família - 50%;GD055;Sistemas de Informação;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;50;Desconto Família - 50%;GD084;Teologia;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;40;Desconto Incodicional - FIES;GD001;Administração;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;40;Desconto Incodicional - FIES;GD057;Análise e Desenvolvimento de Sistemas;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;40;Desconto Incodicional - FIES;GD007;Ciências Contábeis;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;40;Desconto Incodicional - FIES;GD015;Educação Física;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;40;Desconto Incodicional - FIES;GD020;Engenharia de Produção;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;40;Desconto Incodicional - FIES;GD071;Gestão Ambiental;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;40;Desconto Incodicional - FIES;GD072;Gestão Comercial;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;40;Desconto Incodicional - FIES;GD075;Gestão de Recursos Humanos;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;40;Desconto Incodicional - FIES;GD073;Gestão Financeira;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;40;Desconto Incodicional - FIES;GD074;Gestão Pública;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;40;Desconto Incodicional - FIES;GD037;Letras;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;40;Desconto Incodicional - FIES;GD077;Logística;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;40;Desconto Incodicional - FIES;GD078;Marketing;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;40;Desconto Incodicional - FIES;GD041;Matemática;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;40;Desconto Incodicional - FIES;GD045;Pedagogia;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;40;Desconto Incodicional - FIES;GD046;Pedagogia - Segunda Licenciatura;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;40;Desconto Incodicional - FIES;GD079;Processos Gerenciais;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;40;Desconto Incodicional - FIES;GD055;Sistemas de Informação;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;40;Desconto Incodicional - FIES;GD084;Teologia;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;30;Egresso - EB CNEC;GD001;Administração;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;30;Egresso - EB CNEC;GD057;Análise e Desenvolvimento de Sistemas;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;30;Egresso - EB CNEC;GD007;Ciências Contábeis;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;30;Egresso - EB CNEC;GD015;Educação Física;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;30;Egresso - EB CNEC;GD020;Engenharia de Produção;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;30;Egresso - EB CNEC;GD071;Gestão Ambiental;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;30;Egresso - EB CNEC;GD072;Gestão Comercial;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;30;Egresso - EB CNEC;GD075;Gestão de Recursos Humanos;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;30;Egresso - EB CNEC;GD073;Gestão Financeira;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;30;Egresso - EB CNEC;GD074;Gestão Pública;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;30;Egresso - EB CNEC;GD037;Letras;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;30;Egresso - EB CNEC;GD077;Logística;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;30;Egresso - EB CNEC;GD078;Marketing;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;30;Egresso - EB CNEC;GD041;Matemática;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;30;Egresso - EB CNEC;GD045;Pedagogia;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;30;Egresso - EB CNEC;GD046;Pedagogia - Segunda Licenciatura;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;30;Egresso - EB CNEC;GD079;Processos Gerenciais;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;30;Egresso - EB CNEC;GD055;Sistemas de Informação;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;30;Egresso - EB CNEC;GD084;Teologia;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;36;Enem - 10%;GD001;Administração;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;36;Enem - 10%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;36;Enem - 10%;GD007;Ciências Contábeis;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;36;Enem - 10%;GD015;Educação Física;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;36;Enem - 10%;GD020;Engenharia de Produção;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;36;Enem - 10%;GD071;Gestão Ambiental;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;36;Enem - 10%;GD072;Gestão Comercial;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;36;Enem - 10%;GD075;Gestão de Recursos Humanos;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;36;Enem - 10%;GD073;Gestão Financeira;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;36;Enem - 10%;GD074;Gestão Pública;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;36;Enem - 10%;GD037;Letras;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;36;Enem - 10%;GD077;Logística;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;36;Enem - 10%;GD078;Marketing;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;36;Enem - 10%;GD041;Matemática;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;36;Enem - 10%;GD045;Pedagogia;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;36;Enem - 10%;GD046;Pedagogia - Segunda Licenciatura;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;36;Enem - 10%;GD079;Processos Gerenciais;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;36;Enem - 10%;GD055;Sistemas de Informação;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;36;Enem - 10%;GD084;Teologia;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;29;Enem - 100%;GD001;Administração;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;29;Enem - 100%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;29;Enem - 100%;GD007;Ciências Contábeis;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;29;Enem - 100%;GD015;Educação Física;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;29;Enem - 100%;GD020;Engenharia de Produção;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;29;Enem - 100%;GD071;Gestão Ambiental;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;29;Enem - 100%;GD072;Gestão Comercial;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;29;Enem - 100%;GD075;Gestão de Recursos Humanos;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;29;Enem - 100%;GD073;Gestão Financeira;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;29;Enem - 100%;GD074;Gestão Pública;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;29;Enem - 100%;GD037;Letras;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;29;Enem - 100%;GD077;Logística;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;29;Enem - 100%;GD078;Marketing;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;29;Enem - 100%;GD041;Matemática;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;29;Enem - 100%;GD045;Pedagogia;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;29;Enem - 100%;GD046;Pedagogia - Segunda Licenciatura;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;29;Enem - 100%;GD079;Processos Gerenciais;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;29;Enem - 100%;GD055;Sistemas de Informação;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;29;Enem - 100%;GD084;Teologia;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;25;Enem - 20%;GD001;Administração;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;25;Enem - 20%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;25;Enem - 20%;GD007;Ciências Contábeis;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;25;Enem - 20%;GD015;Educação Física;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;25;Enem - 20%;GD020;Engenharia de Produção;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;25;Enem - 20%;GD071;Gestão Ambiental;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;25;Enem - 20%;GD072;Gestão Comercial;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;25;Enem - 20%;GD075;Gestão de Recursos Humanos;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;25;Enem - 20%;GD073;Gestão Financeira;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;25;Enem - 20%;GD074;Gestão Pública;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;25;Enem - 20%;GD037;Letras;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;25;Enem - 20%;GD077;Logística;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;25;Enem - 20%;GD078;Marketing;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;25;Enem - 20%;GD041;Matemática;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;25;Enem - 20%;GD045;Pedagogia;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;25;Enem - 20%;GD046;Pedagogia - Segunda Licenciatura;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;25;Enem - 20%;GD079;Processos Gerenciais;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;25;Enem - 20%;GD055;Sistemas de Informação;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;25;Enem - 20%;GD084;Teologia;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;26;Enem - 30%;GD001;Administração;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;26;Enem - 30%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;26;Enem - 30%;GD007;Ciências Contábeis;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;26;Enem - 30%;GD015;Educação Física;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;26;Enem - 30%;GD020;Engenharia de Produção;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;26;Enem - 30%;GD071;Gestão Ambiental;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;26;Enem - 30%;GD072;Gestão Comercial;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;26;Enem - 30%;GD075;Gestão de Recursos Humanos;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;26;Enem - 30%;GD073;Gestão Financeira;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;26;Enem - 30%;GD074;Gestão Pública;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;26;Enem - 30%;GD037;Letras;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;26;Enem - 30%;GD077;Logística;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;26;Enem - 30%;GD078;Marketing;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;26;Enem - 30%;GD041;Matemática;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;26;Enem - 30%;GD045;Pedagogia;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;26;Enem - 30%;GD046;Pedagogia - Segunda Licenciatura;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;26;Enem - 30%;GD079;Processos Gerenciais;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;26;Enem - 30%;GD055;Sistemas de Informação;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;26;Enem - 30%;GD084;Teologia;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;27;Enem - 40%;GD001;Administração;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;27;Enem - 40%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;27;Enem - 40%;GD007;Ciências Contábeis;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;27;Enem - 40%;GD015;Educação Física;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;27;Enem - 40%;GD020;Engenharia de Produção;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;27;Enem - 40%;GD071;Gestão Ambiental;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;27;Enem - 40%;GD072;Gestão Comercial;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;27;Enem - 40%;GD075;Gestão de Recursos Humanos;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;27;Enem - 40%;GD073;Gestão Financeira;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;27;Enem - 40%;GD074;Gestão Pública;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;27;Enem - 40%;GD037;Letras;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;27;Enem - 40%;GD077;Logística;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;27;Enem - 40%;GD078;Marketing;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;27;Enem - 40%;GD041;Matemática;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;27;Enem - 40%;GD045;Pedagogia;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;27;Enem - 40%;GD046;Pedagogia - Segunda Licenciatura;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;27;Enem - 40%;GD079;Processos Gerenciais;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;27;Enem - 40%;GD055;Sistemas de Informação;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;27;Enem - 40%;GD084;Teologia;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;28;Enem - 50%;GD001;Administração;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;28;Enem - 50%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;28;Enem - 50%;GD007;Ciências Contábeis;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;28;Enem - 50%;GD015;Educação Física;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;28;Enem - 50%;GD020;Engenharia de Produção;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;28;Enem - 50%;GD071;Gestão Ambiental;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;28;Enem - 50%;GD072;Gestão Comercial;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;28;Enem - 50%;GD075;Gestão de Recursos Humanos;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;28;Enem - 50%;GD073;Gestão Financeira;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;28;Enem - 50%;GD074;Gestão Pública;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;28;Enem - 50%;GD037;Letras;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;28;Enem - 50%;GD077;Logística;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;28;Enem - 50%;GD078;Marketing;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;28;Enem - 50%;GD041;Matemática;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;28;Enem - 50%;GD045;Pedagogia;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;28;Enem - 50%;GD046;Pedagogia - Segunda Licenciatura;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;28;Enem - 50%;GD079;Processos Gerenciais;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;28;Enem - 50%;GD055;Sistemas de Informação;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;28;Enem - 50%;GD084;Teologia;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;33;Evadidos Trancados;GD001;Administração;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;33;Evadidos Trancados;GD057;Análise e Desenvolvimento de Sistemas;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;33;Evadidos Trancados;GD007;Ciências Contábeis;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;33;Evadidos Trancados;GD015;Educação Física;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;33;Evadidos Trancados;GD020;Engenharia de Produção;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;33;Evadidos Trancados;GD071;Gestão Ambiental;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;33;Evadidos Trancados;GD072;Gestão Comercial;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;33;Evadidos Trancados;GD075;Gestão de Recursos Humanos;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;33;Evadidos Trancados;GD073;Gestão Financeira;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;33;Evadidos Trancados;GD074;Gestão Pública;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;33;Evadidos Trancados;GD037;Letras;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;33;Evadidos Trancados;GD077;Logística;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;33;Evadidos Trancados;GD078;Marketing;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;33;Evadidos Trancados;GD041;Matemática;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;33;Evadidos Trancados;GD045;Pedagogia;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;33;Evadidos Trancados;GD046;Pedagogia - Segunda Licenciatura;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;33;Evadidos Trancados;GD079;Processos Gerenciais;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;33;Evadidos Trancados;GD055;Sistemas de Informação;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;33;Evadidos Trancados;GD084;Teologia;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;18;Fies Novo;GD001;Administração;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;18;Fies Novo;GD057;Análise e Desenvolvimento de Sistemas;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;18;Fies Novo;GD007;Ciências Contábeis;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;18;Fies Novo;GD015;Educação Física;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;18;Fies Novo;GD020;Engenharia de Produção;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;18;Fies Novo;GD071;Gestão Ambiental;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;18;Fies Novo;GD072;Gestão Comercial;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;18;Fies Novo;GD075;Gestão de Recursos Humanos;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;18;Fies Novo;GD073;Gestão Financeira;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;18;Fies Novo;GD074;Gestão Pública;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;18;Fies Novo;GD037;Letras;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;18;Fies Novo;GD077;Logística;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;18;Fies Novo;GD078;Marketing;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;18;Fies Novo;GD041;Matemática;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;18;Fies Novo;GD045;Pedagogia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;18;Fies Novo;GD046;Pedagogia - Segunda Licenciatura;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;18;Fies Novo;GD079;Processos Gerenciais;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;18;Fies Novo;GD055;Sistemas de Informação;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;18;Fies Novo;GD084;Teologia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;7;Fies*;GD001;Administração;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;7;Fies*;GD057;Análise e Desenvolvimento de Sistemas;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;7;Fies*;GD007;Ciências Contábeis;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;7;Fies*;GD015;Educação Física;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;7;Fies*;GD020;Engenharia de Produção;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;7;Fies*;GD071;Gestão Ambiental;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;7;Fies*;GD072;Gestão Comercial;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;7;Fies*;GD075;Gestão de Recursos Humanos;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;7;Fies*;GD073;Gestão Financeira;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;7;Fies*;GD074;Gestão Pública;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;7;Fies*;GD037;Letras;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;7;Fies*;GD077;Logística;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;7;Fies*;GD078;Marketing;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;7;Fies*;GD041;Matemática;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;7;Fies*;GD045;Pedagogia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;7;Fies*;GD046;Pedagogia - Segunda Licenciatura;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;7;Fies*;GD079;Processos Gerenciais;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;7;Fies*;GD055;Sistemas de Informação;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;7;Fies*;GD084;Teologia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;3;Prouni – 100%;GD001;Administração;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;3;Prouni – 100%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;3;Prouni – 100%;GD007;Ciências Contábeis;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;3;Prouni – 100%;GD015;Educação Física;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;3;Prouni – 100%;GD020;Engenharia de Produção;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;3;Prouni – 100%;GD071;Gestão Ambiental;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;3;Prouni – 100%;GD072;Gestão Comercial;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;3;Prouni – 100%;GD075;Gestão de Recursos Humanos;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;3;Prouni – 100%;GD073;Gestão Financeira;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;3;Prouni – 100%;GD074;Gestão Pública;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;3;Prouni – 100%;GD037;Letras;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;3;Prouni – 100%;GD077;Logística;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;3;Prouni – 100%;GD078;Marketing;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;3;Prouni – 100%;GD041;Matemática;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;3;Prouni – 100%;GD045;Pedagogia;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;3;Prouni – 100%;GD046;Pedagogia - Segunda Licenciatura;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;3;Prouni – 100%;GD079;Processos Gerenciais;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;3;Prouni – 100%;GD055;Sistemas de Informação;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;3;Prouni – 100%;GD084;Teologia;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;4;Prouni – 50%;GD001;Administração;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;4;Prouni – 50%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;4;Prouni – 50%;GD007;Ciências Contábeis;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;4;Prouni – 50%;GD015;Educação Física;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;4;Prouni – 50%;GD020;Engenharia de Produção;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;4;Prouni – 50%;GD071;Gestão Ambiental;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;4;Prouni – 50%;GD072;Gestão Comercial;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;4;Prouni – 50%;GD075;Gestão de Recursos Humanos;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;4;Prouni – 50%;GD073;Gestão Financeira;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;4;Prouni – 50%;GD074;Gestão Pública;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;4;Prouni – 50%;GD037;Letras;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;4;Prouni – 50%;GD077;Logística;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;4;Prouni – 50%;GD078;Marketing;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;4;Prouni – 50%;GD041;Matemática;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;4;Prouni – 50%;GD045;Pedagogia;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;4;Prouni – 50%;GD046;Pedagogia - Segunda Licenciatura;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;4;Prouni – 50%;GD079;Processos Gerenciais;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;4;Prouni – 50%;GD055;Sistemas de Informação;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;4;Prouni – 50%;GD084;Teologia;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;19;Subvenção;GD001;Administração;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;19;Subvenção;GD057;Análise e Desenvolvimento de Sistemas;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;19;Subvenção;GD007;Ciências Contábeis;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;19;Subvenção;GD015;Educação Física;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;19;Subvenção;GD020;Engenharia de Produção;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;19;Subvenção;GD071;Gestão Ambiental;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;19;Subvenção;GD072;Gestão Comercial;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;19;Subvenção;GD075;Gestão de Recursos Humanos;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;19;Subvenção;GD073;Gestão Financeira;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;19;Subvenção;GD074;Gestão Pública;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;19;Subvenção;GD037;Letras;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;19;Subvenção;GD077;Logística;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;19;Subvenção;GD078;Marketing;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;19;Subvenção;GD041;Matemática;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;19;Subvenção;GD045;Pedagogia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;19;Subvenção;GD046;Pedagogia - Segunda Licenciatura;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;19;Subvenção;GD079;Processos Gerenciais;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;19;Subvenção;GD055;Sistemas de Informação;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;19;Subvenção;GD084;Teologia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;34;Transferidos de outras IES;GD001;Administração;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;34;Transferidos de outras IES;GD057;Análise e Desenvolvimento de Sistemas;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;34;Transferidos de outras IES;GD007;Ciências Contábeis;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;34;Transferidos de outras IES;GD015;Educação Física;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;34;Transferidos de outras IES;GD020;Engenharia de Produção;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;34;Transferidos de outras IES;GD071;Gestão Ambiental;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;34;Transferidos de outras IES;GD072;Gestão Comercial;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;34;Transferidos de outras IES;GD075;Gestão de Recursos Humanos;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;34;Transferidos de outras IES;GD073;Gestão Financeira;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;34;Transferidos de outras IES;GD074;Gestão Pública;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;34;Transferidos de outras IES;GD037;Letras;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;34;Transferidos de outras IES;GD077;Logística;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;34;Transferidos de outras IES;GD078;Marketing;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;34;Transferidos de outras IES;GD041;Matemática;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;34;Transferidos de outras IES;GD045;Pedagogia;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;34;Transferidos de outras IES;GD046;Pedagogia - Segunda Licenciatura;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;34;Transferidos de outras IES;GD079;Processos Gerenciais;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;34;Transferidos de outras IES;GD055;Sistemas de Informação;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2398;2019-21;34;Transferidos de outras IES;GD084;Teologia;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;31;2ª Graduação - CNEC;GD001;Administração;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;31;2ª Graduação - CNEC;GD057;Análise e Desenvolvimento de Sistemas;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;31;2ª Graduação - CNEC;GD007;Ciências Contábeis;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;31;2ª Graduação - CNEC;GD015;Educação Física;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;31;2ª Graduação - CNEC;GD020;Engenharia de Produção;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;31;2ª Graduação - CNEC;GD071;Gestão Ambiental;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;31;2ª Graduação - CNEC;GD072;Gestão Comercial;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;31;2ª Graduação - CNEC;GD075;Gestão de Recursos Humanos;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;31;2ª Graduação - CNEC;GD073;Gestão Financeira;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;31;2ª Graduação - CNEC;GD074;Gestão Pública;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;31;2ª Graduação - CNEC;GD037;Letras;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;31;2ª Graduação - CNEC;GD077;Logística;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;31;2ª Graduação - CNEC;GD078;Marketing;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;31;2ª Graduação - CNEC;GD041;Matemática;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;31;2ª Graduação - CNEC;GD045;Pedagogia;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;31;2ª Graduação - CNEC;GD046;Pedagogia - Segunda Licenciatura;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;31;2ª Graduação - CNEC;GD079;Processos Gerenciais;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;31;2ª Graduação - CNEC;GD055;Sistemas de Informação;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;31;2ª Graduação - CNEC;GD084;Teologia;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;32;2ª Graduação - Outras IES;GD001;Administração;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;32;2ª Graduação - Outras IES;GD057;Análise e Desenvolvimento de Sistemas;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;32;2ª Graduação - Outras IES;GD007;Ciências Contábeis;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;32;2ª Graduação - Outras IES;GD015;Educação Física;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;32;2ª Graduação - Outras IES;GD020;Engenharia de Produção;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;32;2ª Graduação - Outras IES;GD071;Gestão Ambiental;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;32;2ª Graduação - Outras IES;GD072;Gestão Comercial;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;32;2ª Graduação - Outras IES;GD075;Gestão de Recursos Humanos;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;32;2ª Graduação - Outras IES;GD073;Gestão Financeira;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;32;2ª Graduação - Outras IES;GD074;Gestão Pública;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;32;2ª Graduação - Outras IES;GD037;Letras;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;32;2ª Graduação - Outras IES;GD077;Logística;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;32;2ª Graduação - Outras IES;GD078;Marketing;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;32;2ª Graduação - Outras IES;GD041;Matemática;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;32;2ª Graduação - Outras IES;GD045;Pedagogia;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;32;2ª Graduação - Outras IES;GD046;Pedagogia - Segunda Licenciatura;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;32;2ª Graduação - Outras IES;GD079;Processos Gerenciais;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;32;2ª Graduação - Outras IES;GD055;Sistemas de Informação;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;32;2ª Graduação - Outras IES;GD084;Teologia;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;1;Bolsa CNEC 100%;GD001;Administração;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;1;Bolsa CNEC 100%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;1;Bolsa CNEC 100%;GD007;Ciências Contábeis;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;1;Bolsa CNEC 100%;GD015;Educação Física;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;1;Bolsa CNEC 100%;GD020;Engenharia de Produção;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;1;Bolsa CNEC 100%;GD071;Gestão Ambiental;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;1;Bolsa CNEC 100%;GD072;Gestão Comercial;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;1;Bolsa CNEC 100%;GD075;Gestão de Recursos Humanos;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;1;Bolsa CNEC 100%;GD073;Gestão Financeira;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;1;Bolsa CNEC 100%;GD074;Gestão Pública;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;1;Bolsa CNEC 100%;GD037;Letras;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;1;Bolsa CNEC 100%;GD077;Logística;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;1;Bolsa CNEC 100%;GD078;Marketing;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;1;Bolsa CNEC 100%;GD041;Matemática;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;1;Bolsa CNEC 100%;GD045;Pedagogia;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;1;Bolsa CNEC 100%;GD046;Pedagogia - Segunda Licenciatura;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;1;Bolsa CNEC 100%;GD079;Processos Gerenciais;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;1;Bolsa CNEC 100%;GD055;Sistemas de Informação;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;1;Bolsa CNEC 100%;GD084;Teologia;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;2;Bolsa CNEC 50%;GD001;Administração;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;2;Bolsa CNEC 50%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;2;Bolsa CNEC 50%;GD007;Ciências Contábeis;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;2;Bolsa CNEC 50%;GD015;Educação Física;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;2;Bolsa CNEC 50%;GD020;Engenharia de Produção;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;2;Bolsa CNEC 50%;GD071;Gestão Ambiental;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;2;Bolsa CNEC 50%;GD072;Gestão Comercial;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;2;Bolsa CNEC 50%;GD075;Gestão de Recursos Humanos;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;2;Bolsa CNEC 50%;GD073;Gestão Financeira;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;2;Bolsa CNEC 50%;GD074;Gestão Pública;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;2;Bolsa CNEC 50%;GD037;Letras;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;2;Bolsa CNEC 50%;GD077;Logística;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;2;Bolsa CNEC 50%;GD078;Marketing;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;2;Bolsa CNEC 50%;GD041;Matemática;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;2;Bolsa CNEC 50%;GD045;Pedagogia;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;2;Bolsa CNEC 50%;GD046;Pedagogia - Segunda Licenciatura;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;2;Bolsa CNEC 50%;GD079;Processos Gerenciais;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;2;Bolsa CNEC 50%;GD055;Sistemas de Informação;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;2;Bolsa CNEC 50%;GD084;Teologia;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;5;Bolsa Desconto Folha;GD001;Administração;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;5;Bolsa Desconto Folha;GD057;Análise e Desenvolvimento de Sistemas;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;5;Bolsa Desconto Folha;GD007;Ciências Contábeis;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;5;Bolsa Desconto Folha;GD015;Educação Física;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;5;Bolsa Desconto Folha;GD020;Engenharia de Produção;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;5;Bolsa Desconto Folha;GD071;Gestão Ambiental;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;5;Bolsa Desconto Folha;GD072;Gestão Comercial;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;5;Bolsa Desconto Folha;GD075;Gestão de Recursos Humanos;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;5;Bolsa Desconto Folha;GD073;Gestão Financeira;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;5;Bolsa Desconto Folha;GD074;Gestão Pública;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;5;Bolsa Desconto Folha;GD037;Letras;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;5;Bolsa Desconto Folha;GD077;Logística;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;5;Bolsa Desconto Folha;GD078;Marketing;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;5;Bolsa Desconto Folha;GD041;Matemática;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;5;Bolsa Desconto Folha;GD045;Pedagogia;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;5;Bolsa Desconto Folha;GD046;Pedagogia - Segunda Licenciatura;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;5;Bolsa Desconto Folha;GD079;Processos Gerenciais;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;5;Bolsa Desconto Folha;GD055;Sistemas de Informação;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;5;Bolsa Desconto Folha;GD084;Teologia;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;8;CCT/ACT;GD001;Administração;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;8;CCT/ACT;GD057;Análise e Desenvolvimento de Sistemas;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;8;CCT/ACT;GD007;Ciências Contábeis;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;8;CCT/ACT;GD015;Educação Física;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;8;CCT/ACT;GD020;Engenharia de Produção;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;8;CCT/ACT;GD071;Gestão Ambiental;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;8;CCT/ACT;GD072;Gestão Comercial;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;8;CCT/ACT;GD075;Gestão de Recursos Humanos;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;8;CCT/ACT;GD073;Gestão Financeira;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;8;CCT/ACT;GD074;Gestão Pública;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;8;CCT/ACT;GD037;Letras;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;8;CCT/ACT;GD077;Logística;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;8;CCT/ACT;GD078;Marketing;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;8;CCT/ACT;GD041;Matemática;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;8;CCT/ACT;GD045;Pedagogia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;8;CCT/ACT;GD046;Pedagogia - Segunda Licenciatura;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;8;CCT/ACT;GD079;Processos Gerenciais;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;8;CCT/ACT;GD055;Sistemas de Informação;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;8;CCT/ACT;GD084;Teologia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;15;Cnec Antecipação;GD001;Administração;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;15;Cnec Antecipação;GD057;Análise e Desenvolvimento de Sistemas;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;15;Cnec Antecipação;GD007;Ciências Contábeis;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;15;Cnec Antecipação;GD015;Educação Física;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;15;Cnec Antecipação;GD020;Engenharia de Produção;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;15;Cnec Antecipação;GD071;Gestão Ambiental;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;15;Cnec Antecipação;GD072;Gestão Comercial;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;15;Cnec Antecipação;GD075;Gestão de Recursos Humanos;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;15;Cnec Antecipação;GD073;Gestão Financeira;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;15;Cnec Antecipação;GD074;Gestão Pública;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;15;Cnec Antecipação;GD037;Letras;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;15;Cnec Antecipação;GD077;Logística;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;15;Cnec Antecipação;GD078;Marketing;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;15;Cnec Antecipação;GD041;Matemática;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;15;Cnec Antecipação;GD045;Pedagogia;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;15;Cnec Antecipação;GD046;Pedagogia - Segunda Licenciatura;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;15;Cnec Antecipação;GD079;Processos Gerenciais;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;15;Cnec Antecipação;GD055;Sistemas de Informação;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;15;Cnec Antecipação;GD084;Teologia;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;12;CNEC Colaborador;GD001;Administração;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;12;CNEC Colaborador;GD057;Análise e Desenvolvimento de Sistemas;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;12;CNEC Colaborador;GD007;Ciências Contábeis;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;12;CNEC Colaborador;GD015;Educação Física;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;12;CNEC Colaborador;GD020;Engenharia de Produção;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;12;CNEC Colaborador;GD071;Gestão Ambiental;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;12;CNEC Colaborador;GD072;Gestão Comercial;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;12;CNEC Colaborador;GD075;Gestão de Recursos Humanos;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;12;CNEC Colaborador;GD073;Gestão Financeira;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;12;CNEC Colaborador;GD074;Gestão Pública;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;12;CNEC Colaborador;GD037;Letras;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;12;CNEC Colaborador;GD077;Logística;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;12;CNEC Colaborador;GD078;Marketing;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;12;CNEC Colaborador;GD041;Matemática;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;12;CNEC Colaborador;GD045;Pedagogia;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;12;CNEC Colaborador;GD046;Pedagogia - Segunda Licenciatura;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;12;CNEC Colaborador;GD079;Processos Gerenciais;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;12;CNEC Colaborador;GD055;Sistemas de Informação;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;12;CNEC Colaborador;GD084;Teologia;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;11;CNEC Parcerias;GD001;Administração;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;11;CNEC Parcerias;GD057;Análise e Desenvolvimento de Sistemas;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;11;CNEC Parcerias;GD007;Ciências Contábeis;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;11;CNEC Parcerias;GD015;Educação Física;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;11;CNEC Parcerias;GD020;Engenharia de Produção;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;11;CNEC Parcerias;GD071;Gestão Ambiental;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;11;CNEC Parcerias;GD072;Gestão Comercial;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;11;CNEC Parcerias;GD075;Gestão de Recursos Humanos;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;11;CNEC Parcerias;GD073;Gestão Financeira;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;11;CNEC Parcerias;GD074;Gestão Pública;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;11;CNEC Parcerias;GD037;Letras;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;11;CNEC Parcerias;GD077;Logística;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;11;CNEC Parcerias;GD078;Marketing;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;11;CNEC Parcerias;GD041;Matemática;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;11;CNEC Parcerias;GD045;Pedagogia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;11;CNEC Parcerias;GD046;Pedagogia - Segunda Licenciatura;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;11;CNEC Parcerias;GD079;Processos Gerenciais;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;11;CNEC Parcerias;GD055;Sistemas de Informação;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;11;CNEC Parcerias;GD084;Teologia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;9;Desconto Comercial;GD001;Administração;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;9;Desconto Comercial;GD057;Análise e Desenvolvimento de Sistemas;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;9;Desconto Comercial;GD007;Ciências Contábeis;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;9;Desconto Comercial;GD015;Educação Física;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;9;Desconto Comercial;GD020;Engenharia de Produção;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;9;Desconto Comercial;GD071;Gestão Ambiental;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;9;Desconto Comercial;GD072;Gestão Comercial;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;9;Desconto Comercial;GD075;Gestão de Recursos Humanos;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;9;Desconto Comercial;GD073;Gestão Financeira;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;9;Desconto Comercial;GD074;Gestão Pública;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;9;Desconto Comercial;GD037;Letras;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;9;Desconto Comercial;GD077;Logística;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;9;Desconto Comercial;GD078;Marketing;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;9;Desconto Comercial;GD041;Matemática;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;9;Desconto Comercial;GD045;Pedagogia;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;9;Desconto Comercial;GD046;Pedagogia - Segunda Licenciatura;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;9;Desconto Comercial;GD079;Processos Gerenciais;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;9;Desconto Comercial;GD055;Sistemas de Informação;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;9;Desconto Comercial;GD084;Teologia;A Distância;99;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;20;Desconto Comercial Incondicional;GD001;Administração;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;20;Desconto Comercial Incondicional;GD057;Análise e Desenvolvimento de Sistemas;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;20;Desconto Comercial Incondicional;GD007;Ciências Contábeis;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;20;Desconto Comercial Incondicional;GD015;Educação Física;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;20;Desconto Comercial Incondicional;GD020;Engenharia de Produção;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;20;Desconto Comercial Incondicional;GD071;Gestão Ambiental;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;20;Desconto Comercial Incondicional;GD072;Gestão Comercial;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;20;Desconto Comercial Incondicional;GD075;Gestão de Recursos Humanos;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;20;Desconto Comercial Incondicional;GD073;Gestão Financeira;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;20;Desconto Comercial Incondicional;GD074;Gestão Pública;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;20;Desconto Comercial Incondicional;GD037;Letras;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;20;Desconto Comercial Incondicional;GD077;Logística;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;20;Desconto Comercial Incondicional;GD078;Marketing;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;20;Desconto Comercial Incondicional;GD041;Matemática;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;20;Desconto Comercial Incondicional;GD045;Pedagogia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;20;Desconto Comercial Incondicional;GD046;Pedagogia - Segunda Licenciatura;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;20;Desconto Comercial Incondicional;GD079;Processos Gerenciais;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;20;Desconto Comercial Incondicional;GD055;Sistemas de Informação;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;20;Desconto Comercial Incondicional;GD084;Teologia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;42;Desconto Família - 10%;GD001;Administração;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;42;Desconto Família - 10%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;42;Desconto Família - 10%;GD007;Ciências Contábeis;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;42;Desconto Família - 10%;GD015;Educação Física;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;42;Desconto Família - 10%;GD020;Engenharia de Produção;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;42;Desconto Família - 10%;GD071;Gestão Ambiental;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;42;Desconto Família - 10%;GD072;Gestão Comercial;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;42;Desconto Família - 10%;GD075;Gestão de Recursos Humanos;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;42;Desconto Família - 10%;GD073;Gestão Financeira;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;42;Desconto Família - 10%;GD074;Gestão Pública;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;42;Desconto Família - 10%;GD037;Letras;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;42;Desconto Família - 10%;GD077;Logística;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;42;Desconto Família - 10%;GD078;Marketing;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;42;Desconto Família - 10%;GD041;Matemática;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;42;Desconto Família - 10%;GD045;Pedagogia;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;42;Desconto Família - 10%;GD046;Pedagogia - Segunda Licenciatura;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;42;Desconto Família - 10%;GD079;Processos Gerenciais;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;42;Desconto Família - 10%;GD055;Sistemas de Informação;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;42;Desconto Família - 10%;GD084;Teologia;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;43;Desconto Família - 15%;GD001;Administração;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;43;Desconto Família - 15%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;43;Desconto Família - 15%;GD007;Ciências Contábeis;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;43;Desconto Família - 15%;GD015;Educação Física;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;43;Desconto Família - 15%;GD020;Engenharia de Produção;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;43;Desconto Família - 15%;GD071;Gestão Ambiental;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;43;Desconto Família - 15%;GD072;Gestão Comercial;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;43;Desconto Família - 15%;GD075;Gestão de Recursos Humanos;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;43;Desconto Família - 15%;GD073;Gestão Financeira;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;43;Desconto Família - 15%;GD074;Gestão Pública;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;43;Desconto Família - 15%;GD037;Letras;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;43;Desconto Família - 15%;GD077;Logística;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;43;Desconto Família - 15%;GD078;Marketing;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;43;Desconto Família - 15%;GD041;Matemática;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;43;Desconto Família - 15%;GD045;Pedagogia;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;43;Desconto Família - 15%;GD046;Pedagogia - Segunda Licenciatura;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;43;Desconto Família - 15%;GD079;Processos Gerenciais;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;43;Desconto Família - 15%;GD055;Sistemas de Informação;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;43;Desconto Família - 15%;GD084;Teologia;A Distância;15;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;44;Desconto Família - 20%;GD001;Administração;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;44;Desconto Família - 20%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;44;Desconto Família - 20%;GD007;Ciências Contábeis;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;44;Desconto Família - 20%;GD015;Educação Física;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;44;Desconto Família - 20%;GD020;Engenharia de Produção;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;44;Desconto Família - 20%;GD071;Gestão Ambiental;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;44;Desconto Família - 20%;GD072;Gestão Comercial;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;44;Desconto Família - 20%;GD075;Gestão de Recursos Humanos;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;44;Desconto Família - 20%;GD073;Gestão Financeira;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;44;Desconto Família - 20%;GD074;Gestão Pública;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;44;Desconto Família - 20%;GD037;Letras;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;44;Desconto Família - 20%;GD077;Logística;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;44;Desconto Família - 20%;GD078;Marketing;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;44;Desconto Família - 20%;GD041;Matemática;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;44;Desconto Família - 20%;GD045;Pedagogia;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;44;Desconto Família - 20%;GD046;Pedagogia - Segunda Licenciatura;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;44;Desconto Família - 20%;GD079;Processos Gerenciais;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;44;Desconto Família - 20%;GD055;Sistemas de Informação;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;44;Desconto Família - 20%;GD084;Teologia;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;45;Desconto Família - 25%;GD001;Administração;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;45;Desconto Família - 25%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;45;Desconto Família - 25%;GD007;Ciências Contábeis;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;45;Desconto Família - 25%;GD015;Educação Física;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;45;Desconto Família - 25%;GD020;Engenharia de Produção;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;45;Desconto Família - 25%;GD071;Gestão Ambiental;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;45;Desconto Família - 25%;GD072;Gestão Comercial;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;45;Desconto Família - 25%;GD075;Gestão de Recursos Humanos;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;45;Desconto Família - 25%;GD073;Gestão Financeira;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;45;Desconto Família - 25%;GD074;Gestão Pública;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;45;Desconto Família - 25%;GD037;Letras;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;45;Desconto Família - 25%;GD077;Logística;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;45;Desconto Família - 25%;GD078;Marketing;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;45;Desconto Família - 25%;GD041;Matemática;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;45;Desconto Família - 25%;GD045;Pedagogia;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;45;Desconto Família - 25%;GD046;Pedagogia - Segunda Licenciatura;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;45;Desconto Família - 25%;GD079;Processos Gerenciais;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;45;Desconto Família - 25%;GD055;Sistemas de Informação;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;45;Desconto Família - 25%;GD084;Teologia;A Distância;25;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;46;Desconto Família - 30%;GD001;Administração;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;46;Desconto Família - 30%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;46;Desconto Família - 30%;GD007;Ciências Contábeis;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;46;Desconto Família - 30%;GD015;Educação Física;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;46;Desconto Família - 30%;GD020;Engenharia de Produção;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;46;Desconto Família - 30%;GD071;Gestão Ambiental;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;46;Desconto Família - 30%;GD072;Gestão Comercial;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;46;Desconto Família - 30%;GD075;Gestão de Recursos Humanos;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;46;Desconto Família - 30%;GD073;Gestão Financeira;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;46;Desconto Família - 30%;GD074;Gestão Pública;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;46;Desconto Família - 30%;GD037;Letras;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;46;Desconto Família - 30%;GD077;Logística;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;46;Desconto Família - 30%;GD078;Marketing;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;46;Desconto Família - 30%;GD041;Matemática;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;46;Desconto Família - 30%;GD045;Pedagogia;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;46;Desconto Família - 30%;GD046;Pedagogia - Segunda Licenciatura;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;46;Desconto Família - 30%;GD079;Processos Gerenciais;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;46;Desconto Família - 30%;GD055;Sistemas de Informação;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;46;Desconto Família - 30%;GD084;Teologia;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;47;Desconto Família - 35%;GD001;Administração;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;47;Desconto Família - 35%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;47;Desconto Família - 35%;GD007;Ciências Contábeis;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;47;Desconto Família - 35%;GD015;Educação Física;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;47;Desconto Família - 35%;GD020;Engenharia de Produção;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;47;Desconto Família - 35%;GD071;Gestão Ambiental;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;47;Desconto Família - 35%;GD072;Gestão Comercial;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;47;Desconto Família - 35%;GD075;Gestão de Recursos Humanos;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;47;Desconto Família - 35%;GD073;Gestão Financeira;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;47;Desconto Família - 35%;GD074;Gestão Pública;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;47;Desconto Família - 35%;GD037;Letras;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;47;Desconto Família - 35%;GD077;Logística;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;47;Desconto Família - 35%;GD078;Marketing;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;47;Desconto Família - 35%;GD041;Matemática;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;47;Desconto Família - 35%;GD045;Pedagogia;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;47;Desconto Família - 35%;GD046;Pedagogia - Segunda Licenciatura;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;47;Desconto Família - 35%;GD079;Processos Gerenciais;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;47;Desconto Família - 35%;GD055;Sistemas de Informação;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;47;Desconto Família - 35%;GD084;Teologia;A Distância;35;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;48;Desconto Família - 40%;GD001;Administração;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;48;Desconto Família - 40%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;48;Desconto Família - 40%;GD007;Ciências Contábeis;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;48;Desconto Família - 40%;GD015;Educação Física;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;48;Desconto Família - 40%;GD020;Engenharia de Produção;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;48;Desconto Família - 40%;GD071;Gestão Ambiental;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;48;Desconto Família - 40%;GD072;Gestão Comercial;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;48;Desconto Família - 40%;GD075;Gestão de Recursos Humanos;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;48;Desconto Família - 40%;GD073;Gestão Financeira;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;48;Desconto Família - 40%;GD074;Gestão Pública;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;48;Desconto Família - 40%;GD037;Letras;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;48;Desconto Família - 40%;GD077;Logística;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;48;Desconto Família - 40%;GD078;Marketing;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;48;Desconto Família - 40%;GD041;Matemática;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;48;Desconto Família - 40%;GD045;Pedagogia;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;48;Desconto Família - 40%;GD046;Pedagogia - Segunda Licenciatura;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;48;Desconto Família - 40%;GD079;Processos Gerenciais;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;48;Desconto Família - 40%;GD055;Sistemas de Informação;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;48;Desconto Família - 40%;GD084;Teologia;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;49;Desconto Família - 45%;GD001;Administração;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;49;Desconto Família - 45%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;49;Desconto Família - 45%;GD007;Ciências Contábeis;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;49;Desconto Família - 45%;GD015;Educação Física;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;49;Desconto Família - 45%;GD020;Engenharia de Produção;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;49;Desconto Família - 45%;GD071;Gestão Ambiental;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;49;Desconto Família - 45%;GD072;Gestão Comercial;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;49;Desconto Família - 45%;GD075;Gestão de Recursos Humanos;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;49;Desconto Família - 45%;GD073;Gestão Financeira;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;49;Desconto Família - 45%;GD074;Gestão Pública;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;49;Desconto Família - 45%;GD037;Letras;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;49;Desconto Família - 45%;GD077;Logística;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;49;Desconto Família - 45%;GD078;Marketing;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;49;Desconto Família - 45%;GD041;Matemática;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;49;Desconto Família - 45%;GD045;Pedagogia;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;49;Desconto Família - 45%;GD046;Pedagogia - Segunda Licenciatura;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;49;Desconto Família - 45%;GD079;Processos Gerenciais;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;49;Desconto Família - 45%;GD055;Sistemas de Informação;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;49;Desconto Família - 45%;GD084;Teologia;A Distância;45;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;50;Desconto Família - 50%;GD001;Administração;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;50;Desconto Família - 50%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;50;Desconto Família - 50%;GD007;Ciências Contábeis;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;50;Desconto Família - 50%;GD015;Educação Física;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;50;Desconto Família - 50%;GD020;Engenharia de Produção;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;50;Desconto Família - 50%;GD071;Gestão Ambiental;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;50;Desconto Família - 50%;GD072;Gestão Comercial;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;50;Desconto Família - 50%;GD075;Gestão de Recursos Humanos;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;50;Desconto Família - 50%;GD073;Gestão Financeira;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;50;Desconto Família - 50%;GD074;Gestão Pública;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;50;Desconto Família - 50%;GD037;Letras;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;50;Desconto Família - 50%;GD077;Logística;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;50;Desconto Família - 50%;GD078;Marketing;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;50;Desconto Família - 50%;GD041;Matemática;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;50;Desconto Família - 50%;GD045;Pedagogia;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;50;Desconto Família - 50%;GD046;Pedagogia - Segunda Licenciatura;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;50;Desconto Família - 50%;GD079;Processos Gerenciais;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;50;Desconto Família - 50%;GD055;Sistemas de Informação;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;50;Desconto Família - 50%;GD084;Teologia;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;40;Desconto Incodicional - FIES;GD001;Administração;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;40;Desconto Incodicional - FIES;GD057;Análise e Desenvolvimento de Sistemas;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;40;Desconto Incodicional - FIES;GD007;Ciências Contábeis;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;40;Desconto Incodicional - FIES;GD015;Educação Física;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;40;Desconto Incodicional - FIES;GD020;Engenharia de Produção;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;40;Desconto Incodicional - FIES;GD071;Gestão Ambiental;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;40;Desconto Incodicional - FIES;GD072;Gestão Comercial;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;40;Desconto Incodicional - FIES;GD075;Gestão de Recursos Humanos;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;40;Desconto Incodicional - FIES;GD073;Gestão Financeira;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;40;Desconto Incodicional - FIES;GD074;Gestão Pública;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;40;Desconto Incodicional - FIES;GD037;Letras;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;40;Desconto Incodicional - FIES;GD077;Logística;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;40;Desconto Incodicional - FIES;GD078;Marketing;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;40;Desconto Incodicional - FIES;GD041;Matemática;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;40;Desconto Incodicional - FIES;GD045;Pedagogia;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;40;Desconto Incodicional - FIES;GD046;Pedagogia - Segunda Licenciatura;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;40;Desconto Incodicional - FIES;GD079;Processos Gerenciais;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;40;Desconto Incodicional - FIES;GD055;Sistemas de Informação;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;40;Desconto Incodicional - FIES;GD084;Teologia;A Distância;5;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;30;Egresso - EB CNEC;GD001;Administração;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;30;Egresso - EB CNEC;GD057;Análise e Desenvolvimento de Sistemas;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;30;Egresso - EB CNEC;GD007;Ciências Contábeis;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;30;Egresso - EB CNEC;GD015;Educação Física;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;30;Egresso - EB CNEC;GD020;Engenharia de Produção;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;30;Egresso - EB CNEC;GD071;Gestão Ambiental;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;30;Egresso - EB CNEC;GD072;Gestão Comercial;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;30;Egresso - EB CNEC;GD075;Gestão de Recursos Humanos;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;30;Egresso - EB CNEC;GD073;Gestão Financeira;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;30;Egresso - EB CNEC;GD074;Gestão Pública;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;30;Egresso - EB CNEC;GD037;Letras;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;30;Egresso - EB CNEC;GD077;Logística;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;30;Egresso - EB CNEC;GD078;Marketing;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;30;Egresso - EB CNEC;GD041;Matemática;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;30;Egresso - EB CNEC;GD045;Pedagogia;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;30;Egresso - EB CNEC;GD046;Pedagogia - Segunda Licenciatura;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;30;Egresso - EB CNEC;GD079;Processos Gerenciais;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;30;Egresso - EB CNEC;GD055;Sistemas de Informação;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;30;Egresso - EB CNEC;GD084;Teologia;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;36;Enem - 10%;GD001;Administração;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;36;Enem - 10%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;36;Enem - 10%;GD007;Ciências Contábeis;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;36;Enem - 10%;GD015;Educação Física;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;36;Enem - 10%;GD020;Engenharia de Produção;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;36;Enem - 10%;GD071;Gestão Ambiental;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;36;Enem - 10%;GD072;Gestão Comercial;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;36;Enem - 10%;GD075;Gestão de Recursos Humanos;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;36;Enem - 10%;GD073;Gestão Financeira;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;36;Enem - 10%;GD074;Gestão Pública;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;36;Enem - 10%;GD037;Letras;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;36;Enem - 10%;GD077;Logística;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;36;Enem - 10%;GD078;Marketing;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;36;Enem - 10%;GD041;Matemática;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;36;Enem - 10%;GD045;Pedagogia;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;36;Enem - 10%;GD046;Pedagogia - Segunda Licenciatura;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;36;Enem - 10%;GD079;Processos Gerenciais;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;36;Enem - 10%;GD055;Sistemas de Informação;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;36;Enem - 10%;GD084;Teologia;A Distância;10;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;29;Enem - 100%;GD001;Administração;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;29;Enem - 100%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;29;Enem - 100%;GD007;Ciências Contábeis;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;29;Enem - 100%;GD015;Educação Física;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;29;Enem - 100%;GD020;Engenharia de Produção;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;29;Enem - 100%;GD071;Gestão Ambiental;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;29;Enem - 100%;GD072;Gestão Comercial;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;29;Enem - 100%;GD075;Gestão de Recursos Humanos;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;29;Enem - 100%;GD073;Gestão Financeira;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;29;Enem - 100%;GD074;Gestão Pública;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;29;Enem - 100%;GD037;Letras;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;29;Enem - 100%;GD077;Logística;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;29;Enem - 100%;GD078;Marketing;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;29;Enem - 100%;GD041;Matemática;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;29;Enem - 100%;GD045;Pedagogia;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;29;Enem - 100%;GD046;Pedagogia - Segunda Licenciatura;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;29;Enem - 100%;GD079;Processos Gerenciais;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;29;Enem - 100%;GD055;Sistemas de Informação;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;29;Enem - 100%;GD084;Teologia;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;25;Enem - 20%;GD001;Administração;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;25;Enem - 20%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;25;Enem - 20%;GD007;Ciências Contábeis;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;25;Enem - 20%;GD015;Educação Física;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;25;Enem - 20%;GD020;Engenharia de Produção;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;25;Enem - 20%;GD071;Gestão Ambiental;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;25;Enem - 20%;GD072;Gestão Comercial;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;25;Enem - 20%;GD075;Gestão de Recursos Humanos;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;25;Enem - 20%;GD073;Gestão Financeira;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;25;Enem - 20%;GD074;Gestão Pública;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;25;Enem - 20%;GD037;Letras;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;25;Enem - 20%;GD077;Logística;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;25;Enem - 20%;GD078;Marketing;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;25;Enem - 20%;GD041;Matemática;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;25;Enem - 20%;GD045;Pedagogia;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;25;Enem - 20%;GD046;Pedagogia - Segunda Licenciatura;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;25;Enem - 20%;GD079;Processos Gerenciais;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;25;Enem - 20%;GD055;Sistemas de Informação;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;25;Enem - 20%;GD084;Teologia;A Distância;20;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;26;Enem - 30%;GD001;Administração;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;26;Enem - 30%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;26;Enem - 30%;GD007;Ciências Contábeis;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;26;Enem - 30%;GD015;Educação Física;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;26;Enem - 30%;GD020;Engenharia de Produção;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;26;Enem - 30%;GD071;Gestão Ambiental;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;26;Enem - 30%;GD072;Gestão Comercial;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;26;Enem - 30%;GD075;Gestão de Recursos Humanos;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;26;Enem - 30%;GD073;Gestão Financeira;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;26;Enem - 30%;GD074;Gestão Pública;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;26;Enem - 30%;GD037;Letras;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;26;Enem - 30%;GD077;Logística;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;26;Enem - 30%;GD078;Marketing;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;26;Enem - 30%;GD041;Matemática;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;26;Enem - 30%;GD045;Pedagogia;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;26;Enem - 30%;GD046;Pedagogia - Segunda Licenciatura;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;26;Enem - 30%;GD079;Processos Gerenciais;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;26;Enem - 30%;GD055;Sistemas de Informação;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;26;Enem - 30%;GD084;Teologia;A Distância;30;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;27;Enem - 40%;GD001;Administração;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;27;Enem - 40%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;27;Enem - 40%;GD007;Ciências Contábeis;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;27;Enem - 40%;GD015;Educação Física;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;27;Enem - 40%;GD020;Engenharia de Produção;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;27;Enem - 40%;GD071;Gestão Ambiental;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;27;Enem - 40%;GD072;Gestão Comercial;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;27;Enem - 40%;GD075;Gestão de Recursos Humanos;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;27;Enem - 40%;GD073;Gestão Financeira;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;27;Enem - 40%;GD074;Gestão Pública;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;27;Enem - 40%;GD037;Letras;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;27;Enem - 40%;GD077;Logística;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;27;Enem - 40%;GD078;Marketing;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;27;Enem - 40%;GD041;Matemática;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;27;Enem - 40%;GD045;Pedagogia;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;27;Enem - 40%;GD046;Pedagogia - Segunda Licenciatura;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;27;Enem - 40%;GD079;Processos Gerenciais;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;27;Enem - 40%;GD055;Sistemas de Informação;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;27;Enem - 40%;GD084;Teologia;A Distância;40;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;28;Enem - 50%;GD001;Administração;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;28;Enem - 50%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;28;Enem - 50%;GD007;Ciências Contábeis;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;28;Enem - 50%;GD015;Educação Física;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;28;Enem - 50%;GD020;Engenharia de Produção;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;28;Enem - 50%;GD071;Gestão Ambiental;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;28;Enem - 50%;GD072;Gestão Comercial;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;28;Enem - 50%;GD075;Gestão de Recursos Humanos;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;28;Enem - 50%;GD073;Gestão Financeira;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;28;Enem - 50%;GD074;Gestão Pública;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;28;Enem - 50%;GD037;Letras;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;28;Enem - 50%;GD077;Logística;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;28;Enem - 50%;GD078;Marketing;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;28;Enem - 50%;GD041;Matemática;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;28;Enem - 50%;GD045;Pedagogia;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;28;Enem - 50%;GD046;Pedagogia - Segunda Licenciatura;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;28;Enem - 50%;GD079;Processos Gerenciais;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;28;Enem - 50%;GD055;Sistemas de Informação;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;28;Enem - 50%;GD084;Teologia;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;33;Evadidos Trancados;GD001;Administração;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;33;Evadidos Trancados;GD057;Análise e Desenvolvimento de Sistemas;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;33;Evadidos Trancados;GD007;Ciências Contábeis;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;33;Evadidos Trancados;GD015;Educação Física;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;33;Evadidos Trancados;GD020;Engenharia de Produção;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;33;Evadidos Trancados;GD071;Gestão Ambiental;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;33;Evadidos Trancados;GD072;Gestão Comercial;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;33;Evadidos Trancados;GD075;Gestão de Recursos Humanos;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;33;Evadidos Trancados;GD073;Gestão Financeira;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;33;Evadidos Trancados;GD074;Gestão Pública;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;33;Evadidos Trancados;GD037;Letras;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;33;Evadidos Trancados;GD077;Logística;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;33;Evadidos Trancados;GD078;Marketing;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;33;Evadidos Trancados;GD041;Matemática;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;33;Evadidos Trancados;GD045;Pedagogia;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;33;Evadidos Trancados;GD046;Pedagogia - Segunda Licenciatura;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;33;Evadidos Trancados;GD079;Processos Gerenciais;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;33;Evadidos Trancados;GD055;Sistemas de Informação;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;33;Evadidos Trancados;GD084;Teologia;A Distância;20;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;18;Fies Novo;GD001;Administração;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;18;Fies Novo;GD057;Análise e Desenvolvimento de Sistemas;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;18;Fies Novo;GD007;Ciências Contábeis;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;18;Fies Novo;GD015;Educação Física;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;18;Fies Novo;GD020;Engenharia de Produção;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;18;Fies Novo;GD071;Gestão Ambiental;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;18;Fies Novo;GD072;Gestão Comercial;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;18;Fies Novo;GD075;Gestão de Recursos Humanos;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;18;Fies Novo;GD073;Gestão Financeira;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;18;Fies Novo;GD074;Gestão Pública;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;18;Fies Novo;GD037;Letras;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;18;Fies Novo;GD077;Logística;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;18;Fies Novo;GD078;Marketing;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;18;Fies Novo;GD041;Matemática;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;18;Fies Novo;GD045;Pedagogia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;18;Fies Novo;GD046;Pedagogia - Segunda Licenciatura;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;18;Fies Novo;GD079;Processos Gerenciais;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;18;Fies Novo;GD055;Sistemas de Informação;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;18;Fies Novo;GD084;Teologia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;7;Fies*;GD001;Administração;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;7;Fies*;GD057;Análise e Desenvolvimento de Sistemas;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;7;Fies*;GD007;Ciências Contábeis;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;7;Fies*;GD015;Educação Física;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;7;Fies*;GD020;Engenharia de Produção;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;7;Fies*;GD071;Gestão Ambiental;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;7;Fies*;GD072;Gestão Comercial;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;7;Fies*;GD075;Gestão de Recursos Humanos;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;7;Fies*;GD073;Gestão Financeira;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;7;Fies*;GD074;Gestão Pública;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;7;Fies*;GD037;Letras;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;7;Fies*;GD077;Logística;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;7;Fies*;GD078;Marketing;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;7;Fies*;GD041;Matemática;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;7;Fies*;GD045;Pedagogia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;7;Fies*;GD046;Pedagogia - Segunda Licenciatura;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;7;Fies*;GD079;Processos Gerenciais;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;7;Fies*;GD055;Sistemas de Informação;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;7;Fies*;GD084;Teologia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;3;Prouni – 100%;GD001;Administração;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;3;Prouni – 100%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;3;Prouni – 100%;GD007;Ciências Contábeis;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;3;Prouni – 100%;GD015;Educação Física;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;3;Prouni – 100%;GD020;Engenharia de Produção;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;3;Prouni – 100%;GD071;Gestão Ambiental;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;3;Prouni – 100%;GD072;Gestão Comercial;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;3;Prouni – 100%;GD075;Gestão de Recursos Humanos;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;3;Prouni – 100%;GD073;Gestão Financeira;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;3;Prouni – 100%;GD074;Gestão Pública;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;3;Prouni – 100%;GD037;Letras;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;3;Prouni – 100%;GD077;Logística;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;3;Prouni – 100%;GD078;Marketing;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;3;Prouni – 100%;GD041;Matemática;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;3;Prouni – 100%;GD045;Pedagogia;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;3;Prouni – 100%;GD046;Pedagogia - Segunda Licenciatura;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;3;Prouni – 100%;GD079;Processos Gerenciais;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;3;Prouni – 100%;GD055;Sistemas de Informação;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;3;Prouni – 100%;GD084;Teologia;A Distância;100;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;4;Prouni – 50%;GD001;Administração;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;4;Prouni – 50%;GD057;Análise e Desenvolvimento de Sistemas;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;4;Prouni – 50%;GD007;Ciências Contábeis;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;4;Prouni – 50%;GD015;Educação Física;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;4;Prouni – 50%;GD020;Engenharia de Produção;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;4;Prouni – 50%;GD071;Gestão Ambiental;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;4;Prouni – 50%;GD072;Gestão Comercial;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;4;Prouni – 50%;GD075;Gestão de Recursos Humanos;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;4;Prouni – 50%;GD073;Gestão Financeira;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;4;Prouni – 50%;GD074;Gestão Pública;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;4;Prouni – 50%;GD037;Letras;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;4;Prouni – 50%;GD077;Logística;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;4;Prouni – 50%;GD078;Marketing;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;4;Prouni – 50%;GD041;Matemática;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;4;Prouni – 50%;GD045;Pedagogia;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;4;Prouni – 50%;GD046;Pedagogia - Segunda Licenciatura;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;4;Prouni – 50%;GD079;Processos Gerenciais;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;4;Prouni – 50%;GD055;Sistemas de Informação;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;4;Prouni – 50%;GD084;Teologia;A Distância;50;1;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;19;Subvenção;GD001;Administração;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;19;Subvenção;GD057;Análise e Desenvolvimento de Sistemas;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;19;Subvenção;GD007;Ciências Contábeis;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;19;Subvenção;GD015;Educação Física;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;19;Subvenção;GD020;Engenharia de Produção;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;19;Subvenção;GD071;Gestão Ambiental;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;19;Subvenção;GD072;Gestão Comercial;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;19;Subvenção;GD075;Gestão de Recursos Humanos;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;19;Subvenção;GD073;Gestão Financeira;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;19;Subvenção;GD074;Gestão Pública;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;19;Subvenção;GD037;Letras;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;19;Subvenção;GD077;Logística;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;19;Subvenção;GD078;Marketing;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;19;Subvenção;GD041;Matemática;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;19;Subvenção;GD045;Pedagogia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;19;Subvenção;GD046;Pedagogia - Segunda Licenciatura;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;19;Subvenção;GD079;Processos Gerenciais;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;19;Subvenção;GD055;Sistemas de Informação;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;19;Subvenção;GD084;Teologia;A Distância;100;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;34;Transferidos de outras IES;GD001;Administração;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;34;Transferidos de outras IES;GD057;Análise e Desenvolvimento de Sistemas;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;34;Transferidos de outras IES;GD007;Ciências Contábeis;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;34;Transferidos de outras IES;GD015;Educação Física;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;34;Transferidos de outras IES;GD020;Engenharia de Produção;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;34;Transferidos de outras IES;GD071;Gestão Ambiental;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;34;Transferidos de outras IES;GD072;Gestão Comercial;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;34;Transferidos de outras IES;GD075;Gestão de Recursos Humanos;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;34;Transferidos de outras IES;GD073;Gestão Financeira;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;34;Transferidos de outras IES;GD074;Gestão Pública;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;34;Transferidos de outras IES;GD037;Letras;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;34;Transferidos de outras IES;GD077;Logística;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;34;Transferidos de outras IES;GD078;Marketing;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;34;Transferidos de outras IES;GD041;Matemática;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;34;Transferidos de outras IES;GD045;Pedagogia;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;34;Transferidos de outras IES;GD046;Pedagogia - Segunda Licenciatura;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;34;Transferidos de outras IES;GD079;Processos Gerenciais;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;34;Transferidos de outras IES;GD055;Sistemas de Informação;A Distância;25;0;1;6
+169;Centro Universitário Cenecista de Osório;2399;2019-22;34;Transferidos de outras IES;GD084;Teologia;A Distância;25;0;1;6
