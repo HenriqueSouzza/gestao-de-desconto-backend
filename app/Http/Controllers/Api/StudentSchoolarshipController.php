@@ -543,8 +543,30 @@ class StudentSchoolarShipController extends Controller
     }
 
 
-    private function firstInstallmentCodBolsa($codBolsa){
+    private function codBolsaP1($codBolsa){
         switch($codBolsa){
+            case '25':  return	'62';
+            case '26':  return	'63';
+            case '27':  return	'64';
+            case '28':  return	'65';
+            case '36':  return	'66';
+            case '30':  return	'81';
+            case '31':  return	'82';
+            case '32':  return	'83';
+            case '33':  return	'84';
+            case '34':  return	'85';
+            case '35':  return	'86';
+            case '41':  return	'87';
+            case '42':  return	'80';
+            case '43':  return	'79';
+            case '44':  return	'78';
+            case '45':  return	'77';
+            case '46':  return	'76';
+            case '47':  return	'75';
+            case '48':  return	'74';
+            case '49':  return	'73';
+            case '50':  return	'72';
+            case '9':   return	'67';
             default: return $codBolsa;
         }
 
@@ -620,7 +642,7 @@ class StudentSchoolarShipController extends Controller
                                 ['RA'             => $discount->ra],
                                 ['IDPERLET'       => $discount->period],
                                 ['CODCONTRATO'    => $discount->contract],
-                                ['CODBOLSA'       => $discount->schoolarship],
+                                ['CODBOLSA'       => $i == 1 ? $this->codBolsaP1($discount->schoolarship) : $discount->schoolarship],
                                 ['CODSERVICO'     => $i == 1 ? 1 : 2],
                                 ['DESCONTO'       => $discount->value],
                                 ['TIPODESC'       => 'P'],
