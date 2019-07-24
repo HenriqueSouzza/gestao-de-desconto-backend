@@ -21,6 +21,7 @@ class ConcessionPeriod extends Model
     protected $fillable = [
         'id_rm_establishment_concession_period',
         'id_rm_modality_concession_period' ,
+        'id_rm_course_type_concession_period' ,
         'id_rm_period_concession_period' ,
         'id_rm_period_code_concession_period' ,
         'date_start_concession_period' ,
@@ -64,6 +65,7 @@ class ConcessionPeriod extends Model
     public $rules = [
         'id_rm_establishment_concession_period' => 'required',
         'id_rm_modality_concession_period'      => 'required',
+        'id_rm_course_type_concession_period'   => 'required',
         'id_rm_period_concession_period'        => 'required',
         'id_rm_period_code_concession_period'   => 'required',
         'date_start_concession_period'          => 'required',
@@ -105,8 +107,9 @@ class ConcessionPeriod extends Model
         'id'                                         => 'id',
         'id_rm_establishment_concession_period'      => 'id_rm_establishment',
         'id_rm_modality_concession_period'           => 'id_rm_modality' ,
+        'id_rm_course_type_concession_period'        => 'id_rm_course_type' ,
         'id_rm_period_concession_period'             => 'id_rm_period' ,
-        'id_rm_period_code_concession_period'        => 'id_rm_period' ,
+        'id_rm_period_code_concession_period'        => 'id_rm_period' , // ver se pode mudar
         'date_start_concession_period'               => 'date_start' ,
         'date_end_concession_period'                 => 'date_end' ,
         'fk_user'                                    => 'fk_user',
