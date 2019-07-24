@@ -119,7 +119,8 @@ class ConcessionPeriodController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'codfilial' => 'required|numeric|min:1',
-            'modality'  => 'required|string'
+            'modality'  => 'required|string',
+            'coursetype'  => 'required|string'
         ]);
     
         if($validator->fails())
@@ -133,11 +134,13 @@ class ConcessionPeriodController extends Controller
         $now = date('Y-m-d');        
         $codFilial = $request->codfilial;
         $modality = $request->modality;
+        $coursetype = $request->coursetype;
 
         $periods = $this->model->where('date_start_concession_period', '<=', $now)
                          ->where('date_end_concession_period', '>=', $now)
                          ->where('id_rm_establishment_concession_period', $codFilial)
                          ->where('id_rm_modality_concession_period', $modality)
+                         ->where('id_rm_course_type_concession_period', $coursetype)
                          ->get();
 
         if($periods->count() == 0)
