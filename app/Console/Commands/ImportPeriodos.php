@@ -5,7 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use DB;
 
-class ImportBolsas extends Command
+class ImportPeriodos extends Command
 {
     /**
      * The name and signature of the console command.
