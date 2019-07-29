@@ -12,7 +12,7 @@ class ImportBolsas extends Command
      *
      * @var string
      */
-    protected $signature = 'import:bolsas {filename: nome do arquivo} {codcurso: codcurso 3 ou 4}';
+    protected $signature = 'import:bolsas {filename} {codcurso}';
 
     /**
      * The console command description.
