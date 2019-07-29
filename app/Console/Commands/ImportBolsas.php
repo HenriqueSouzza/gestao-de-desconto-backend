@@ -43,7 +43,7 @@ class ImportBolsas extends Command
         $insert = [[]];
         $fileName = $this->argument('filename');
         $codCurso = $this->argument('codcurso');
-        if(!$fileName || $codCurso){
+        if(!$fileName || !$codCurso){
             echo "Digite o nome do arquivo e do codcurso";
             return;
         }
