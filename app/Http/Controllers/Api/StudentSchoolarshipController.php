@@ -589,6 +589,30 @@ class StudentSchoolarShipController extends Controller
                 return    '72';
             case '9':
                 return    '67';
+            case '51':
+                return '71';
+            case '52':
+                return '71';
+            case '53':
+                return '71';
+            case '54':
+                return '71';
+            case '55':
+                return '71';
+            case '56':
+                return '71';
+            case '57':
+                return '71';
+            case '58':
+                return '71';
+            case '59':
+                return '71';
+            case '22':
+                return '71';
+            case '68':
+                return '71';
+            case '69':
+                return '71';
             default:
                 return $codBolsa;
         }
@@ -699,6 +723,9 @@ class StudentSchoolarShipController extends Controller
                         }
                     }
                     $detail = $i == ($discount->last_installment + 1) && !$hasError ? 'Todas parcelas inseridas' : 'Inserido Parcialmente';
+                    if ($hasError) {
+                        $detail = $detail . '(Erro na parcela' . ($i - 1) . ')';
+                    }
                     SchoolarshipWorkflow::create([
                         'fk_student_schoolarship'      => $id,
                         'fk_action'                    => 3, // Aprovado

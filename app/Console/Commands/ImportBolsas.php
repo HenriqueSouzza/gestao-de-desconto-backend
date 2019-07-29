@@ -12,14 +12,14 @@ class ImportBolsas extends Command
      *
      * @var string
      */
-    protected $signature = 'import:bolsas {filename}';
+    protected $signature = 'import:bolsas {filename: nome do arquivo} {codcurso: codcurso 3 ou 4}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Faz importacao das bolsas passando nome do arquivo/ utilize "import:bolsas clear" para limpar todas';
+    protected $description = '3 - Graduacao , 4 - Pos .... Faz importacao das bolsas passando nome do arquivo/ utilize "import:bolsas clear" para limpar todas ,';
 
     /**
      * Create a new command instance.
@@ -42,6 +42,11 @@ class ImportBolsas extends Command
         $row = 0;
         $insert = [[]];
         $fileName = $this->argument('filename');
+        $codCurso = $this->argument('codcurso');
+        if(!$fileName || $codCurso){
+            echo "Digite o nome do arquivo e do codcurso";
+            return;
+        }
         if($fileName == 'clear'){
             echo 'Limpando as bolsas';
             DB::table('discount_margin_schoolarships')->truncate();
@@ -67,7 +72,7 @@ class ImportBolsas extends Command
                     $insert[$row]['first_installment_discount_margin_schoolarship'] = $data[11]; //PARCELA_INICIAL
                     $insert[$row]['last_installment_discount_margin_schoolarship'] = $data[12]; //PARCELA_FINAL
                     $insert[$row]['fk_user'] = '1';
-                    $insert[$row]['id_rm_course_type_discount_margin_schoolarship'] = '3';
+                    $insert[$row]['id_rm_course_type_discount_margin_schoolarship'] = $codCurso;
 
                     $row++;
                 }
