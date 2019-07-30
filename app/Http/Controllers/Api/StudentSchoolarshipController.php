@@ -63,7 +63,7 @@ class StudentSchoolarShipController extends Controller
 
     protected $response = [];
 
-
+    // nomes das bolsas pelo codigo
     protected $names = [];
 
 
@@ -97,27 +97,7 @@ class StudentSchoolarShipController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
         return $this->storeTrait($request);
-        // dd($schoolarship);
-        // if($request->first_installment_student_schoolarship == $request->last_installment_student_schoolarship)
-        // {
-        //     $schoolarship = $this->storeOne($request);
-        //     return $this->createResponse($schoolarship, 201);
-        // }
-        // else
-        // {
-        //     // Criando varias entradas com parcela inicial e final igual
-        //     $first = $request->first_installment_student_schoolarship;
-        //     $last = $request->last_installment_student_schoolarship;
-        //     for($i = $first; $i <= $last; $i=$i+1 )
-        //     {                
-        //         $temp = clone $request;                
-        //         $temp['first_installment_student_schoolarship'] = $temp['last_installment_student_schoolarship'] = $i;                                       
-        //         $schoolarship = $this->storeOne($temp);
-        //     }
-        //     return $this->createResponse($schoolarship, 201);
-        // }
     }
 
 
@@ -186,19 +166,11 @@ class StudentSchoolarShipController extends Controller
      */
     public function getLocalSchoolarships(Request $request)
     {
-        // return StudentSchoolarship::where([
-        //     'id_rm_establishment_student_schoolarship' => $request->codfilial, 
-        //     'id_rm_period_code_student_schoolarship' => $request->codperlet,
-        //     'send_rm_student_schoolarship' => false
-        // ])->get()->toArray(); 
-
         return $this->model->where([
             'id_rm_establishment_student_schoolarship' => $request->codfilial,
             'id_rm_period_code_student_schoolarship'   => $request->codperlet,
             'send_rm_student_schoolarship'             => false
-        ])
-            ->whereNull('id_rm_student_schoolarship')
-            ->get()->toArray();
+        ])->whereNull('id_rm_student_schoolarship')->get()->toArray();
     }
 
 
@@ -222,7 +194,7 @@ class StudentSchoolarShipController extends Controller
      */
     protected function getStudents(Request $request)
     {
-        
+
         $validator = Validator::make($request->all(), [
             'codfilial' => 'required|numeric|min:1',
             'codcurso'  => 'required|string',
@@ -252,12 +224,11 @@ class StudentSchoolarShipController extends Controller
             'TIPOALUNO' => $request->tipoaluno
         ];
 
-        $requestSoap = (array)$this->query($name, $parameters);
-        $schoolarship       =  (array)$this->getSchoolarship($request);
-        $tempLocals         =  (array)$this->getLocalSchoolarships($request);
+        $requestSoap = (array) $this->query($name, $parameters);
+        $schoolarship       =  (array) $this->getSchoolarship($request);
+        $tempLocals         =  (array) $this->getLocalSchoolarships($request);
         $localScholarships  =  $this->schoolarshipToKeyContract($tempLocals);
-
-        $responseSoap = $this->formatResponse($requestSoap, $schoolarship, $localScholarships); // ta lento
+        $responseSoap = $this->formatResponse($requestSoap, $schoolarship, $localScholarships);
 
         return $this->createResponse($responseSoap);
     }
@@ -277,7 +248,8 @@ class StudentSchoolarShipController extends Controller
             'codpolo'   => 'required|string',
             'codperlet' => 'required',
             'ra'        => 'required|numeric',
-            'nomealuno' => 'required|'
+            'nomealuno' => 'required|',
+            'tipoaluno' => 'required|'
         ]);
 
         if ($validator->fails()) {
@@ -289,14 +261,12 @@ class StudentSchoolarShipController extends Controller
 
         $name = self::$nameQuery['WEB006'];
         $parameters = $this->getStudentsParams($request);
-        $requestSoap = (array)$this->query($name, $parameters);
 
-
-
-        $schoolarship = $this->getSchoolarship($request);
-        $tempLocals = $this->getLocalSchoolarships($request);
-        $localScholarships = $this->schoolarshipToKeyContract($tempLocals);
-        $responseSoap = $this->formatResponse($requestSoap, $schoolarship, $localScholarships);
+        $requestSoap        = (array) $this->query($name, $parameters);
+        $schoolarship       = (array) $this->getSchoolarship($request);
+        $tempLocals         = (array) $this->getLocalSchoolarships($request);
+        $localScholarships  = $this->schoolarshipToKeyContract($tempLocals);
+        $responseSoap       = $this->formatResponse($requestSoap, $schoolarship, $localScholarships);
 
         $localStudents = [];
         foreach ($responseSoap as $val) {
@@ -320,7 +290,8 @@ class StudentSchoolarShipController extends Controller
             'CODPOLO'   => $request->codpolo,
             'CODPERLET' => $request->codperlet,
             'RA'        => $request->ra,
-            'NOMEALUNO' => $request->nomealuno
+            'NOMEALUNO' => $request->nomealuno,
+            'TIPOALUNO' => $request->tipoaluno
         ];
     }
 
@@ -334,7 +305,7 @@ class StudentSchoolarShipController extends Controller
         $newArray = [];
 
         foreach ($scholarships as $scholarship) {
-            $newArray[(string)$scholarship['id_rm_contract_student_schoolarship']] = $scholarship;
+            $newArray[(string) $scholarship['id_rm_contract_student_schoolarship']] = $scholarship;
         }
         return $newArray;
     }
@@ -363,15 +334,15 @@ class StudentSchoolarShipController extends Controller
         //caso so tenha um registro irá contar os objetos
         if ($size == 1) {
             $result = $dataStudent['Resultado'];
-            $ra = (string)$result->RA;
-            $contract = (string)$result->CODCONTRATO;
+            $ra = (string) $result->RA;
+            $contract = (string) $result->CODCONTRATO;
             if (array_key_exists($contract, $localScholarships)) {
                 $localScholarship[$ra] = [$localScholarships[$contract]];
             }
             //pesquisa se nas bolsas obtidas possui o RA do aluno 
             if (array_key_exists(0, $dataSchoolarship)) {
                 for ($i = 0; $i < count($dataSchoolarship); $i++) {
-                    $data = (array)$dataSchoolarship[$i];
+                    $data = (array) $dataSchoolarship[$i];
                     if (in_array($ra, $data)) {
                         //obtem as bolsas anteriores
                         if (in_array('ANTERIOR', $data)) {
@@ -386,7 +357,7 @@ class StudentSchoolarShipController extends Controller
                     }
                 }
             } else {
-                $data = (array)$dataSchoolarship;
+                $data = (array) $dataSchoolarship;
                 if (in_array($ra, $data)) {
                     //obtem as bolsas anteriores
                     if (in_array('ANTERIOR', $data)) {
@@ -403,24 +374,24 @@ class StudentSchoolarShipController extends Controller
         if ($size > 1) {
             // inicializando vazio
             foreach ($dataStudent['Resultado'] as $result) {
-                $ra = (string)$result->RA;
+                $ra = (string) $result->RA;
                 $beforeSchoolarship[$ra] = [];
                 $afterSchoolarship[$ra]  = [];
                 $localScholarship[$ra]  = [];
             }
             // coloccando todas bolsas no aluno
             foreach ($dataSchoolarship as $data) {
-                $data = (array)$data;
+                $data = (array) $data;
                 if (in_array('ANTERIOR', $data)) {
-                    $beforeSchoolarship[(string)$data['RA']][] = $data;
+                    $beforeSchoolarship[(string) $data['RA']][] = $data;
                 } else {
-                    $afterSchoolarship[(string)$data['RA']][] = $data;
+                    $afterSchoolarship[(string) $data['RA']][] = $data;
                 }
             }
             foreach ($dataStudent['Resultado'] as $result) {
 
-                $ra = (string)$result->RA;
-                $contract = (string)$result->CODCONTRATO;
+                $ra = (string) $result->RA;
+                $contract = (string) $result->CODCONTRATO;
                 //pesquisa se nas bolsas obtidas possui o RA do aluno 
                 if (array_key_exists($contract, $localScholarships)) {
                     $localScholarship[$ra] = [$localScholarships[$contract]];
@@ -479,7 +450,7 @@ class StudentSchoolarShipController extends Controller
             'NOMEALUNO' => $request->nomealuno
         ];
 
-        $requestSoap = (array)$this->query($name, $parameters);
+        $requestSoap = (array) $this->query($name, $parameters);
         return (isset($requestSoap['Resultado']) ? $requestSoap['Resultado'] : $requestSoap);
     }
 
@@ -494,19 +465,19 @@ class StudentSchoolarShipController extends Controller
     {
         return [
             'dados' => [
-                'ra'                  => (string)$result->RA,
-                'aluno'               => (string)$result->ALUNO,
-                'codfilial'           => (string)$result->CODFILIAL,
-                'filial'              => (string)$result->FILIAL,
-                'codcurso'            => (string)$result->CODCURSO,
-                'codContrato'         => (string)$result->CODCONTRATO,
-                'idhabilitacaofilial' => (string)$result->IDHABILITACAOFILIAL,
-                'curso'               => (string)$result->CURSO,
-                'codperlet'           => (string)$result->CODPERLET,
-                'idperlet'            => (string)$result->IDPERLET,
-                'valor_mensalidade'   => (string)$result->VALOR_MENSALIDADE,
-                'tipo_aluno'          => (string)$result->TIPO_ALUNO,
-                'modalidade'          => (string)$result->MODALIDADE,
+                'ra'                  => (string) $result->RA,
+                'aluno'               => (string) $result->ALUNO,
+                'codfilial'           => (string) $result->CODFILIAL,
+                'filial'              => (string) $result->FILIAL,
+                'codcurso'            => (string) $result->CODCURSO,
+                'codContrato'         => (string) $result->CODCONTRATO,
+                'idhabilitacaofilial' => (string) $result->IDHABILITACAOFILIAL,
+                'curso'               => (string) $result->CURSO,
+                'codperlet'           => (string) $result->CODPERLET,
+                'idperlet'            => (string) $result->IDPERLET,
+                'valor_mensalidade'   => (string) $result->VALOR_MENSALIDADE,
+                'tipo_aluno'          => (string) $result->TIPO_ALUNO,
+                'modalidade'          => (string) $result->MODALIDADE,
             ],
             'bolsas_anteriores'       => $beforeSchoolarship,
             'bolsas_atuais'           => $afterSchoolarship,
@@ -566,9 +537,62 @@ class StudentSchoolarShipController extends Controller
     }
     public function getLog()
     {
+        // return $this->createResponse()
         return $this->createResponse(StudentSchoolarship::with('workflows')->withTrashed()->get());
     }
 
+
+    private function codBolsaP1($codBolsa)
+    {
+        switch ($codBolsa) {
+            case '25':
+                return    '62';
+            case '26':
+                return    '63';
+            case '27':
+                return    '64';
+            case '28':
+                return    '65';
+            case '36':
+                return    '66';
+            case '30':
+                return    '81';
+            case '31':
+                return    '82';
+            case '32':
+                return    '83';
+            case '33':
+                return    '84';
+            case '34':
+                return    '85';
+            case '35':
+                return    '86';
+            case '41':
+                return    '87';
+            case '42':
+                return    '80';
+            case '43':
+                return    '79';
+            case '44':
+                return    '78';
+            case '45':
+                return    '77';
+            case '46':
+                return    '76';
+            case '47':
+                return    '75';
+            case '48':
+                return    '74';
+            case '49':
+                return    '73';
+            case '50':
+                return    '72';
+            case '9':
+                return    '67';
+            default:
+                return $codBolsa;
+        }
+    }
     /**
      * @param Request $request (com os dados acima no formato JSON)
      * @return array $requestSoap     * 
@@ -613,7 +637,7 @@ class StudentSchoolarShipController extends Controller
 
             //verificar se o contrato possui parcelas em abertos
             $installments = $this->getInstallmentContract($discount['first_installment'], $discount['last_installment'], $discount['contract']);
-            if ((string)$installments->POSSUI_LANCAMENTO == 1) {
+            if ((string) $installments->POSSUI_LANCAMENTO == 1) {
                 $error = "O Contrato {$discount['contract']} possui parcelas geradas, não sendo possível lançar o desconto";
                 $requestSoap[$discount['ra']][] = $discount;
                 $requestSoap[$discount['ra']]['erro'] = $error;
@@ -622,7 +646,7 @@ class StudentSchoolarShipController extends Controller
                 //identificar qual ra esta faltando o dado, fazer o map das colunas e gravar na tabela, depois enviar para o totvs
                 $data = new Request($discount);
                 $hasError = 0;
-                $discount = (Object)$discount;
+                $discount = (object) $discount;
                 $update = isset($discount->id);
                 $action = $update ? $this->update($data, $discount->id) : $this->store($data);
                 $id = $action->getData()->response->content->id;
@@ -640,7 +664,7 @@ class StudentSchoolarShipController extends Controller
                                 ['RA'             => $discount->ra],
                                 ['IDPERLET'       => $discount->period],
                                 ['CODCONTRATO'    => $discount->contract],
-                                ['CODBOLSA'       => $discount->schoolarship],
+                                ['CODBOLSA'       => $i == 1 ? $this->codBolsaP1($discount->schoolarship) : $discount->schoolarship],
                                 ['CODSERVICO'     => $i == 1 ? 1 : 2],
                                 ['DESCONTO'       => $discount->value],
                                 ['TIPODESC'       => 'P'],
@@ -649,7 +673,7 @@ class StudentSchoolarShipController extends Controller
 
                             ],
                         ];
-                        $result = (string)$this->saveRecord($dataServer, $xmlRequest);
+                        $result = (string) $this->saveRecord($dataServer, $xmlRequest);
                         $mensagem = $this->tratarMensagemRM($result);
                         if (!is_numeric($mensagem)) {
                             $requestSoap[$discount->ra]['erro'] = $mensagem;
@@ -658,37 +682,37 @@ class StudentSchoolarShipController extends Controller
                             //remove o que foi criado caso seja criacao                            
                             if (!$update)
                                 $this->destroy($id);
-                            else{                                                                
+                            else {
                                 $this->model->find($id)->update(['send_rm_student_schoolarship' => false]);
                             }
                             break;
-                        } else {                                                        
+                        } else {
                             //adiciona o id da bolsa do aluno junto aos dados enviados
                             $discount->student_schoolarship = $mensagem;
-                            $discount = (array)$discount;
+                            $discount = (array) $discount;
                             $dataUpdate = new Request($discount);
-                            $discount = (object)$discount;
+                            $discount = (object) $discount;
                             //atualiza o registro inserido acima
                             $update = $this->update($dataUpdate, $id);
                             //obtem a resposta (API) por meio da classe jsonresponse por meio do getData()
                             $requestSoap[$discount->ra][] = $update->getData()->response->content;
                         }
                     }
-                    $detail = $i == $discount->last_installment && !$hasError ? 'Todas parcelas inseridas' : 'Inserido Parcialmente';
+                    $detail = $i == ($discount->last_installment + 1) && !$hasError ? 'Todas parcelas inseridas' : 'Inserido Parcialmente';
                     SchoolarshipWorkflow::create([
                         'fk_student_schoolarship'      => $id,
                         'fk_action'                    => 3, // Aprovado
                         'fk_user'                      => $request->user()->id, //TODO: Pegar id do usuario
                         'detail_schoolarship_workflow' => $detail
                     ]);
-                } else {                                        
+                } else {
                     $requestSoap[$discount->ra][] = $action->getData()->response->content;
                     SchoolarshipWorkflow::create([
-                            'fk_student_schoolarship'      => $id,
-                            'fk_action'                    => $update ? 2 : 1, // EDICAO ou delecao
-                            'fk_user'                      => $request->user()->id, //TODO: Pegar id do usuario
-                            'detail_schoolarship_workflow' => ''
-                        ]);
+                        'fk_student_schoolarship'      => $id,
+                        'fk_action'                    => $update ? 2 : 1, // EDICAO ou delecao
+                        'fk_user'                      => $request->user()->id, //TODO: Pegar id do usuario
+                        'detail_schoolarship_workflow' => ''
+                    ]);
                 }
             }
         }
@@ -696,7 +720,7 @@ class StudentSchoolarShipController extends Controller
     }
     private function tratarMensagemRM($mensagem)
     {
-        $search = (string)explode(':', $mensagem)[1];
+        $search = (string) explode(':', $mensagem)[1];
         // caso de error
         if (!strchr($search, ';')) {
             $error = explode('\n', $mensagem);
@@ -737,7 +761,7 @@ class StudentSchoolarShipController extends Controller
             'CODCONTRATO'    => $contract,
         ];
 
-        $requestSoap = (array)$this->query($name, $parameters);
+        $requestSoap = (array) $this->query($name, $parameters);
         return $requestSoap['Resultado'];
     }
 
@@ -773,7 +797,7 @@ class StudentSchoolarShipController extends Controller
             'ANO'       => $request->ano
         ];
 
-        $requestSoap = (array)$this->query($name, $parameters);
+        $requestSoap = (array) $this->query($name, $parameters);
 
         return $this->createResponse($requestSoap['Resultado']);
     }

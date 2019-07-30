@@ -18,6 +18,7 @@ class PermissionResource extends JsonResource
             'id_concession_period'                  => $this->id_concession_period,
             'id_rm_establishment_concession_period' => $this->id_rm_establishment_concession_period,
             'id_rm_modality_concession_period'      => $this->id_rm_modality_concession_period,
+            'id_rm_course_type_concession_period'   => $this->id_rm_course_type_concession_period,
             'id_rm_period_concession_period'        => $this->id_rm_period_concession_period,
             'id_rm_period_code_concession_period'   => $this->id_rm_period_code_concession_period,
             'date_start_concession_period'          => $this->date_start_concession_period,
@@ -29,3 +30,4 @@ class PermissionResource extends JsonResource
         ];
     }
 }
+
