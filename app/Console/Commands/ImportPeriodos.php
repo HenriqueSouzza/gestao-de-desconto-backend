@@ -53,7 +53,7 @@ class ImportPeriodos extends Command
                 $insert[$row]['id_rm_period_code_concession_period'] = $data[3];   // PERIODO_LETIVO 
                 $insert[$row]['date_start_concession_period'] = $data[4];  // DTINICIAL
                 $insert[$row]['date_end_concession_period'] = $data[5]; // DTFIM                      
-                $insert[$row]['id_rm_modality_concession_period'] = $data[6] == 'Presencial' ? 'P' : 'D'; // Modalideade  
+                $insert[$row]['id_rm_modality_concession_period'] = $data[6]; // Modalideade  
                 $insert[$row]['id_rm_course_type_concession_period'] = $data[7]; // CODCURSO                                       
                 $insert[$row]['fk_user'] = '1';
                 $row++;            
