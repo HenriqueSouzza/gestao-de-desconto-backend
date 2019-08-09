@@ -84,7 +84,13 @@ class DiscountMarginSchoolarshipController extends Controller
         
         return $this->createResponse($margins, 200);
     }
-
+    public function import(Request $request){   
+      
+        if($request->file->store('imports'));
+            return "Armazenado com sucesso";
+        return "Problema na armazenacao"
+        
+    }
     /**
      * Store a newly created resource in storage.
      *
