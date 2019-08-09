@@ -72,7 +72,7 @@ class ImportBolsas extends Command
                     $insert[$row]['first_installment_discount_margin_schoolarship'] = $data[11]; //PARCELA_INICIAL
                     $insert[$row]['last_installment_discount_margin_schoolarship'] = $data[12]; //PARCELA_FINAL
                     $insert[$row]['fk_user'] = '1';
-                    $insert[$row]['id_rm_course_type_discount_margin_schoolarship'] = $codCurso;
+                    $insert[$row]['id_rm_course_type_discount_margin_schoolarship'] = $data[13];
 
                     $row++;
                 }
