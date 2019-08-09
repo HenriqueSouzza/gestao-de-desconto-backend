@@ -88,7 +88,7 @@ class DiscountMarginSchoolarshipController extends Controller
       
         if($request->file->store('imports'));
             return "Armazenado com sucesso";
-        return "Problema na armazenacao"
+        return "Problema na armazenacao";
         
     }
     /**
