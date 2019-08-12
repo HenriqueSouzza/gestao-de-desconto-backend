@@ -697,7 +697,7 @@ class StudentSchoolarShipController extends Controller
                     $dataServer = 'EduBolsaAlunoData';
                     
                     for ($i = $discount->first_installment; $i <= $discount->last_installment; $i++) {
-                        $codServico = getCodServico($i, $discount->course_type);
+                        $codServico = $this->getCodServico($i, $discount->course_type);
                         $xmlRequest = [
                             'SBolsaAluno' => [
                                 ['IDBOLSAALUNO'   => $studentSchoolarship],
