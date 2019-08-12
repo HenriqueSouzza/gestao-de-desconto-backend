@@ -478,6 +478,7 @@ class StudentSchoolarShipController extends Controller
                 'valor_mensalidade'   => (string) $result->VALOR_MENSALIDADE,
                 'tipo_aluno'          => (string) $result->TIPO_ALUNO,
                 'modalidade'          => (string) $result->MODALIDADE,
+                'tipo_curso'          => (string) $result->CODTIPOCURSO
             ],
             'bolsas_anteriores'       => $beforeSchoolarship,
             'bolsas_atuais'           => $afterSchoolarship,
