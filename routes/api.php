@@ -28,12 +28,14 @@ Route::group(['middleware' => ['auth:api' /*, 'check.user.acl'*/]], function(){
         'role-users'                  => 'Api\RoleUserController',
         'student-schoolarships'       => 'Api\StudentSchoolarshipController',
         'users'                       => 'Api\UserController',
-        'totvs-queries'               => 'Api\TotvsQuerySqlController'
+        'totvs-queries'               => 'Api\TotvsQuerySqlController',
+    //    'discount-margin-schoolarships' => 'Api\DiscountMarginSchoolarshipController'
     ]);
 
     Route::get('/permissions/update/all', 'Api\PermissionController@updateAllPermissions');
     Route::post('/concession-periods/list', 'Api\ConcessionPeriodController@listPeriods'); // lista de periodos letivos dado filial, e modalidade
     Route::post('/discount-margin-schoolarships/list', 'Api\DiscountMarginSchoolarshipController@listMargins'); // lista de periodos letivos dado filial, e modalidade
+    Route::post('/discount-margin-schoolarships/import', 'Api\DiscountMarginSchoolarshipController@import'); // lista de periodos letivos dado filial, e modalidade
     Route::post('/student-schoolarships/list-students', 'Api\StudentSchoolarShipController@getStudents');
     Route::post('/student-schoolarships/list-local-students', 'Api\StudentSchoolarShipController@getLocalStudents');
     Route::post('/student-schoolarships/students', 'Api\StudentSchoolarShipController@postSchoolarship');

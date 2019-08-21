@@ -478,6 +478,7 @@ class StudentSchoolarShipController extends Controller
                 'valor_mensalidade'   => (string) $result->VALOR_MENSALIDADE,
                 'tipo_aluno'          => (string) $result->TIPO_ALUNO,
                 'modalidade'          => (string) $result->MODALIDADE,
+                'tipo_curso'          => (string) $result->CODTIPOCURSO
             ],
             'bolsas_anteriores'       => $beforeSchoolarship,
             'bolsas_atuais'           => $afterSchoolarship,
@@ -617,6 +618,23 @@ class StudentSchoolarShipController extends Controller
                 return $codBolsa;
         }
     }
+
+    /**
+     * Pegar codservico
+     */
+    private function getCodServico($i, $course_type){
+        if($course_type == 3){ // GRAD
+            if($i == 1)
+                return 1;
+            return 2;
+        }
+        else if($course_type == 4) {// POS
+            if($i == 1)
+                return 6;
+            return 7;
+        }
+    }
+
     /**
      * @param Request $request (com os dados acima no formato JSON)
      * @return array $requestSoap     * 
@@ -677,8 +695,9 @@ class StudentSchoolarShipController extends Controller
                 if ($discount->send_rm) {   //caso passe o idbolsaaluno o registro irá ser atualizado se não sera criado
                     $studentSchoolarship = (isset($discount->student_schoolarship) ? $discount->student_schoolarship : 'xsi');
                     $dataServer = 'EduBolsaAlunoData';
+                    
                     for ($i = $discount->first_installment; $i <= $discount->last_installment; $i++) {
-
+                        $codServico = $this->getCodServico($i, $discount->course_type);
                         $xmlRequest = [
                             'SBolsaAluno' => [
                                 ['IDBOLSAALUNO'   => $studentSchoolarship],
@@ -689,7 +708,7 @@ class StudentSchoolarShipController extends Controller
                                 ['IDPERLET'       => $discount->period],
                                 ['CODCONTRATO'    => $discount->contract],
                                 ['CODBOLSA'       => $i == 1 ? $this->codBolsaP1($discount->schoolarship) : $discount->schoolarship],
-                                ['CODSERVICO'     => $i == 1 ? 1 : 2],
+                                ['CODSERVICO'     => $codServico],
                                 ['DESCONTO'       => $discount->value],
                                 ['TIPODESC'       => 'P'],
                                 ['CODUSUARIO'     => 'wsgestaodedesconto'],
